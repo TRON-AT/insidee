@@ -7,12 +7,20 @@ class Cursor {
             visibleTimeout: 300
         }, options);
         this.body = $(this.options.container);
+        
+        // Disable cursor on mobile/tablet devices
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 1024;
+        if (this.isMobile) {
+            return; // Don't initialize cursor on mobile
+        }
+        
         this.el = $('<div class="cb-cursor"></div>');
         this.text = $('<div class="cb-cursor-text"></div>');
         this.init();
     }
 
     init() {
+        if (this.isMobile) return;
         this.el.append(this.text);
         this.body.append(this.el);
         this.bind();
@@ -20,6 +28,7 @@ class Cursor {
     }
 
     bind() {
+        if (this.isMobile) return;
         const self = this;
 
         this.body.on('mouseleave', () => {

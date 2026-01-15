@@ -1,21 +1,27 @@
 /* variable css */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 :root {
-  --primary: #111111;
-  --secondary: #555555;
-  --border: rgba(17, 17, 17, 0.1);
-  --bg: #111111;
-  --theme: #FA814D;
-  --black: #111111;
+  --primary: #1A1A1A;
+  --secondary: #6B6B6B;
+  --border: rgba(26, 26, 26, 0.1);
+  --bg: #1A1A1A;
+  --theme: #F7C52D;
+  --theme-dark: #E5B800;
+  --theme-light: #FFD966;
+  --black: #1A1A1A;
+  --black-2: #2D2D2D;
+  --grey: #6B6B6B;
+  --grey-light: #9A9A9A;
   --white: #FFFFFF;
-  --action: #FA814D;
+  --white-2: #F5F5F5;
+  --action: #F7C52D;
 }
 
 .dark {
   --primary: #FFFFFF;
-  --secondary: #999999;
+  --secondary: #9A9A9A;
   --border: rgba(255, 255, 255, 0.1);
-  --bg: #171717;
+  --bg: #0D0D0D;
 }
 
 /* typography css */

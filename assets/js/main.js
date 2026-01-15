@@ -705,6 +705,122 @@
       });
     }
   });
+
+  // Mobile/Tablet text-animation for about-area-2
+  mm.add("(max-width: 1399px) and (min-width: 768px)", () => {
+    if (document.querySelectorAll(".about-area-2").length > 0) {
+      // Animate the section title on scroll
+      gsap.from(".about-area-2 .section-title", {
+        scrollTrigger: {
+          trigger: ".about-area-2",
+          start: "top 80%",
+          end: "top 30%",
+          scrub: 1,
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+      });
+
+      // Animate the year text
+      gsap.from(".about-area-2 .year-since", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .year-wrapper",
+          start: "top 95%",
+          end: "top 70%",
+          scrub: false,
+          toggleActions: "play none none none",
+        },
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      // Animate the text wrapper
+      gsap.from(".about-area-2 .text-wrapper", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .text-wrapper",
+          start: "top 90%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+      });
+
+      // Animate the button wrapper
+      gsap.from(".about-area-2 .btn-wrapper", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .btn-wrapper",
+          start: "top 95%",
+          end: "top 70%",
+          scrub: 1,
+        },
+        y: 30,
+        opacity: 0,
+        duration: 1,
+      });
+    }
+  });
+
+  // Small mobile animations for about-area-2 (simpler, no year text animation)
+  mm.add("(max-width: 767px)", () => {
+    if (document.querySelectorAll(".about-area-2").length > 0) {
+      // Simple fade in for section title
+      gsap.from(".about-area-2 .section-title", {
+        scrollTrigger: {
+          trigger: ".about-area-2",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      // Year text animation - slide in from left with fade
+      gsap.from(".about-area-2 .year-since", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .year-wrapper",
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+        x: -80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // Animate the text wrapper
+      gsap.from(".about-area-2 .text-wrapper", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .text-wrapper",
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      // Animate the button wrapper
+      gsap.from(".about-area-2 .btn-wrapper", {
+        scrollTrigger: {
+          trigger: ".about-area-2 .btn-wrapper",
+          start: "top 95%",
+          toggleActions: "play none none none",
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    }
+  });
   // text-animation end
 
   // service-area-2 text and bg animation start
@@ -748,30 +864,30 @@
   // works-wrapper-2 box animation start
   if (document.querySelectorAll(".works-wrapper-2").length > 0) {
     const workBoxes = document.querySelectorAll(".works-wrapper-2 .work-box");
-    gsap.fromTo(
-      workBoxes,
-      {
-        opacity: 0,
-        scale: 0.8,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: {
-          each: 0.2,
-          from: "random",
+    workBoxes.forEach((box, index) => {
+      gsap.fromTo(
+        box,
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.95,
         },
-        scrollTrigger: {
-          trigger: ".works-wrapper-2",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: false,
-        },
-      }
-    );
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 90%",
+            end: "top 60%",
+            toggleActions: "play none none reverse",
+          },
+          delay: (index % 4) * 0.1, // Stagger based on column position
+        }
+      );
+    });
   }
   // works-wrapper-2 box animation end
 
