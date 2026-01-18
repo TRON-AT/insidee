@@ -8478,14 +8478,8 @@ only screen and (max-width: 1919px) {
 /* Pain Card */
 .pain-card {
   position: relative;
-  animation: painCardFadeIn 0.7s ease-out forwards;
-  opacity: 0;
+  opacity: 1 !important;
 }
-
-.pain-card:nth-child(1) { animation-delay: 0.1s; }
-.pain-card:nth-child(2) { animation-delay: 0.2s; }
-.pain-card:nth-child(3) { animation-delay: 0.3s; }
-.pain-card:nth-child(4) { animation-delay: 0.4s; }
 
 @keyframes painCardFadeIn {
   0% {
@@ -8501,8 +8495,8 @@ only screen and (max-width: 1919px) {
 .pain-card-inner {
   position: relative;
   padding: 36px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(247, 197, 45, 0.1);
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(247, 197, 45, 0.15) !important;
   border-radius: 20px;
   height: 100%;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -8550,8 +8544,8 @@ only screen and (max-width: 1919px) {
   right: 28px;
   font-family: var(--font_bdogrotesk);
   font-size: 14px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+  color: #F7C52D !important;
   letter-spacing: 0.05em;
   transition: color 0.4s ease;
 }
@@ -8570,12 +8564,17 @@ only screen and (max-width: 1919px) {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.pain-icon svg {
+  stroke: #F7C52D !important;
+  color: #F7C52D !important;
+}
+
 /* Pain Title */
 .pain-title {
   font-family: var(--font_bdogrotesk);
   font-size: 22px;
-  font-weight: 500;
-  color: var(--white);
+  font-weight: 600;
+  color: #ffffff !important;
   margin: 0 0 12px 0;
   letter-spacing: -0.01em;
 }
@@ -8584,7 +8583,7 @@ only screen and (max-width: 1919px) {
 .pain-desc {
   font-size: 15px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.7) !important;
   line-height: 1.6;
   margin: 0;
 }
@@ -8730,26 +8729,55 @@ only screen and (max-width: 1919px) {
 
 @media only screen and (max-width: 767px) {
   .problem-title {
-    font-size: 40px;
+    font-size: 36px;
+    text-align: center;
   }
   
   .problem-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .problem-header .section-label {
+    justify-content: center;
+  }
+  
+  .problem-subtitle {
+    text-align: center;
   }
   
   .pain-points-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   
   .pain-card-inner {
     padding: 24px;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(247, 197, 45, 0.2) !important;
   }
   
   .pain-number {
     top: 20px;
-    right: 24px;
+    right: 20px;
+    font-size: 16px;
+  }
+  
+  .pain-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 18px;
+  }
+  
+  .pain-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .pain-desc {
+    font-size: 14px;
+    line-height: 1.5;
   }
   
   .transition-line-left,
@@ -8763,31 +8791,45 @@ only screen and (max-width: 1919px) {
   }
   
   .transition-text {
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .problem-transition {
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .problem-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .problem-subtitle {
-    font-size: 15px;
+    font-size: 14px;
   }
   
   .pain-card-inner {
     padding: 20px;
+    background: rgba(255, 255, 255, 0.06) !important;
   }
   
   .pain-icon {
     width: 44px;
     height: 44px;
     border-radius: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .pain-number {
+    font-size: 14px;
+    top: 16px;
+    right: 16px;
   }
   
   .pain-title {
-    font-size: 18px;
+    font-size: 17px;
   }
   
   .pain-desc {
@@ -8798,6 +8840,11 @@ only screen and (max-width: 1919px) {
     left: 20px;
     right: 20px;
   }
+  
+  .transition-text {
+    font-size: 15px;
+  }
+}
   
   .transition-text {
     font-size: 16px;
