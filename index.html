@@ -23,6 +23,81 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css?v=1.0">
 
+  <!-- Tally Form Widget -->
+  <script src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Tally Popup Fixes -->
+  <style>
+    /* Ensure Tally popup appears above everything */
+    iframe[data-tally-src],
+    .tally-popup,
+    [data-tally-overlay],
+    div[style*="tally"] {
+      z-index: 999999 !important;
+    }
+    
+    /* Body scroll lock when popup is open */
+    body.tally-popup-open {
+      overflow: hidden !important;
+      position: fixed !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    body.tally-popup-open #smooth-wrapper,
+    body.tally-popup-open #smooth-content {
+      overflow: hidden !important;
+    }
+    
+    /* Connect Us link styling in nav */
+    .connect-us-link {
+      color: #F7C52D !important;
+      font-weight: 600 !important;
+    }
+    
+    .connect-us-link:hover {
+      color: #FFD966 !important;
+    }
+    
+    /* Connect Us button in side menu */
+    .rr-btn-connect {
+      background: linear-gradient(135deg, #F7C52D 0%, #FFD966 100%) !important;
+      border: none !important;
+    }
+    
+    .rr-btn-connect .btn-wrap .text-one,
+    .rr-btn-connect .btn-wrap .text-two {
+      color: #1A1A1A !important;
+    }
+  </style>
+
+  <script>
+    function openTallyForm() {
+      // Store scroll position
+      var scrollY = window.scrollY || document.documentElement.scrollTop;
+      document.body.style.top = '-' + scrollY + 'px';
+      document.body.classList.add('tally-popup-open');
+      
+      Tally.openPopup('VLPaKN', {
+        layout: 'modal',
+        width: 700,
+        overlay: true,
+        autoClose: 3000,
+        onOpen: function() {
+          // Additional scroll lock
+          document.body.classList.add('tally-popup-open');
+        },
+        onClose: function() {
+          // Restore scroll
+          document.body.classList.remove('tally-popup-open');
+          var scrollY = document.body.style.top;
+          document.body.style.top = '';
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+      });
+    }
+  </script>
+
 </head>
 
 <body class="body-wrapper body-creative-agency font-heading-sequelsans-romanbody">
@@ -69,6 +144,14 @@
             </span>
           </a>
         </div>
+        <div class="offset-button" style="margin-top: 15px;">
+          <a href="javascript:void(0);" onclick="openTallyForm(); document.getElementById('side-info-close').click();" class="rr-btn rr-btn-connect">
+            <span class="btn-wrap">
+              <span class="text-one">Connect Us</span>
+              <span class="text-two">Connect Us</span>
+            </span>
+          </a>
+        </div>
         <div class="offset-widget-box">
           <h2 class="title">Contact US</h2>
           <div class="contact-meta">
@@ -108,6 +191,7 @@
                 <li><a href="#home" id="nav-home">Home</a></li>
                 <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
                 <li><a href="#services" id="nav-services">Services</a></li>
+                <li><a href="javascript:void(0);" onclick="openTallyForm();" class="connect-us-link">Connect Us</a></li>
               </ul>
             </nav>
           </div>
@@ -158,7 +242,7 @@
                 <!-- Hero Title -->
                 <div class="hero-title-wrap">
                   <h1 class="hero-title char-anim" data-delay="0.3" data-stagger="0.03" data-duration="0.8">
-                    We Build Brands That Speak Like Humans & Perform Like Machines.
+                    We Build Brands That Scale With Precision.
                   </h1>
                 </div>
 
@@ -167,7 +251,7 @@
                   <div class="hero-left">
                     <div class="hero-desc-wrap fade-anim" data-delay="0.8" data-offset="40" data-direction="bottom">
                       <p class="hero-description">
-                        A <span class="text-highlight">process-driven</span> global marketing agency delivering strategy, performance, and creative execution — <span class="text-highlight">without chaos.</span>
+                        A <span class="text-highlight">global, process-driven</span> marketing agency combining strategy, performance, and creative execution <span class="text-highlight">without chaos.</span>
                       </p>
                     </div>
                     
@@ -183,7 +267,7 @@
                       </div>
                       <div class="trust-item fade-anim" data-delay="1.1" data-offset="30" data-direction="left">
                         <span class="trust-dot trust-blue"></span>
-                        <span class="trust-label">Proven growth across industries</span>
+                        <span class="trust-label">Enterprise & funded startups</span>
                       </div>
                     </div>
 
@@ -193,12 +277,6 @@
                         <span class="btn-wrap">
                           <span class="text-one">Apply for a Strategy Call</span>
                           <span class="text-two">Apply for a Strategy Call</span>
-                        </span>
-                      </a>
-                      <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media,%20I%20want%20to%20request%20a%20Growth%20Audit" class="rr-btn btn-border hero-btn-outline">
-                        <span class="btn-wrap">
-                          <span class="text-one">Request a Growth Audit</span>
-                          <span class="text-two">Request a Growth Audit</span>
                         </span>
                       </a>
                     </div>
@@ -224,7 +302,6 @@
                   <div class="section-label fade-anim" data-delay="0.1" data-offset="30" data-direction="left">
                     <span class="label-number">02</span>
                     <span class="label-line"></span>
-                    <span class="label-text">Lead Qualification</span>
                   </div>
                   <h2 class="section-title-large rr_title_anim">
                     Who We Work With
@@ -536,10 +613,10 @@
                           </svg>
                         </div>
                       </div>
-                      <div class="pillar-content">
+                        <div class="pillar-content">
                         <h3 class="pillar-title">Clear KPIs. Clear Reporting. Zero Confusion.</h3>
                         <p class="pillar-desc">You always know what's working. Transparent metrics, real results.</p>
-                      </div>
+                        </div>
                       <div class="pillar-accent"></div>
                     </div>
                   </div>
@@ -576,7 +653,7 @@
                 </div>
                 <div class="section-content section-spacing-top">
                   <div class="year-wrapper">
-                    <h2 class="year-since"><span class="is-fading"><span class="first-text">2017</span> - 2025</span>
+                    <h2 class="year-since"><span class="is-fading"><span class="first-text">2017</span> - 2026</span>
                       <span class="last-text">Work</span>
                     </h2>
                   </div>
@@ -586,14 +663,14 @@
                       changes. Whether your inquiries are big or small, we're prepared to engage, focusing on complex
                       problems</p>
                   </div>
-                  <div class="btn-wrapper">
+                    <div class="btn-wrapper" style="text-align: center;">
                     <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media,%20I'd%20like%20to%20know%20more%20about%20your%20agency" class="rr-btn">
-                        <span class="btn-wrap">
-                        <span class="text-one">Know More</span>
-                        <span class="text-two">Know More</span>
-                        </span>
+                      <span class="btn-wrap">
+                      <span class="text-one">Know More</span>
+                      <span class="text-two">Know More</span>
+                      </span>
                     </a>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -601,120 +678,66 @@
           <!-- about area end  -->
 
           <!-- work area start  -->
-          <section class="work-area-2" id="portfolio">
+                    <!-- company showcase area start  -->
+          <section class="company-showcase-area" id="portfolio">
             <div class="container large">
-              <div class="work-area-2-inner section-spacing-top">
-                <div class="works-wrapper-box">
-                  <div class="works-wrapper-head">
-                    <div class="text-wrapper">
-                      <p class="text">Selected <span class="d-xxl-none">Work</span></p>
+              <div class="company-showcase-inner section-spacing">
+                <!-- Company Profile CTA -->
+                <div class="company-profile-cta">
+                  <div class="profile-content">
+                    <div class="profile-badge fade-anim" data-delay="0.1" data-offset="30" data-direction="top">
+                      <span class="badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                          <polyline points="14,2 14,8 20,8"/>
+                          <line x1="16" y1="13" x2="8" y2="13"/>
+                          <line x1="16" y1="17" x2="8" y2="17"/>
+                          <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                      </span>
+                      <span class="badge-text">Company Profile</span>
                     </div>
-                    <div class="total-count">
-                      <p class="text"><a href="https://linktr.ee/insideeindia">browse more (20)</a></p>
-                    </div>
-                  </div>
-                  <div class="works-wrapper-2">
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/1zwh0RckGU1sq6KRYQhzCdFqRkBBr8yk9"><img src="img/01.png" alt="Advertising and social media"></a>
+                    
+                    <h2 class="profile-title rr_title_anim" style="text-align: center;">
+                      Get to Know <span class="highlight">Insidee</span>
+                    </h2>
+                    
+                    <p class="profile-desc fade-anim" data-delay="0.2" data-offset="30" data-direction="bottom">
+                      Explore our complete company profile—our story, vision, capabilities, and the impact we've created for brands across industries.
+                    </p>
+                    
+                    <div class="profile-stats fade-anim" data-delay="0.3" data-offset="30" data-direction="bottom">
+                      <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Brands Served</span>
                       </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/1zwh0RckGU1sq6KRYQhzCdFqRkBBr8yk9">Advertising and social media</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
+                      <div class="stat-divider"></div>
+                      <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Experience</span>
                       </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/10nj878afOULLBrb_O4UGXoGOwh5ahoZn"><img src="img/02.png" alt="Marketing Strategies"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/10nj878afOULLBrb_O4UGXoGOwh5ahoZn">Marketing Strategies</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/14vpGvOo6vO7QhDEKtBO4l4R-A5zZZsbh"><img src="img/03.png" alt="AI & Tech solution"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/14vpGvOo6vO7QhDEKtBO4l4R-A5zZZsbh">AI & Tech solution</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
+                      <div class="stat-divider"></div>
+                      <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Global Offices</span>
                       </div>
                     </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/14dZMyNos4wDIaNV_eLVs2i9FW9GGJNLJ"><img src="img/04.png" alt="CGI & 3D Animations"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/14dZMyNos4wDIaNV_eLVs2i9FW9GGJNLJ">CGI & 3D Animations</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/1_cJWOOclm__lqjOyZTqqZ_3D3YRsXhrs"><img src="img/05.png" alt="Case Studies"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/1_cJWOOclm__lqjOyZTqqZ_3D3YRsXhrs">Case Studies</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/15s82huwVvsPufWZevDrQUdRwIaKuq17O"><img src="img/06.png" alt="Graphic Design"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/15s82huwVvsPufWZevDrQUdRwIaKuq17O">Graphic Design</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/1sGXoovmH9jEQXZviet7igCa1PpObnAJu"><img src="img/07.png" alt="Digital Ads"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/1sGXoovmH9jEQXZviet7igCa1PpObnAJu">Digital Ads</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb" data-cursor-text="View Project">
-                        <a href="https://drive.google.com/drive/folders/1Krmdwva2zBnDJc0UhCDiEWWIBtcUcbif"><img src="img/08.png" alt="Podcasts"></a>
-                      </div>
-                      <div class="content">
-                        <h3 class="title"><a href="https://drive.google.com/drive/folders/1Krmdwva2zBnDJc0UhCDiEWWIBtcUcbif">Podcasts</a></h3>
-                        <div class="meta">
-                          <span class="date">2025</span>
-                          <span class="tag">Design</span>
-                        </div>
-                      </div>
+                    
+                    <div class="profile-cta-wrap fade-anim" data-delay="0.4" data-offset="30" data-direction="bottom">
+                      <a href="https://linktr.ee/insideeindia?utm_source=linktree_profile_share&ltsid=0491bd84-eb4c-471c-b962-d615cab3a3ca" target="_blank" class="rr-btn showcase-btn">
+                        <span class="btn-wrap">
+                          <span class="text-one">View Company Profile</span>
+                          <span class="text-two">View Company Profile</span>
+                        </span>
+                      </a>
+                      <p class="profile-note">Case studies, portfolio, credentials & more</p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </section>
-          <!-- work area end  -->
+          <!-- company showcase area end  --> 
 
           <!-- actually-area area start  -->
           <section class="actually-area">
@@ -742,8 +765,8 @@
                       <div class="number">
                       001
                       </div>
-                      <h3 class="title">Advertising and <br> Marketing</h3>
-                      <p class="text">Strategic campaigns that elevate your brand visibility and drive measurable results across digital and traditional channels.</p>
+                      <h3 class="title">Strategy &<br> Growth</h3>
+                      <p class="text">Brand strategy · Go-to-market · Growth roadmaps · Scaling frameworks</p>
                     </div>
                     </div>
                   </a>
@@ -753,8 +776,8 @@
                       <div class="number">
                       002
                       </div>
-                      <h3 class="title">Audience and <br> Connections</h3>
-                      <p class="text">Building meaningful relationships between your brand and target audiences through personalized engagement strategies.</p>
+                      <h3 class="title">Performance &<br> Revenue</h3>
+                      <p class="text">Performance marketing · Funnels · CRO · Analytics</p>
                     </div>
                     </div>
                   </a>
@@ -764,8 +787,8 @@
                       <div class="number">
                       003
                       </div>
-                      <h3 class="title">Consumer Intelligence &amp;<br> Market Research</h3>
-                      <p class="text">Data-driven insights that reveal consumer behaviors and market trends to inform strategic business decisions.</p>
+                      <h3 class="title">Brand &<br> Creative</h3>
+                      <p class="text">Brand identity · CGI / 3D · Ad films · Content</p>
                     </div>
                     </div>
                   </a>
@@ -775,85 +798,8 @@
                       <div class="number">
                       004
                       </div>
-                      <h3 class="title">Advanced IT, Tech <br> and AI Solutions</h3>
-                      <p class="text">Cutting-edge technological innovations that drive efficiency, automation, and competitive advantage for your business.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      005
-                      </div>
-                      <h3 class="title">Brand Design &amp;<br> Brand Activation</h3>
-                      <p class="text">Comprehensive identity development and strategic activations that bring your brand to life across all touchpoints.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      006
-                      </div>
-                      <h3 class="title">Events and <br> Experiences</h3>
-                      <p class="text">Immersive brand experiences and memorable events that create lasting connections with your audience.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      007
-                      </div>
-                      <h3 class="title">Creative Media <br> Production</h3>
-                      <p class="text">High-quality content creation across video, audio, and visual media to elevate your brand storytelling.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      008
-                      </div>
-                      <h3 class="title">Social Media <br> Marketing</h3>
-                      <p class="text">Platform-specific strategies that build community, engagement, and conversion through targeted social presence.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      009
-                      </div>
-                      <h3 class="title">Influencer <br> Management</h3>
-                      <p class="text">Strategic partnerships with key opinion leaders who authentically amplify your brand message to relevant audiences.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      010
-                      </div>
-                      <h3 class="title">Data and <br> Analytics</h3>
-                      <p class="text">Comprehensive measurement and insights that track performance and optimize your marketing investments.</p>
-                    </div>
-                    </div>
-                  </a>
-                  <a class="fade-anim" href="service-details.html">
-                    <div class="service-box-wrapper">
-                    <div class="service-box">
-                      <div class="number">
-                      011
-                      </div>
-                      <h3 class="title">CGI Commercials <br> and Animations</h3>
-                      <p class="text">Stunning visual storytelling through computer-generated imagery that brings impossible concepts to life.</p>
+                      <h3 class="title">Digital &<br> Tech</h3>
+                      <p class="text">Websites · Landing pages · CRM · AI solutions</p>
                     </div>
                     </div>
                   </a>
@@ -990,11 +936,7 @@
                 <div class="section-header">
                   <div class="section-title-wrapper">
                     <div class="title-wrapper">
-                      <h2 class="section-title font-sequelsans-romanbody rr_title_anim">Our happy clients always
-                        say,
-                        how they are satisfied with
-                        our service.
-                      </h2>
+                      <h2 class="section-title font-sequelsans-romanbody rr_title_anim">Our happy <span class="text-gradient-highlight">clients always</span> say, how they are satisfied with our service.</h2>
                     </div>
                   </div>
                 </div>
@@ -1273,7 +1215,7 @@
 
                 <!-- CTA Button -->
                 <div class="how-we-work-cta fade-anim" data-delay="0.6" data-offset="30" data-direction="bottom">
-                  <a href="https://forms.gle/your-form-link" target="_blank" class="rr-btn process-cta-btn">
+                  <a href="javascript:void(0);" onclick="openTallyForm();" class="rr-btn process-cta-btn">
                     <span class="btn-wrap">
                       <span class="text-one">Start Your Application</span>
                       <span class="text-two">Start Your Application</span>

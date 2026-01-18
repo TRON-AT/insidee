@@ -266,9 +266,14 @@
         autoplay: true,
         spaceBetween: 0,
         speed: 5000,
-        allowTouchMove: false,
+        allowTouchMove: true,
+        grabCursor: true,
+        freeMode: true,
+        freeModeMomentum: true,
         autoplay: {
           delay: 1,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         },
       });
     }

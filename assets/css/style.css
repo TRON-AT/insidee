@@ -9425,7 +9425,10 @@ only screen and (max-width: 1919px) {
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--white);
+  background: linear-gradient(135deg, #F7C52D 0%, #FFD966 50%, #F7C52D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   margin: 0 0 24px 0;
 }
@@ -9512,30 +9515,34 @@ only screen and (max-width: 1919px) {
 }
 
 .case-meta {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .client-type {
   display: inline-block;
-  padding: 5px 12px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  padding: 0;
+  background: linear-gradient(135deg, #F7C52D 0%, #FFD966 50%, #F7C52D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: none;
+  border-radius: 0;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: var(--font_bdogrotesk);
+  color: #F7C52D;
+  text-transform: none;
+  letter-spacing: -0.02em;
 }
 
 .case-title {
   font-family: var(--font_bdogrotesk);
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--white);
-  margin: 0 0 24px 0;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 28px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
   padding-right: 50px;
 }
 
@@ -9711,8 +9718,12 @@ only screen and (max-width: 1919px) {
   }
   
   .case-title {
-    font-size: 18px;
+    font-size: 16px;
     padding-right: 45px;
+  }
+  
+  .client-type {
+    font-size: 24px;
   }
   
   .detail-text {
@@ -9738,12 +9749,12 @@ only screen and (max-width: 1919px) {
   }
   
   .case-title {
-    font-size: 17px;
+    font-size: 15px;
   }
   
   .client-type {
-    font-size: 10px;
-    padding: 4px 10px;
+    font-size: 22px;
+    padding: 0;
   }
   
   .detail-label {
@@ -10177,6 +10188,261 @@ only screen and (max-width: 1919px) {
 
 /* ============================================
    END HOW WE WORK SECTION
+   ============================================ */
+
+/* ============================================
+   COMPANY SHOWCASE SECTION
+   ============================================ */
+
+.company-showcase-area {
+  background-color: #1A1A1A !important;
+  background: #1A1A1A !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-showcase-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(247, 197, 45, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.company-showcase-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Company Profile CTA Styles */
+.company-profile-cta {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.profile-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(247, 197, 45, 0.1);
+  border: 1px solid rgba(247, 197, 45, 0.25);
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 32px;
+}
+
+.profile-badge .badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-badge .badge-icon svg {
+  stroke: #F7C52D;
+  width: 18px;
+  height: 18px;
+}
+
+.profile-badge .badge-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #F7C52D;
+  letter-spacing: 0.02em;
+}
+
+.profile-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-title .highlight {
+  background: linear-gradient(135deg, #F7C52D 0%, #FFD966 50%, #F7C52D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile-desc {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+/* Stats Row */
+.profile-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 42px;
+  font-weight: 700;
+  color: #F7C52D !important;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* CTA Button */
+.profile-cta-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showcase-btn {
+  background: linear-gradient(135deg, #F7C52D 0%, #FFD966 100%) !important;
+  border: none !important;
+  padding: 20px 48px !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 4px 30px rgba(247, 197, 45, 0.35);
+}
+
+.showcase-btn .btn-wrap .text-one,
+.showcase-btn .btn-wrap .text-two {
+  color: #1A1A1A !important;
+}
+
+.showcase-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(247, 197, 45, 0.5);
+}
+
+.profile-note {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin-top: 18px;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .profile-title {
+    font-size: 42px;
+  }
+  
+  .profile-stats {
+    gap: 30px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .profile-title {
+    font-size: 32px;
+  }
+  
+  .profile-desc {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .profile-stats {
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+  
+  .stat-number {
+    font-size: 32px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+  
+  .stat-divider {
+    height: 40px;
+  }
+  
+  .showcase-btn {
+    padding: 18px 36px !important;
+    font-size: 15px !important;
+  }
+  
+  .company-profile-cta {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-title {
+    font-size: 28px;
+  }
+  
+  .profile-badge {
+    padding: 8px 16px;
+  }
+  
+  .profile-badge .badge-text {
+    font-size: 13px;
+  }
+  
+  .profile-stats {
+    gap: 15px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .stat-divider {
+    height: 35px;
+  }
+}
+
+/* ============================================
+   END COMPANY SHOWCASE SECTION
    ============================================ */
 
 /* ============================================
@@ -11748,6 +12014,15 @@ only screen and (max-width: 1919px) {
   max-width: 1000px;
   margin-left: auto;
   color: #FCF7F3;
+}
+
+/* Yellow gradient text highlight */
+.text-gradient-highlight {
+  background: linear-gradient(135deg, #F7C52D 0%, #FFD966 50%, #F7C52D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: inherit;
 }
 
 .dark .testimonial-area .section-title {
@@ -40391,6 +40666,281 @@ START: Footer CSS
   .service-box .text {
     font-size: 14px;
   }
+}
+
+/* ============================================
+   SECTION SPACING OPTIMIZATION
+   Reduces excessive gaps between sections
+   ============================================ */
+
+/* Reduce default section spacing */
+.section-spacing {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.section-spacing-top {
+  padding-top: 70px;
+}
+
+.section-spacing-bottom {
+  padding-bottom: 70px;
+}
+
+/* Reduce why-insidee section bottom spacing */
+.why-insidee-section.section-spacing {
+  padding-bottom: 30px;
+}
+
+.why-tagline {
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+
+/* Reduce pillars container gap */
+.pillars-container {
+  margin-bottom: 15px;
+}
+
+/* Reduce about-area-2 top spacing after why-insidee */
+.about-area-2 .about-area-2-inner.section-spacing-top {
+  padding-top: 40px;
+}
+
+/* Reduce work area spacing */
+.work-area-2-inner.section-spacing-top {
+  padding-top: 50px;
+}
+
+/* Optimize actually-area spacing */
+.actually-area .actually-area-inner.section-spacing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Service area spacing optimization */
+.service-area-2-inner .services-wrapper-box.section-spacing-bottom {
+  padding-bottom: 50px;
+}
+
+/* Case studies section spacing */
+.case-studies-section.section-spacing {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+/* How we work section */
+.how-we-work-section.section-spacing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Founder section */
+.founder-section.section-spacing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Who we work with section */
+.who-we-work-section.section-spacing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Problem section */
+.problem-section.section-spacing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1399px) {
+  .section-spacing {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .section-spacing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .why-insidee-section.section-spacing,
+  .who-we-work-section.section-spacing,
+  .problem-section.section-spacing,
+  .how-we-work-section.section-spacing,
+  .founder-section.section-spacing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ============================================
+   CLIENT CAROUSEL LOGO SIZE OPTIMIZATION
+   Increases logo visibility and size
+   ============================================ */
+
+/* Larger client boxes for better visibility */
+.client-area-2 .client-box {
+  width: 220px !important;
+  height: 120px !important;
+  padding: 20px 25px !important;
+  border-radius: 14px;
+}
+
+/* Larger logo scale for better visibility */
+.client-area-2 .client-box img {
+  transform: scale(1.8) !important;
+}
+
+.client-area-2 .client-box:hover img {
+  transform: scale(2) !important;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1919px) {
+  .client-area-2 .client-box {
+    width: 200px !important;
+    height: 110px !important;
+    padding: 18px 22px !important;
+  }
+  
+  .client-area-2 .client-box img {
+    transform: scale(1.7) !important;
+  }
+  
+  .client-area-2 .client-box:hover img {
+    transform: scale(1.9) !important;
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .client-area-2 .client-box {
+    width: 180px !important;
+    height: 100px !important;
+    padding: 15px 20px !important;
+  }
+  
+  .client-area-2 .client-box img {
+    transform: scale(1.6) !important;
+  }
+  
+  .client-area-2 .client-box:hover img {
+    transform: scale(1.8) !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .client-area-2 .client-box {
+    width: 160px !important;
+    height: 90px !important;
+    padding: 12px 16px !important;
+  }
+  
+  .client-area-2 .client-box img {
+    transform: scale(1.5) !important;
+  }
+  
+  .client-area-2 .client-box:hover img {
+    transform: scale(1.7) !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .client-area-2 .client-box {
+    width: 140px !important;
+    height: 80px !important;
+    padding: 10px 14px !important;
+    border-radius: 10px;
+  }
+  
+  .client-area-2 .client-box img {
+    transform: scale(1.4) !important;
+  }
+  
+  .client-area-2 .client-box:hover img {
+    transform: scale(1.6) !important;
+  }
+}
+
+/* ============================================
+   ABOUT-AREA-2 & WORK-AREA-2 Z-INDEX FIX
+   Ensures proper layering during scroll animation
+   ============================================ */
+
+/* About section needs proper z-index */
+.about-area-2 {
+  position: relative;
+  z-index: 1;
+  background: #FCF7F3;
+}
+
+.about-area-2 .container.large {
+  background: #FCF7F3;
+}
+
+.about-area-2-inner {
+  background: #FCF7F3;
+}
+
+.about-area-2 .section-header {
+  background: #FCF7F3;
+  position: relative;
+  z-index: 3;
+}
+
+.about-area-2 .section-content {
+  position: relative;
+  z-index: 2;
+  background: #FCF7F3;
+}
+
+.about-area-2 .section-content .year-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.about-area-2 .section-content .text-wrapper {
+  position: relative;
+  z-index: 10;
+  background: #FCF7F3;
+  padding: 20px 0;
+}
+
+.about-area-2 .section-content .btn-wrapper {
+  position: relative;
+  z-index: 10;
+  background: #FCF7F3;
+  padding-bottom: 30px;
+}
+
+/* Work section needs solid background and higher z-index */
+.work-area-2 {
+  position: relative;
+  z-index: 5;
+  background: #FCF7F3;
+}
+
+.work-area-2-inner {
+  position: relative;
+  z-index: 6;
+  background: #FCF7F3;
+}
+
+.works-wrapper-box {
+  position: relative;
+  z-index: 7;
+  background: #FCF7F3;
+  padding-top: 20px;
+}
+
+/* Ensure works-wrapper-head is above about-area-2 content */
+.works-wrapper-head {
+  position: relative;
+  z-index: 8;
+  background: #FCF7F3;
 }
 
 /*# sourceMappingURL=style.css.map */
