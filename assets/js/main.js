@@ -828,43 +828,45 @@
   });
   // text-animation end
 
-  // service-area-2 text and bg animation start
-  if (document.querySelectorAll(".actually-area").length > 0) {
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".actually-area",
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: "bottom+=1500 top",
-      }
-    });
-    const t_line = new SplitText(".t_line", { type: "lines" });
-    t_line.lines.forEach((target) => {
-      tl.to(target, {
-        backgroundPositionX: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          scrub: 1,
-          start: 'top 25%',
-          end: "center 25%",
-        }
-      });
-    });
-    tl.to(".actually-area .section-title", {
-      scale: 40,
-      opacity: 0,
-      ease: "power4.inOut",
-      delay: 0.35,
-      duration: 0.75,
-    });
-    tl.to(".actually-area", {
-      backgroundColor: "#111111",
-      duration: 0.45,
-    }, "-=0.50");
-  }
-  // service-area-2 text and bg animation end
+ if (document.querySelectorAll(".actually-area").length > 0) {
+  // Split text into lines for individual line animations
+  const t_line = new SplitText(".t_line", { type: "lines" });
+  
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".actually-area",
+      pin: true,           // Pins the section during animation
+      scrub: 1,           // Syncs animation with scroll
+      start: "top top",   // Animation starts when top of element hits top of viewport
+      end: "bottom+=1500 top",  // Animation ends 1500px after the bottom
+    }
+  });
+  
+  // Animate each line's background gradient reveal sequentially within the timeline
+  // This ensures the animation works on mobile during pinned scroll
+  t_line.lines.forEach((target, index) => {
+    tl.to(target, {
+      backgroundPositionX: 0,  // Reveals the colored part of gradient
+      ease: "none",
+      duration: 0.3,           // Duration for each line animation
+    }, index * 0.15);          // Stagger each line with slight overlap
+  });
+  
+  // Scale up and fade out the title
+  tl.to(".actually-area .section-title", {
+    scale: 40,              // Massive scale increase
+    opacity: 0,             // Fade to transparent
+    ease: "power4.inOut",   // Smooth easing
+    duration: 0.75,
+  }, ">");  // Start after text fill animations complete
+  
+  // Change background color to dark
+  tl.to(".actually-area", {
+    backgroundColor: "#111111",  // Dark background
+    duration: 0.45,
+  }, "-=0.50");  // Start 0.5 seconds before previous animation ends
+}
+// service-area-2 text and bg animation end
 
   // works-wrapper-2 box animation start
   if (document.querySelectorAll(".works-wrapper-2").length > 0) {
