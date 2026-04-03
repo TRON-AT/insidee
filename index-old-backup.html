@@ -1,0 +1,2425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insidee Media">
+
+  <title>Insidee Media</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4267478880206112');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4267478880206112&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/vendor/animate.min.css">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0">
+
+  <!-- Tally Form Widget -->
+  <script src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Tally Popup Fixes -->
+  <style>
+    /* Ensure Tally popup appears above everything */
+    iframe[data-tally-src],
+    .tally-popup,
+    [data-tally-overlay],
+    div[style*="tally"] {
+      z-index: 999999 !important;
+    }
+    
+    /* Body scroll lock when popup is open */
+    body.tally-popup-open {
+      overflow: hidden !important;
+      position: fixed !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    body.tally-popup-open #smooth-wrapper,
+    body.tally-popup-open #smooth-content {
+      overflow: hidden !important;
+    }
+    
+    /* Connect Us link styling in nav */
+    .connect-us-link {
+      color: #F7C52D !important;
+      font-weight: 600 !important;
+    }
+    
+    .connect-us-link:hover {
+      color: #FFD966 !important;
+    }
+    
+    /* Connect Us button in side menu */
+    .rr-btn-connect {
+      background: linear-gradient(135deg, #F7C52D 0%, #FFD966 100%) !important;
+      border: none !important;
+    }
+    
+    .rr-btn-connect .btn-wrap .text-one,
+    .rr-btn-connect .btn-wrap .text-two {
+      color: #1A1A1A !important;
+    }
+    
+    /* Fullscreen Tally Overlay */
+    #tally-fullscreen-overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999999 !important;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(20,20,20,0.98);
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.2s;
+    }
+    #tally-fullscreen-overlay.active {
+      display: flex;
+    }
+    #tally-fullscreen-iframe {
+      width: 95vw;
+      max-width: 700px;
+      height: 90vh;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      background: #fff;
+      animation: popIn 0.2s;
+      pointer-events: auto;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #tally-fullscreen-close {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 99999999 !important;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      pointer-events: auto !important;
+    }
+    #tally-fullscreen-close:hover {
+      background: #f0f0f0;
+      transform: scale(1.1);
+    }
+    #tally-fullscreen-close:active {
+      transform: scale(0.95);
+    }
+    #tally-fullscreen-close svg {
+      width: 24px;
+      height: 24px;
+      color: #333;
+      stroke: #333;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      #tally-fullscreen-iframe {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+      }
+      #tally-fullscreen-close {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      }
+    }
+    body.tally-popup-open {
+      overflow: hidden !important;
+      position: fixed !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+
+  <script>
+    // Fullscreen Tally Popup logic
+    function openTallyForm() {
+      // Store scroll position
+      var scrollY = window.scrollY || document.documentElement.scrollTop;
+      document.body.style.top = '-' + scrollY + 'px';
+      document.body.classList.add('tally-popup-open');
+      var overlay = document.getElementById('tally-fullscreen-overlay');
+      if (overlay) {
+        overlay.classList.add('active');
+        // Focus iframe for accessibility
+        setTimeout(function() {
+          var iframe = document.getElementById('tally-fullscreen-iframe');
+          if (iframe) iframe.focus();
+        }, 300);
+      }
+    }
+    function closeTallyForm() {
+      var overlay = document.getElementById('tally-fullscreen-overlay');
+      if (overlay) overlay.classList.remove('active');
+      document.body.classList.remove('tally-popup-open');
+      var scrollY = document.body.style.top;
+      document.body.style.top = '';
+      // Fix: parseInt returns NaN if scrollY is '', so fallback to 0
+      var scrollNum = 0;
+      if (scrollY && /^-\d+px$/.test(scrollY)) {
+        scrollNum = -parseInt(scrollY, 10);
+      }
+      window.scrollTo(0, scrollNum);
+    }
+    // Optional: Close on ESC
+    document.addEventListener('keydown', function(e){
+      if (e.key === "Escape") closeTallyForm();
+    });
+    // Close on overlay click or close button click
+    document.addEventListener('DOMContentLoaded', function() {
+      var overlay = document.getElementById('tally-fullscreen-overlay');
+      var closeBtn = document.getElementById('tally-fullscreen-close');
+      
+      // Close button click handler
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeTallyForm();
+        });
+      }
+      
+      // Overlay background click handler
+      if (overlay) {
+        overlay.addEventListener('click', function(e) {
+          // Only close if click is directly on the overlay background
+          if (e.target === overlay) {
+            closeTallyForm();
+          }
+        });
+      }
+    });
+  </script>
+</head>
+
+<body class="body-wrapper body-creative-agency font-heading-sequelsans-romanbody">
+
+  <!-- Fullscreen Tally Popup Overlay -->
+  <div id="tally-fullscreen-overlay" tabindex="-1" aria-modal="true" role="dialog">
+    <button id="tally-fullscreen-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <iframe id="tally-fullscreen-iframe" src="https://tally.so/r/VLPaKN?transparentBackground=1&hideTitle=1" allow="clipboard-write" tabindex="0"></iframe>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+
+      </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  </div>
+
+  <!-- Sroll to top -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <!-- side toggle start -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html" style="font-size: 2rem; font-weight: bold; color: #222; text-decoration: none;">
+              INSIDEE
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media,%20I'm%20interested%20in%20your%20services" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Let's Talk</span>
+              <span class="text-two">Let's Talk</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-button" style="margin-top: 15px;">
+          <a href="javascript:void(0);" onclick="openTallyForm(); document.getElementById('side-info-close').click();" class="rr-btn rr-btn-connect">
+            <span class="btn-wrap">
+              <span class="text-one">Connect Us</span>
+              <span class="text-two">Connect Us</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact US</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">India & Dubai</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:contact@insidee.in">contact@insidee.in</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="https://wa.me/918077002038">+91 8077002038</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+  <!-- side toggle end -->
+
+  <!-- Header area start -->
+  <header class="header-area-2">
+    <div class="header-main">
+      <div class="container large">
+        <div class="header-area-2__inner">
+          <div class="header__logo">
+            <a href="#home" style="font-size: 2rem; font-weight: bold; color: #222; text-decoration: none;">
+              INSIDEE
+            </a>
+          </div>
+          <div class="header__nav pos-center">
+            <nav class="main-menu">
+              <ul>
+                <li><a href="#home" id="nav-home">Home</a></li>
+                <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
+                <li><a href="#services" id="nav-services">Services</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="javascript:void(0);" onclick="openTallyForm();" class="connect-us-link">Connect Us</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__button">
+            <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media,%20I'm%20interested%20in%20your%20services" class="rr-btn">
+              <span class="btn-wrap">
+                <span class="text-one">Let's Talk</span>
+                <span class="text-two">Let's Talk</span>
+              </span>
+            </a>
+          </div>
+          <div class="header__navicon">
+            <button class="side-toggle"><img src="assets/imgs/icon/icon-2.webp" alt="image"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header area end -->
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div>
+
+        <div class="body-bg">
+          <div class="container large">
+            <img src="assets/imgs/shape/shape-9.webp" alt="image">
+            <img src="assets/imgs/shape/shape-9.webp" alt="image">
+          </div>
+        </div>
+
+        <main>
+
+          <!-- hero area start  -->
+          <section class="hero-section" id="home">
+            <div class="container large">
+              <div class="hero-container">
+                <!-- Brand Badge -->
+                <div class="hero-badge-wrap fade-anim" data-delay="0.2" data-offset="30" data-direction="top">
+                  <div class="hero-badge">
+                    <span class="badge-brand">INSIDEE Media</span>
+                    <span class="badge-divider"></span>
+                    <span class="badge-tagline">Insidee Creative Media</span>
+                  </div>
+                </div>
+
+                <!-- Hero Title -->
+                <div class="hero-title-wrap">
+                  <h1 class="hero-title char-anim" data-delay="0.3" data-stagger="0.03" data-duration="0.8">
+                    We Build Brands That Scale With Precision.
+                  </h1>
+                </div>
+
+                <!-- Hero Grid - Description + Image -->
+                <div class="hero-grid">
+                  <div class="hero-left">
+                    <div class="hero-desc-wrap fade-anim" data-delay="0.8" data-offset="40" data-direction="bottom">
+                      <p class="hero-description">
+                        A <span class="text-highlight">global, process-driven</span> marketing studio combining strategy, performance, and creative execution <span class="text-highlight">without chaos.</span>
+                      </p>
+                    </div>
+                    
+                    <!-- Trust Row -->
+                    <div class="hero-trust-row" style="flex-direction: column; align-items: flex-start; gap: 12px;">
+                      <div class="trust-item fade-anim" data-delay="0.9" data-offset="30" data-direction="left" style="display: flex; align-items: center; gap: 10px;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7C52D" stroke-width="2.5" style="flex-shrink: 0; display: inline-block;">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                        <span class="trust-label" style="font-size: 16px;">Trusted by 50+ brands</span>
+                        </div>
+                        <div class="trust-item fade-anim" data-delay="1.0" data-offset="30" data-direction="left" style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7C52D" stroke-width="2.5" style="flex-shrink: 0; display: inline-block;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="trust-label" style="font-size: 16px;">India & Dubai presence</span>
+                        </div>
+                        <div class="trust-item fade-anim" data-delay="1.1" data-offset="30" data-direction="left" style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7C52D" stroke-width="2.5" style="flex-shrink: 0; display: inline-block;">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="trust-label" style="font-size: 16px;">Enterprise & Funded startups</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-actions fade-anim" data-delay="1.2" data-offset="30" data-direction="bottom">
+                      <a href="javascript:void(0);" onclick="openTallyForm();" class="rr-btn hero-btn-primary">
+                      <span class="btn-wrap">
+                        <span class="text-one">Apply for a Strategy Call</span>
+                        <span class="text-two">Apply for a Strategy Call</span>
+                      </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="hero-right fade-anim" data-delay="0.6" data-offset="60" data-direction="right">
+                    <div class="hero-image-wrap parallax-view">
+                      <img src="img/hero.png" alt="Insidee Creative Media" data-speed="0.8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- hero area end  -->
+
+          <!-- who we work with area start -->
+          <section class="who-we-work-section section-spacing">
+            <div class="container large">
+              <div class="who-we-work-container">
+                <!-- Section Header -->
+                <div class="section-header-row">
+                  <div class="section-label fade-anim" data-delay="0.1" data-offset="30" data-direction="left">
+                    
+                  </div>
+                  <h2 class="section-title-large rr_title_anim">
+                    Who We Work With
+                  </h2>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="who-we-work-grid">
+                  <!-- Ideal Clients Column -->
+                  <div class="clients-column">
+                    <h3 class="column-title fade-anim" data-delay="0.2" data-offset="20" data-direction="bottom">Ideal Clients</h3>
+                    <div class="client-cards">
+                      <div class="client-card">
+                        <span class="card-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                          </svg>
+                        </span>
+                        <div class="card-content">
+                          <h4 class="card-title">Funded Startups</h4>
+                          <p class="card-desc">Seed to Series B companies ready to scale</p>
+                        </div>
+                      </div>
+                      <div class="client-card">
+                        <span class="card-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 6l-9.5 9.5-5-5L1 18"/>
+                            <path d="M17 6h6v6"/>
+                          </svg>
+                        </span>
+                        <div class="card-content">
+                          <h4 class="card-title">Growing Brands</h4>
+                          <p class="card-desc">₹1 Cr+ annual revenue businesses</p>
+                        </div>
+                      </div>
+                      <div class="client-card">
+                        <span class="card-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                          </svg>
+                        </span>
+                        <div class="card-content">
+                          <h4 class="card-title">Enterprises & Institutions</h4>
+                          <p class="card-desc">Established organizations seeking growth</p>
+                        </div>
+                      </div>
+                      <div class="client-card">
+                        <span class="card-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                          </svg>
+                        </span>
+                        <div class="card-content">
+                          <h4 class="card-title">International Brands</h4>
+                          <p class="card-desc">Global brands seeking India/Dubai execution</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Disqualification Column -->
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- who we work with area end -->
+
+          <!-- the problem section start -->
+            <section class="problem-section section-spacing">
+            <div class="container large">
+              <div class="problem-container">
+              <!-- Section Header -->
+              <div class="problem-header">
+                <div class="section-label fade-anim" data-delay="0.1" data-offset="30" data-direction="left">
+                <span class="label-text">Pain Points</span>
+                </div>
+                <h2 class="problem-title rr_title_anim">The Problem</h2>
+              </div>
+
+              <!-- Compact Pain Points Grid -->
+              <div class="pain-points-compact">
+                <div class="pain-block">
+                <span class="pain-num">01</span>
+                <h4>Vanishing Act Agencies</h4>
+                <p>Sell big, disappear after onboarding.</p>
+                </div>
+                <div class="pain-block">
+                <span class="pain-num">02</span>
+                <h4>Outsourced Chaos</h4>
+                <p>Freelancers with no accountability.</p>
+                </div>
+                <div class="pain-block">
+                <span class="pain-num">03</span>
+                <h4>Pretty But Pointless</h4>
+                <p>Great creatives, zero measurable ROI.</p>
+                </div>
+                <div class="pain-block">
+                <span class="pain-num">04</span>
+                <h4>Vendor Juggling</h4>
+                <p>Chasing multiple vendors endlessly.</p>
+                </div>
+              </div>
+
+              <!-- Transition -->
+              <div class="problem-transition-compact">
+                <p><strong>Insidee Media</strong> was built to fix exactly this.</p>
+              </div>
+              </div>
+            </div>
+            </section>
+            
+            <style>
+            .pain-points-compact {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              margin-top: 40px;
+            }
+            
+            .pain-block {
+              background: #242424 !important;
+              border: 1px solid #3a3a3a !important;
+              border-radius: 12px;
+              padding: 28px 24px;
+              text-align: center;
+              transition: all 0.3s ease;
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+            
+            .pain-block:hover {
+              border-color: #4a4a4a;
+              background: #2a2a2a !important;
+              transform: translateY(-5px);
+            }
+            
+            .pain-block .pain-num {
+              display: inline-block;
+              font-size: 14px;
+              font-weight: 700;
+              color: #ffffff !important;
+              margin-bottom: 14px;
+            }
+            
+            .pain-block h4 {
+              font-size: 18px;
+              font-weight: 600;
+              color: #ffffff !important;
+              margin-bottom: 10px;
+            }
+            
+            .pain-block p {
+              font-size: 14px;
+              color: rgba(255, 255, 255, 0.75) !important;
+              line-height: 1.5;
+              margin: 0;
+            }
+            
+            .problem-transition-compact {
+              text-align: center;
+              margin-top: 40px;
+              padding-top: 30px;
+              border-top: 1px solid #3a3a3a;
+            }
+            
+            .problem-transition-compact p {
+              font-size: 18px;
+              color: rgba(255, 255, 255, 0.85) !important;
+            }
+            
+            .problem-transition-compact strong {
+              color: #ffffff !important;
+            }
+            
+            @media (max-width: 991px) {
+              .pain-points-compact {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+              }
+              
+              .pain-block {
+                padding: 24px 20px;
+              }
+            }
+            
+            @media (max-width: 575px) {
+              .pain-points-compact {
+                grid-template-columns: 1fr;
+                gap: 14px;
+              }
+              
+              .pain-block {
+                padding: 22px 18px;
+                background: #262626 !important;
+                border: 1px solid #404040 !important;
+              }
+              
+              .pain-block .pain-num {
+                font-size: 13px;
+              }
+              
+              .pain-block h4 {
+                font-size: 17px;
+              }
+              
+              .pain-block p {
+                font-size: 13px;
+              }
+              
+              .problem-transition-compact p {
+                font-size: 16px;
+              }
+              
+              .problem-title {
+                font-size: 32px !important;
+                text-align: center;
+              }
+              
+              .problem-header {
+                text-align: center;
+              }
+              
+              .problem-header .section-label {
+                justify-content: center;
+              }
+            }
+            
+            /* Force remove any yellowish tints from problem section */
+            .problem-section {
+              background: #1A1A1A !important;
+            }
+            
+            .problem-section::before,
+            .problem-section::after {
+              display: none !important;
+            }
+            </style>
+          <!-- the problem section end -->
+
+          <!-- why insidee section start -->
+          <section class="why-insidee-section section-spacing">
+            <div class="container large">
+              <!-- Why Insidee Card -->
+              <div class="why-card">
+                <!-- Header -->
+                <div class="why-card-header">
+                  <div class="why-header-left">
+                    <span class="why-label">Why Us</span>
+                    <h2 class="why-card-title">Why Insidee</h2>
+                  </div>
+                  <p class="why-tagline-text">Premium. Process-led. Results-driven.</p>
+                </div>
+                
+                <!-- Reasons Grid -->
+                <div class="why-reasons-grid">
+                  <div class="why-reason-item">
+                    <span class="reason-num">01</span>
+                    <div class="reason-content">
+                      <h4 class="reason-title">Strategy First</h4>
+                      <p class="reason-desc">Think first, build second.</p>
+                    </div>
+                  </div>
+                  <div class="why-reason-item">
+                    <span class="reason-num">02</span>
+                    <div class="reason-content">
+                      <h4 class="reason-title">In-House Team</h4>
+                      <p class="reason-desc">No freelancers. No outsourcing.</p>
+                    </div>
+                  </div>
+                  <div class="why-reason-item">
+                    <span class="reason-num">03</span>
+                    <div class="reason-content">
+                      <h4 class="reason-title">Creative + Performance</h4>
+                      <p class="reason-desc">Beautiful work that converts.</p>
+                    </div>
+                  </div>
+                  <div class="why-reason-item">
+                    <span class="reason-num">04</span>
+                    <div class="reason-content">
+                      <h4 class="reason-title">Founder-Led</h4>
+                      <p class="reason-desc">Talk to decision-makers.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Why Insidee Card Styles -->
+          <style>
+          .why-insidee-section {
+            background: #FCF7F3 !important;
+          }
+          
+          .why-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 48px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+          }
+          
+          .why-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 36px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+          
+          .why-header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+          
+          .why-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+          }
+          
+          .why-card-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin: 0;
+            background: linear-gradient(135deg, #F7C52D 0%, #E5B800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          .why-tagline-text {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.5);
+            margin: 0;
+          }
+          
+          .why-reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+          }
+          
+          .why-reason-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            background: #FCF7F3;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 14px;
+            padding: 24px 26px;
+            transition: all 0.3s ease;
+          }
+          
+          .why-reason-item:hover {
+            background: #FFF8E7;
+            border-color: rgba(247, 197, 45, 0.3);
+          }
+          
+          .reason-num {
+            font-size: 14px;
+            font-weight: 700;
+            color: #E5B800;
+            letter-spacing: 0.05em;
+            min-width: 28px;
+            padding-top: 3px;
+          }
+          
+          .reason-content {
+            flex: 1;
+          }
+          
+          .reason-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+          }
+          
+          .reason-desc {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.5;
+            margin: 0;
+          }
+          
+          @media (max-width: 768px) {
+            .why-card {
+              padding: 32px 28px;
+              border-radius: 16px;
+            }
+            
+            .why-card-header {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 12px;
+            }
+            
+            .why-card-title {
+              font-size: 32px;
+            }
+            
+            .why-reasons-grid {
+              grid-template-columns: 1fr;
+              gap: 14px;
+            }
+            
+            .why-reason-item {
+              padding: 20px 22px;
+            }
+            
+            .reason-title {
+              font-size: 18px;
+            }
+            
+            .reason-desc {
+              font-size: 15px;
+            }
+          }
+          </style>
+          <!-- why insidee section end -->
+          <div class="client-area-2">
+            <div class="client-area-2-inner">
+                <div class="container large">
+                <div class="client-section-header" style="padding-left: 24px; padding-right: 24px; padding-top: 48px; padding-bottom: 18px;">
+                  <h3 class="client-heading rr_title_anim" style="margin-top: 32px; margin-bottom: 10px;">Our Clients</h3>
+                  <p class="client-subtext fade-anim" data-delay="0.2" data-offset="20" data-direction="bottom">Trusted by leading brands across industries</p>
+                </div>
+                </div>
+              <div class="clients-wrapper-box fade-anim">
+                <div class="clients-wrapper">
+                  <div class="swiper client-slider-active">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/1.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/2.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/3.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/4.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/5.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/6.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/7.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/8.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/9.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/10.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/11.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/12.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/13.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/14.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/15.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/16.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/17.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/18.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/19.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/20.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/21.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/22.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/23.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/24.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/25.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/26.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/27.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/28.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/29.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/30.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/31.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/32.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/33.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/34.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/35.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/36.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/37.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/38.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/39.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/40.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/41.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/42.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/43.svg" alt="client logo">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="client-box">
+                          <img src="assets/insidee logo/44.svg" alt="client logo">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- client area end  -->
+
+          <!-- about area start  -->
+          <section class="about-area-2">
+            <div class="container large">
+              <div class="about-area-2-inner section-spacing-top">
+                <div class="section-header">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-sequelsans-romanbody rr_title_anim">Creating virtual emotion
+                        Empowering brands with creativity, strategy, and technology for digital growth</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-content section-spacing-top">
+                  <div class="year-wrapper">
+                    <h2 class="year-since"><span class="is-fading"><span class="first-text">2017</span> - 2026</span>
+                     
+                    </h2>
+                  </div>
+                  <div class="text-wrapper">
+                    <p class="text">We help brands and people be part of the solution. As a cause-led branding and
+                      communications agency, we harness the power of technology and creativity to drive positive
+                      changes. Whether your inquiries are big or small, we're prepared to engage, focusing on complex
+                      problems</p>
+                  </div>
+                  <div class="btn-wrapper">
+                    <a href="javascript:void(0);" onclick="openTallyForm();" class="rr-btn">
+                      <span class="btn-wrap">
+                      <span class="text-one">Learn More</span>
+                      <span class="text-two">Learn More</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- about area end  -->
+
+          <!-- work area start  -->
+                    <!-- company showcase area start  -->
+          <section class="company-showcase-area" id="portfolio">
+            <div class="container large">
+              <div class="company-showcase-inner section-spacing">
+                <!-- Company Profile CTA -->
+                <div class="company-profile-cta">
+                  <div class="profile-content">
+                    <div class="profile-badge fade-anim" data-delay="0.1" data-offset="30" data-direction="top">
+                      <span class="badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                          <polyline points="14,2 14,8 20,8"/>
+                          <line x1="16" y1="13" x2="8" y2="13"/>
+                          <line x1="16" y1="17" x2="8" y2="17"/>
+                          <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                      </span>
+                      <span class="badge-text">Company Profile</span>
+                    </div>
+                    
+                    <h2 class="profile-title rr_title_anim" style="text-align: center;">
+                      Get to Know <span class="highlight">Insidee</span>
+                    </h2>
+                    
+                    <p class="profile-desc fade-anim" data-delay="0.2" data-offset="30" data-direction="bottom">
+                      Explore our complete company profile—our story, vision, capabilities, and the impact we've created for brands across industries.
+                    </p>
+                    
+                    <div class="profile-stats fade-anim" data-delay="0.3" data-offset="30" data-direction="bottom">
+                      <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Brands Served</span>
+                      </div>
+                      <div class="stat-divider"></div>
+                      <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Experience</span>
+                      </div>
+                      <div class="stat-divider"></div>
+                      <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Global Offices</span>
+                      </div>
+                    </div>
+                    
+                    <div class="profile-cta-wrap fade-anim" data-delay="0.4" data-offset="30" data-direction="bottom">
+                      <a href="https://linktr.ee/insideeindia?utm_source=linktree_profile_share&ltsid=0491bd84-eb4c-471c-b962-d615cab3a3ca" target="_blank" class="rr-btn showcase-btn">
+                        <span class="btn-wrap">
+                          <span class="text-one">View Company Profile</span>
+                          <span class="text-two">View Company Profile</span>
+                        </span>
+                      </a>
+                      <p class="profile-note">Case studies, portfolio, credentials & more</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- company showcase area end  --> 
+
+          <!-- actually-area area start  -->
+          <section class="actually-area">
+            <div class="actually-area-inner section-spacing">
+              <div class="container">
+                <div class="bg-area"></div>
+                <h2 class="section-title font-sequelsans-romanbody t_line">
+                  What services <br>
+                  we provide you <br>
+                  actually</h2>
+              </div>
+            </div>
+          </section>
+          <!-- actually-area area end  -->
+
+          <!-- service area start  -->
+            <section class="service-area-2" id="services">
+              <div class="service-area-2-inner">
+              <div class="services-wrapper-box section-spacing-bottom">
+              <div class="container large">
+                <div class="services-wrapper-2">
+                <a class="fade-anim" href="service-details.html">
+                <div class="service-box-wrapper">
+                <div class="service-box">
+                  <div class="number">
+                  001
+                  </div>
+                  <h3 class="title">Strategy &<br> Growth</h3>
+                  <ul class="service-list">
+                  <li>Brand strategy</li>
+                  <li>Go-to-market</li>
+                  <li>Growth roadmaps</li>
+                  <li>Scaling frameworks</li>
+                  </ul>
+                </div>
+                </div>
+                </a>
+                <a class="fade-anim" href="service-details.html">
+                <div class="service-box-wrapper">
+                <div class="service-box">
+                  <div class="number">
+                  002
+                  </div>
+                  <h3 class="title">Performance &<br> Revenue</h3>
+                  <ul class="service-list">
+                  <li>Performance marketing</li>
+                  <li>Funnels</li>
+                  <li>CRO</li>
+                  <li>Analytics</li>
+                  </ul>
+                </div>
+                </div>
+                </a>
+                <a class="fade-anim" href="service-details.html">
+                <div class="service-box-wrapper">
+                <div class="service-box">
+                  <div class="number">
+                  003
+                  </div>
+                  <h3 class="title">Brand &<br> Creative</h3>
+                  <ul class="service-list">
+                  <li>Brand identity</li>
+                  <li>CGI / 3D</li>
+                  <li>VFX</li>
+                  <li>Ad films</li>
+                  <li>Content</li>
+                  </ul>
+                </div>
+                </div>
+                </a>
+                <a class="fade-anim" href="service-details.html">
+                <div class="service-box-wrapper">
+                <div class="service-box">
+                  <div class="number">
+                  004
+                  </div>
+                  <h3 class="title">Digital &<br> Tech</h3>
+                  <ul class="service-list">
+                  <li>Websites</li>
+                  <li>Landing pages</li>
+                  <li>CRM</li>
+                  <li>AI solutions</li>
+                  </ul>
+                </div>
+                </div>
+                </a>
+                </div>
+              </div>
+              </div>
+              </div>
+            <div class="case-studies-section section-spacing">
+              <div class="container large">
+                <!-- Section Header -->
+                <div class="case-studies-header">
+                    <div class="section-label fade-anim" data-delay="0.1" data-offset="30" data-direction="left">
+                    <h3 class="label-text" style="font-size: 1.5rem; font-weight: 600; margin: 0;">Proof of Execution</h3>
+                    </div>
+                  <h2 class="case-studies-title rr_title_anim">Case Studies</h2>
+                  <p class="case-studies-objective fade-anim" data-delay="0.2" data-offset="30" data-direction="bottom">
+                    Build trust through real outcomes, not claims.
+                  </p>
+                </div>
+
+                <!-- Modern Expandable Case Studies -->
+                <div class="expandable-cases">
+                  <!-- Case Study 1 -->
+                  <div class="expand-card" data-case="1">
+                    <div class="expand-header" onclick="toggleCase(1)">
+                      <div class="expand-left">
+                        <span class="expand-number">01</span>
+                        <div class="expand-info">
+                          <span class="expand-client">Dehradun Bazaar</span>
+                          <h3 class="expand-title">The City's Biggest Flea Market Experience</h3>
+                        </div>
+                      </div>
+                      <div class="expand-toggle">
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"/>
+                          <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="expand-content">
+                      <div class="expand-details">
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Problem</span>
+                            <p>High ad spend with minimal conversions and poor audience targeting.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Our Approach</span>
+                            <p>Data-driven audience segmentation, creative refresh, and funnel optimization.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block result-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Results</span>
+                            <p>A benchmark for community-driven brand activations through storytelling, design & digital strategy.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Case Study 2 -->
+                  <div class="expand-card" data-case="2">
+                    <div class="expand-header" onclick="toggleCase(2)">
+                      <div class="expand-left">
+                        <span class="expand-number">02</span>
+                        <div class="expand-info">
+                          <span class="expand-client">Haneri</span>
+                          <h3 class="expand-title">Crafting India's First Fan Movement Brand</h3>
+                        </div>
+                      </div>
+                      <div class="expand-toggle">
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"/>
+                          <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="expand-content">
+                      <div class="expand-details">
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Problem</span>
+                            <p>No brand presence, struggling to generate qualified leads for enterprise sales.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Our Approach</span>
+                            <p>Complete brand overhaul, LinkedIn thought leadership, and inbound content strategy.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block result-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Results</span>
+                            <p>Turning an idea into a nationwide cultural identity—from the people, for the people.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Case Study 3 -->
+                  <div class="expand-card" data-case="3">
+                    <div class="expand-header" onclick="toggleCase(3)">
+                      <div class="expand-left">
+                        <span class="expand-number">03</span>
+                        <div class="expand-info">
+                          <span class="expand-client">Saatvik Solar</span>
+                          <h3 class="expand-title">Powering a Brand for Its Next Chapter</h3>
+                        </div>
+                      </div>
+                      <div class="expand-toggle">
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"/>
+                          <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="expand-content">
+                      <div class="expand-details">
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Problem</span>
+                            <p>Outdated digital presence, losing patients to modern competitors.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Our Approach</span>
+                            <p>Website redesign, local SEO, reputation management, and patient journey optimization.</p>
+                          </div>
+                        </div>
+                        <div class="detail-block result-block">
+                          <div class="detail-text">
+                            <span class="detail-label">Results</span>
+                            <p>Stronger identity, higher engagement & renewed market confidence for their IPO phase.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Browse Button -->
+                
+              </div>
+            </div>
+
+            <!-- Expandable Cards Styles -->
+            <style>
+            .case-studies-title {
+              background: linear-gradient(135deg, #F7C52D 0%, #FFD966 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            }
+            
+            .expandable-cases {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              margin-top: 50px;
+            }
+            
+            .expand-card {
+              background: #1a1a1a;
+              border: 1px solid rgba(255, 255, 255, 0.08);
+              border-radius: 14px;
+              overflow: hidden;
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .expand-card:hover {
+              border-color: rgba(247, 197, 45, 0.2);
+            }
+            
+            .expand-card.active {
+              border-color: rgba(247, 197, 45, 0.3);
+              background: #1e1e1e;
+            }
+            
+            .expand-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 24px 28px;
+              cursor: pointer;
+              user-select: none;
+            }
+            
+            .expand-left {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            }
+            
+            .expand-number {
+              font-size: 13px;
+              font-weight: 600;
+              color: #F7C52D;
+              letter-spacing: 0.05em;
+              min-width: 28px;
+            }
+            
+            .expand-info {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+            }
+            
+            .expand-client {
+              font-size: 16px;
+              font-weight: 600;
+              color: #F7C52D;
+              text-transform: none;
+              letter-spacing: 0.01em;
+            }
+            
+            .expand-title {
+              font-size: 15px;
+              font-weight: 400;
+              color: rgba(255, 255, 255, 0.7);
+              margin: 0;
+              line-height: 1.5;
+            }
+            
+            .expand-toggle {
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 50%;
+              transition: all 0.3s ease;
+            }
+            
+            .expand-card:hover .expand-toggle {
+              border-color: rgba(247, 197, 45, 0.3);
+            }
+            
+            .expand-card.active .expand-toggle {
+              background: #F7C52D;
+              border-color: #F7C52D;
+              transform: rotate(45deg);
+            }
+            
+            .toggle-icon {
+              color: rgba(255, 255, 255, 0.5);
+              transition: all 0.3s ease;
+            }
+            
+            .expand-card.active .toggle-icon {
+              color: #1a1a1a;
+            }
+            
+            .expand-content {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .expand-card.active .expand-content {
+              max-height: 500px;
+            }
+            
+            .expand-details {
+              padding: 0 28px 28px 68px;
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+            
+            .detail-block {
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              padding: 16px 18px;
+              background: rgba(255, 255, 255, 0.02);
+              border-radius: 10px;
+              border-left: 2px solid rgba(247, 197, 45, 0.3);
+            }
+            
+            .detail-block.result-block {
+              border-left-color: #F7C52D;
+              background: rgba(247, 197, 45, 0.03);
+            }
+            
+            .detail-icon {
+              display: none;
+            }
+            
+            .detail-text {
+              flex: 1;
+            }
+            
+            .detail-text .detail-label {
+              display: block;
+              font-size: 10px;
+              font-weight: 600;
+              color: rgba(247, 197, 45, 0.8);
+              text-transform: uppercase;
+              letter-spacing: 0.12em;
+              margin-bottom: 6px;
+            }
+            
+            .detail-text p {
+              font-size: 14px;
+              color: rgba(255, 255, 255, 0.7);
+              line-height: 1.6;
+              margin: 0;
+            }
+            
+            .result-block .detail-text .detail-label {
+              color: #F7C52D;
+            }
+            
+            .result-block .detail-text p {
+              color: rgba(255, 255, 255, 0.85);
+            }
+            
+            @media (max-width: 768px) {
+              .expand-header {
+                padding: 18px 20px;
+              }
+              
+              .expand-left {
+                gap: 14px;
+              }
+              
+              .expand-number {
+                display: none;
+              }
+              
+              .expand-title {
+                font-size: 16px;
+              }
+              
+              .expand-toggle {
+                width: 36px;
+                height: 36px;
+              }
+              
+              .expand-details {
+                padding: 0 20px 20px 20px;
+              }
+              
+              .detail-block {
+                padding: 14px 16px;
+              }
+              
+              .detail-text p {
+                font-size: 13px;
+              }
+            }
+            </style>
+            
+            <script>
+            function toggleCase(caseNum) {
+              const card = document.querySelector(`.expand-card[data-case="${caseNum}"]`);
+              const wasActive = card.classList.contains('active');
+              
+              // Close all cards
+              document.querySelectorAll('.expand-card').forEach(c => {
+                c.classList.remove('active');
+              });
+              
+              // Toggle clicked card
+              if (!wasActive) {
+                card.classList.add('active');
+              }
+            }
+            </script>
+          </section>
+          <!-- service area   -->
+
+          <!-- testimonial area start  -->
+          <section class="testimonial-area moving-testimonial" aria-labelledby="testimonial-heading">
+            <div class="container large">
+              <div class="testimonial-area-inner section-spacing-top">
+                <div class="section-header">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 id="testimonial-heading" class="section-title font-sequelsans-romanbody rr_title_anim">What Our <span class="text-gradient-highlight">Happy Clients</span> Say About Us</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-wrapper-box section-spacing-bottom">
+              <div class="pin">
+                <div class="container full-hd">
+                  <div class="testimonial-wrapper">
+                    <article class="testimonial-item t-card">
+                      <div class="content">
+                        <div class="text-wrapper">
+                          <p class="text">“Insidee Media transformed our digital presence. Their creative campaigns and strategic approach helped us reach new customers and grow our brand online. Highly recommended!”</p>
+                        </div>
+                        <div class="author">
+                          <div class="meta">
+                            <h3 class="name">Priya Sharma</h3>
+                            <span class="post">Marketing Head, UrbanRoots</span>
+                          </div>
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-3.webp" alt="" aria-hidden="true" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="testimonial-item t-card light">
+                      <div class="content">
+
+                        <div class="text-wrapper">
+                          <p class="text">“The team at Insidee Media is innovative and responsive. Their tech solutions streamlined our operations and their branding expertise gave us a fresh identity.”</p>
+                        </div>
+                        <div class="author">
+                          <div class="meta">
+                            <h3 class="name">Rohan Mehta</h3>
+                            <span class="post">Co-Founder, TechNest</span>
+                          </div>
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-3-light.webp" alt="" aria-hidden="true" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="testimonial-item t-card">
+                      <div class="content">
+                        <div class="text-wrapper">
+                          <blockquote class="text">“We loved working with Insidee Media for our product launch. Their creative media production and social media strategies made a real impact.”</p>
+                        </div>
+                        <div class="author">
+                          <div class="meta">
+                            <h3 class="name">Ananya Iyer</h3>
+                            <span class="post">Brand Manager, FreshBite</span>
+                          </div>
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-3.webp" alt="" aria-hidden="true" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="testimonial-item t-card light">
+                      <div class="content">
+
+                        <div class="text-wrapper">
+                          <p class="text">“Their data-driven approach and market research gave us valuable insights. The team is professional, creative, and always delivers on time.”</p>
+                        </div>
+                        <div class="author">
+                          <div class="meta">
+                            <h3 class="name">Siddharth Rao</h3>
+                            <span class="post">CEO, GreenLeaf Ventures</span>
+                          </div>
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-3-light.webp" alt="" aria-hidden="true" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="testimonial-item t-card">
+                      <div class="content">
+                        <div class="text-wrapper">
+                          <blockquote class="text">“Insidee Media’s event management and influencer campaigns helped us connect with our audience in new ways. Their passion and expertise are unmatched.”</p>
+                        </div>
+                        <div class="author">
+                          <div class="meta">
+                            <h3 class="name">Meera Nair</h3>
+                            <span class="post">Head of Communications, Vistara Foods</span>
+                          </div>
+                          <div class="icon">
+                            <img class="quote-icon" src="assets/imgs/icon/icon-3.webp" alt="" aria-hidden="true" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- testimonial area end  -->
+
+          <!-- client area start  -->
+          
+
+        
+         
+         
+
+          <!-- how we work area start  -->
+          <section class="how-we-work-section section-spacing" style="background: #1a1a1a;">
+            <div class="container large">
+              <!-- Compact Process Box -->
+              <div class="process-box">
+                <!-- Header -->
+                <div class="process-box-header" style="flex-direction: column; align-items: center; text-align: center;">
+                  <div class="process-header-left" style="align-items: center;">
+                  <span class="process-label">Process</span>
+                  <h2 class="process-box-title">How We Work</h2>
+                  </div>
+                  <p class="process-tagline">Clear. Structured. Results-driven.</p>
+                </div>
+                
+                <!-- Steps Grid -->
+                <div class="process-steps-grid">
+                  <div class="process-step-card">
+                    <span class="step-num">01</span>
+                    <h4 class="step-name">Apply & Qualify</h4>
+                    <p class="step-info">Brief application to understand your goals.</p>
+                  </div>
+                  <div class="process-step-card">
+                    <span class="step-num">02</span>
+                    <h4 class="step-name">Strategy Call</h4>
+                    <p class="step-info">Direct conversation with the founder.</p>
+                  </div>
+                  <div class="process-step-card">
+                    <span class="step-num">03</span>
+                    <h4 class="step-name">Custom Roadmap</h4>
+                    <p class="step-info">Tailored strategy with transparent pricing.</p>
+                  </div>
+                  <div class="process-step-card">
+                    <span class="step-num">04</span>
+                    <h4 class="step-name">Execution & Reporting</h4>
+                    <p class="step-info">Precision delivery with measurable results.</p>
+                  </div>
+                </div>
+                
+                <!-- CTA -->
+                <div class="process-box-cta">
+                  <a href="javascript:void(0);" onclick="openTallyForm();" class="process-apply-btn">
+                    <span>Start Your Application</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"/>
+                      <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                  </a>
+                  <span class="process-note">Takes 2 min • No commitment</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Process Box Styles -->
+          <style>
+          .how-we-work-section {
+            background: #1a1a1a !important;
+          }
+          
+          .process-box {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            max-width: 100%;
+            margin: 0 auto;
+          }
+          
+          .process-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          }
+          
+          .process-header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+          }
+          
+          .process-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+          }
+          
+          .process-box-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0;
+            background: linear-gradient(135deg, #F7C52D 0%, #FFD966 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          .process-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            align-self: center;
+          }
+          
+          .process-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+          }
+          
+          .process-step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+          }
+          
+          .process-step-card:hover {
+            background: rgba(247, 197, 45, 0.05);
+            border-color: rgba(247, 197, 45, 0.2);
+          }
+          
+          .step-num {
+            display: inline-block;
+            font-size: 11px;
+            font-weight:  700;
+            color: #F7C52D;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+          }
+          
+          .step-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+          }
+          
+          .step-info {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.5;
+            margin: 0;
+          }
+          
+          .process-box-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+          }
+          
+          .process-apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #F7C52D;
+            color: #1a1a1a;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+          }
+          
+          .process-apply-btn:hover {
+            background: #FFD966;
+            transform: translateX(4px);
+          }
+          
+          .process-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+          }
+          
+          @media (max-width: 991px) {
+            .process-box {
+              padding: 28px;
+            }
+            
+            .process-box-header {
+              flex-direction: column;
+              gap: 12px;
+            }
+            
+            .process-tagline {
+              align-self: flex-start;
+            }
+            
+            .process-steps-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 12px;
+            }
+          }
+          
+          @media (max-width: 575px) {
+            .process-box {
+              padding: 24px 20px;
+              border-radius: 16px;
+            }
+            
+            .process-box-title {
+              font-size: 24px;
+            }
+            
+            .process-steps-grid {
+              grid-template-columns: 1fr;
+              gap: 10px;
+            }
+            
+            .process-step-card {
+              padding: 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+            }
+            
+            .step-num {
+              margin-bottom: 0;
+              min-width: 24px;
+            }
+            
+            .process-step-card > div {
+              flex: 1;
+            }
+            
+            .step-name {
+              font-size: 14px;
+              margin-bottom: 4px;
+            }
+            
+            .step-info {
+              font-size: 12px;
+            }
+            
+            .process-box-cta {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 12px;
+            }
+            
+            .process-apply-btn {
+              justify-content: center;
+              padding: 16px 24px;
+            }
+            
+            .process-note {
+              text-align: center;
+            }
+          }
+          </style>
+          <!-- how we work area end  -->
+
+          <!-- founder section start  -->
+          <section class="founder-section section-spacing">
+            <div class="container large">
+              <div class="founder-container">
+                <!-- Section Header -->
+                <div class="founder-header">
+                  <div class="section-label fade-anim" data-delay="0.1" data-offset="30" data-direction="left">
+                    
+                    <span class="label-line"></span>
+                    <span class="label-text">Authority & Trust</span>
+                  </div>
+                  <h2 class="founder-section-title rr_title_anim">Meet the Founder</h2>
+                </div>
+
+                <!-- Founder Content Grid -->
+                <div class="founder-grid">
+                  <!-- Founder Image Column -->
+                  <div class="founder-image-col fade-anim" data-delay="0.2" data-offset="60" data-direction="left">
+                    <div class="founder-image-wrapper">
+                      <div class="founder-image-frame">
+                        <img src="img/founder.png" alt="Founder - Insidee Creative Media" class="founder-img">
+                        <div class="image-accent-line"></div>
+                      </div>
+                      <div class="founder-badge">
+                        <span class="badge-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                          </svg>
+                        </span>
+                        <span class="badge-text">Founder-Led Studio</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Founder Quote & Info Column -->
+                  <div class="founder-info-col">
+                    <!-- Quote Block -->
+                    <div class="founder-quote-block">
+                      <div class="quote-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                      </div>
+                      <blockquote class="founder-quote">
+                        Marketing is not noise. It is clarity, trust, and execution.
+                      </blockquote>
+                      <div class="founder-name-wrap">
+                        <h3 class="founder-name">Founder</h3>
+                        <p class="founder-title">CEO & Creative Director, Insidee Media</p>
+                      </div>
+                    </div>
+
+                    <!-- Credibility Points -->
+                    <div class="credibility-points fade-anim" data-delay="0.4" data-offset="40" data-direction="bottom">
+                      <h4 class="credibility-heading">Why Brands Trust Our Leadership</h4>
+                      <div class="credibility-grid">
+                        <div class="credibility-item">
+                          <div class="credibility-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                              <circle cx="9" cy="7" r="4"/>
+                              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                          </div>
+                          <div class="credibility-content">
+                            <h5 class="credibility-title">Founder-Led Sales & Strategy</h5>
+                            <p class="credibility-desc">Direct access to decision-makers, not account managers.</p>
+                          </div>
+                        </div>
+                        <div class="credibility-item">
+                          <div class="credibility-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                          </div>
+                          <div class="credibility-content">
+                            <h5 class="credibility-title">Process-Driven Operations</h5>
+                            <p class="credibility-desc">Systems and SOPs that ensure consistent delivery.</p>
+                          </div>
+                        </div>
+                        <div class="credibility-item">
+                          <div class="credibility-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <circle cx="12" cy="12" r="10"/>
+                              <line x1="2" y1="12" x2="22" y2="12"/>
+                              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                          </div>
+                          <div class="credibility-content">
+                            <h5 class="credibility-title">Global Vision, Local Execution</h5>
+                            <p class="credibility-desc">India & Dubai presence with international standards.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- founder section end  -->
+
+          <!-- cta area start  -->
+           <footer style="margin-top: 80px; background-color: #222;">
+                <section class="footer heading-bg overflow-hidden p-relative z-1">
+                    <div class="container-fluid">
+                        <div class="footer-top">
+                            <div class="footer-top-footer-title">
+                                <h2 class="top-title rr-title-anim">Let’s Move Forward <br> United.</h2>
+                            </div>
+                            <div class="hero">
+                                <div class="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2">
+                                    <a href="portfolio.html"
+                                        class="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 tp-btn-circle-3 d-flex align-items-center justify-content-center flex-column">
+                                        <span class="tp-btn-circle-text-2">
+                                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M35.2634 0.736319L7.32521 0.390242L7.39175 5.76183L26.1669 5.9944L0.817263 31.344L4.65572 35.1825L30.0053 9.83286L30.2379 28.608L35.6095 28.6745L35.2634 0.736319ZM28.746 4.95275L2.33598 31.3628L4.63691 33.6637L4.63697 33.6637L2.33622 31.3629L28.7464 4.95276L28.746 4.95275ZM31.0471 7.25394L31.2985 27.5474L31.2987 27.5474L31.0474 7.25369L31.0471 7.25394ZM34.2028 1.79704L8.41265 1.47757L8.45259 4.70124L8.45234 4.70124L8.4124 1.47744L34.2028 1.79691L34.2028 1.79704Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                        <i class="tp-btn-circle-dot"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__menu p-relative">
+                            <ul>
+                <li><a href="#home" id="nav-home">Home</a></li>
+                <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
+                <li><a href="#services" id="nav-services">Services</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              </ul>
+                        </div>
+                        <div class="footer__main">
+                            <h3 class="footer__main-title end">Insidee</h3>
+                        </div>
+                    </div>
+                    <div class="footer__bottom-wrapper">
+                        <div class="container">
+                            <div class="footer__bottom">
+                                <div class="footer__copyright">
+                                    <a href="#">Back To Top <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+        <!-- footer area end  -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/ScrollToPlugin.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/TextPlugin.js"></script>
+  <script src="assets/vendor/customEase.js"></script>
+  <script src="assets/vendor/Flip.min.js"></script>
+  <script src="assets/vendor/jquery.meanmenu.min.js"></script>
+  <script src="assets/vendor/backToTop.js"></script>
+  <script src="assets/vendor/matter.js"></script>
+  <script src="assets/vendor/throwable.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js?v=1.0"></script>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-nav">
+    <a href="javascript:void(0);" onclick="openTallyForm();" class="mobile-nav-btn">
+      <div class="mobile-nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <span class="mobile-nav-text">Apply for a Strategic Call</span>
+      <div class="mobile-nav-arrow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Mobile Bottom Nav Styles -->
+  <style>
+  /* Hide on desktop, show on mobile/tablet */
+  .mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9998;
+  }
+  
+  .mobile-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: linear-gradient(135deg, #F7C52D 0%, #E5B800 100%);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 24px rgba(247, 197, 45, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mobile-nav-btn:active {
+    transform: scale(0.96);
+  }
+  
+  .mobile-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1A1A1A;
+  }
+  
+  .mobile-nav-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A1A;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  
+  .mobile-nav-arrow {
+    display: none;
+  }
+  
+  /* Only show on mobile and tablet */
+  @media (max-width: 991px) {
+    .mobile-bottom-nav {
+      display: block;
+    }
+    
+    /* Add padding to body to prevent content being hidden behind nav */
+    body {
+      padding-bottom: 80px;
+    }
+    
+    /* Hide back-to-top button on mobile/tablet to avoid overlap */
+    .progress-wrap,
+    .rr-back-to-top,
+    #back-to-top,
+    .back-to-top,
+    .backToTop,
+    #backToTop {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .mobile-bottom-nav {
+      bottom: 16px;
+    }
+    
+    .mobile-nav-btn {
+      padding: 16px 28px;
+    }
+    
+    .mobile-nav-text {
+      font-size: 15px;
+    }
+    
+    .mobile-nav-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  /* Hide when Tally popup is open */
+  .tally-popup-open .mobile-bottom-nav {
+    display: none !important;
+  }
+  </style>
+
+  <!-- Desktop Floating CTA Button -->
+  <div class="desktop-floating-cta">
+    <a href="javascript:void(0);" onclick="openTallyForm();" class="desktop-cta-btn" title="Apply for Strategic Call">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    </a>
+  </div>
+  
+  <!-- Desktop Floating CTA Styles -->
+  <style>
+  /* Desktop Floating CTA - Only show on desktop */
+  .desktop-floating-cta {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 32px;
+    z-index: 9997;
+  }
+  
+  .desktop-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #F7C52D 0%, #E5B800 100%);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(247, 197, 45, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #1A1A1A;
+  }
+  
+  .desktop-cta-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(247, 197, 45, 0.5), 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .desktop-cta-btn:active {
+    transform: scale(1.05);
+  }
+  
+  .desktop-cta-btn svg {
+    color: #1A1A1A;
+  }
+  
+  /* Only show on desktop (screens > 991px) */
+  @media (min-width: 992px) {
+    .desktop-floating-cta {
+      display: block;
+    }
+  }
+  
+  /* Hide when Tally popup is open */
+  .tally-popup-open .desktop-floating-cta {
+    display: none !important;
+  }
+  </style>
+
+</body>
+
+</html>
