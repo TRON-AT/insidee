@@ -76,7 +76,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .mobile-toggle.active span:nth-child(2){opacity:0}
 .mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-.floating-cta{position:fixed;bottom:100px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;padding:16px 28px;background:var(--yellow);color:var(--text);font-family:var(--font-heading);font-size:0.88rem;font-weight:700;border:none;border-radius:60px;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(232,168,56,0.4),0 2px 8px rgba(0,0,0,0.1);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);animation:floatPulse 3s ease-in-out infinite}
+/* Kraya WhatsApp widget — push above Strategy Call button */
+[id*='kraya'],[class*='kraya'],[id*='chat-widget'],[class*='chat-widget']{bottom:90px!important}
+.floating-cta{position:fixed;bottom:24px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;padding:16px 28px;background:var(--yellow);color:var(--text);font-family:var(--font-heading);font-size:0.88rem;font-weight:700;border:none;border-radius:60px;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(232,168,56,0.4),0 2px 8px rgba(0,0,0,0.1);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);animation:floatPulse 3s ease-in-out infinite}
 .floating-cta:hover{background:var(--yellow-hover);color:#fff;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 44px rgba(232,168,56,0.5)}
 .floating-cta svg{transition:transform 0.3s}
 .floating-cta:hover svg{transform:translateX(3px)}
@@ -267,7 +269,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
 .footer-social a:hover{color:var(--blue)}
 
 @media(max-width:1024px){.hero-content{grid-template-columns:1fr}.hero-right{margin-top:32px}.results-preview{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}}
-@media(max-width:900px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--surface);padding:24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.active{display:flex}.mobile-toggle{display:block}.why-grid,.ideal-grid{grid-template-columns:1fr 1fr}.cap-grid,.case-grid,.risk-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}.footer-grid{grid-template-columns:1fr 1fr}.floating-cta{bottom:90px;right:16px;padding:14px 22px;font-size:0.82rem}.pain-grid{grid-template-columns:1fr}.trust-bar-inner{gap:28px}}
+@media(max-width:900px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--surface);padding:24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.active{display:flex}.mobile-toggle{display:block}.why-grid,.ideal-grid{grid-template-columns:1fr 1fr}.cap-grid,.case-grid,.risk-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}.footer-grid{grid-template-columns:1fr 1fr}.floating-cta{bottom:20px;right:16px;padding:14px 22px;font-size:0.82rem}.pain-grid{grid-template-columns:1fr}.trust-bar-inner{gap:28px}}
 @media(max-width:600px){.hero-actions{flex-direction:column}.btn-primary,.btn-secondary{width:100%;justify-content:center}.why-grid,.ideal-grid,.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.trust-bar-inner{flex-direction:column;gap:16px}.trust-divider{width:40px;height:1px}.results-preview{grid-template-columns:1fr}.client-box{gap:16px}.client-box img{height:30px}.final-cta-actions{flex-direction:column}.logos-grand-wrapper::before,.logos-grand-wrapper::after{width:40px}.logo-card{width:145px;height:75px;padding:8px 14px;margin:0 10px}}
 </style>
 </head>
@@ -307,7 +309,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
       <div class="hero-proof-text"><strong>50+ Indian brands</strong> scaled with Insidee since 2018</div>
     </div>
     <div class="hero-actions">
-      <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-secondary btn-whatsapp">WhatsApp Us</a>
+      <a href="https://wa.me/918077841173?text=Hi%20Insidee%20Media%2C%20I%27m%20interested%20in%20your%20services" target="_blank" class="btn-secondary btn-whatsapp">WhatsApp Us</a>
     </div>
     <p class="hero-cta-note">✓ Free 30-min call &nbsp; ✓ No commitment &nbsp; ✓ Talk to the founder directly</p>
   </div>
@@ -474,7 +476,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
   <h2 class="section-title">Ready to finally work with an agency that <em>actually delivers?</em></h2>
   <p class="final-cta-sub">Book a free strategy call with our founder. We'll audit your current marketing, show you relevant case studies, and put together a custom proposal — completely free. No fluff.</p>
   <div class="final-cta-actions">
-    <a href="https://wa.me/918077002038?text=Hi%20Insidee%20Media%2C%20I%27m%20interested%20in%20a%20strategy%20call." target="_blank" class="btn-primary btn-whatsapp">WhatsApp Us Directly</a>
+    <a href="https://wa.me/918077841173?text=Hi%20Insidee%20Media%2C%20I%27m%20interested%20in%20a%20strategy%20call." target="_blank" class="btn-primary btn-whatsapp">WhatsApp Us Directly</a>
   </div>
   <p class="final-cta-note">Free 30-min call · Free audit · No commitment · Founder-led · ₹0 to start</p>
 </div>
@@ -484,7 +486,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
   <div class="footer-grid">
     <div class="footer-brand"><div class="logo" style="font-size:1.4rem">INSIDEE<span>.</span></div><p>India's premium 360° creative & growth agency. Strategy, performance marketing, brand building, production, and technology — all under one roof since 2018.</p></div>
     <div class="footer-col"><h4>Services</h4><a href="#">Performance Marketing</a><a href="#">Brand Strategy</a><a href="#">Video & CGI</a><a href="#">Web Development</a><a href="#">Social Media</a><a href="#">SEO & Events</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="https://insideemedia.com" target="_blank">Main Website</a><a href="../academy/index.html">Academy</a><a href="#">Case Studies</a><a href="mailto:contact@insidee.in">contact@insidee.in</a><a href="https://wa.me/918077002038" target="_blank">+91 8077 002 038</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="https://insideemedia.com" target="_blank">Main Website</a><a href="../academy/index.html">Academy</a><a href="#">Case Studies</a><a href="mailto:contact@insidee.in">contact@insidee.in</a><a href="https://wa.me/918077841173" target="_blank">+91 8077 841 173</a></div>
     <div class="footer-col"><h4>Offices</h4><a href="#">Dehradun, Uttarakhand</a><a href="#">Gurugram, Haryana</a></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Insidee Media. All rights reserved.</span><div class="footer-social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div></div>
