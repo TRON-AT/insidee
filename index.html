@@ -145,17 +145,20 @@ section{padding:100px 0}
 .trust-item p{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;font-weight:500}
 .trust-divider{width:1px;height:36px;background:rgba(255,255,255,0.12)}
 
-/* LOGOS — BIG & PROMINENT */
-.clients-section{padding:56px 0;background:var(--surface);border-bottom:1px solid var(--border)}
-.clients-section .section-label{text-align:center;margin-bottom:32px;font-size:0.78rem}
-.logos-marquee{overflow:hidden;position:relative}
-.logos-marquee::before,.logos-marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
-.logos-marquee::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
-.logos-marquee::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
-.logos-track{display:flex;align-items:center;animation:logosScroll 60s linear infinite;width:max-content;gap:56px;padding:24px 0}
-.logos-track img{height:115px;max-width:300px;width:auto;object-fit:contain;opacity:0.85;filter:grayscale(100%);transition:all 0.4s}
-.logos-track img:hover{opacity:1;filter:grayscale(0%);transform:scale(1.1)}
-@keyframes logosScroll{to{transform:translateX(-50%)}}
+.modern-clients{padding:32px 0 16px 0;background:var(--surface);border-bottom:1px solid var(--border)}
+.modern-clients .section-label{text-align:center;margin-bottom:20px;font-size:0.78rem;text-transform:uppercase;color:var(--yellow);font-family:var(--font-heading);font-weight:700;letter-spacing:0.2em}
+.logo-card{width:200px;height:100px;padding:10px 20px;background:#fff;border:1px solid var(--border-light);border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 16px;box-shadow:var(--shadow-sm);transition:all 0.3s;flex-shrink:0}
+.logo-card img{width:100%;height:100%;object-fit:contain;transition:all 0.3s;transform:scale(1.4)}
+.logo-card:hover{border-color:var(--yellow);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.logo-card:hover img{transform:scale(1.55)}
+.logos-grand-wrapper{position:relative;overflow:hidden;width:100%}
+.logos-grand-wrapper::before,.logos-grand-wrapper::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.logos-grand-wrapper::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.logos-grand-wrapper::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.logos-marquee{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+.logos-marquee::-webkit-scrollbar{display:none}
+.logos-marquee.active{cursor:grabbing}
+.logos-track{display:flex;align-items:center;width:max-content;padding:8px 0}
 
 /* PAIN POINTS */
 .pain-section{background:var(--bg-warm)}
@@ -289,7 +292,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
 
 @media(max-width:1024px){.hero-content{grid-template-columns:1fr}.hero-right{margin-top:32px}.results-preview{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}}
 @media(max-width:900px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--surface);padding:24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.active{display:flex}.mobile-toggle{display:block}.why-grid{grid-template-columns:1fr 1fr}.cap-grid{grid-template-columns:1fr}.models-grid,.case-grid,.risk-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}.footer-grid{grid-template-columns:1fr 1fr}.floating-cta{bottom:20px;right:16px;padding:14px 22px;font-size:0.82rem}.pain-grid{grid-template-columns:1fr}.trust-bar-inner{gap:28px}}
-@media(max-width:600px){.hero-actions{flex-direction:column}.btn-primary,.btn-secondary{width:100%;justify-content:center}.why-grid,.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.trust-bar-inner{flex-direction:column;gap:16px}.trust-divider{width:40px;height:1px}.results-preview{grid-template-columns:1fr}.logos-track img{height:85px;max-width:220px}.logos-track{gap:40px}}
+@media(max-width:600px){.hero-actions{flex-direction:column}.btn-primary,.btn-secondary{width:100%;justify-content:center}.why-grid,.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.trust-bar-inner{flex-direction:column;gap:16px}.trust-divider{width:40px;height:1px}.results-preview{grid-template-columns:1fr}.logos-grand-wrapper::before,.logos-grand-wrapper::after{width:40px}.logo-card{width:145px;height:75px;padding:8px 14px;margin:0 10px}}
 </style>
 </head>
 <body>
@@ -302,6 +305,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
     <a href="#proof">Proof</a>
     <a href="#models">Engagement</a>
     <a href="india/index.html">India</a>
+    <a href="academy/index.html">Academy</a>
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="https://tally.so/r/VLPaKN" target="_blank" class="nav-cta-link">Get a Free Proposal →</a>
   </div>
@@ -355,9 +359,15 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
 </div></div></div>
 
 <!-- CLIENT LOGOS — BIG -->
-<div class="clients-section">
-  <div class="container"><div class="section-label">Trusted by 50+ Brands Across Industries</div></div>
-  <div class="logos-marquee"><div class="logos-track" id="logosTrack"></div></div>
+<div class="modern-clients">
+  <div class="container">
+    <div class="section-label">Trusted by 50+ Brands Across Industries</div>
+  </div>
+  <div class="logos-grand-wrapper">
+    <div class="logos-marquee">
+      <div class="logos-track" id="logosTrack"></div>
+    </div>
+  </div>
 </div>
 
 <!-- PAIN POINTS — AGITATE -->
@@ -509,7 +519,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
   <div class="footer-grid">
     <div class="footer-brand"><div class="logo" style="font-size:1.4rem">INSIDEE<span>.</span> <sub>GLOBAL</sub></div><p>A global creative & growth studio based in India, remotely partnering with Dubai-based businesses and international brands for strategy, creative, and performance marketing.</p></div>
     <div class="footer-col"><h4>Capabilities</h4><a href="#">Strategy & Growth</a><a href="#">Performance Marketing</a><a href="#">Brand & Creative</a><a href="#">Digital & Technology</a><a href="#">Content & Social</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="https://insideemedia.com" target="_blank">Main Website</a><a href="#">Case Studies</a><a href="mailto:contact@insidee.in">contact@insidee.in</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="https://insideemedia.com" target="_blank">Main Website</a><a href="academy/index.html">Academy</a><a href="#">Case Studies</a><a href="mailto:contact@insidee.in">contact@insidee.in</a></div>
     <div class="footer-col"><h4>Presence</h4><a href="#">Dehradun, India (HQ)</a><a href="#">Gurugram, India</a><a href="#">Dubai & MENA (Remote)</a><a href="#">International Clients</a></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Insidee Media. All rights reserved.</span><div class="footer-social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div></div>
@@ -531,7 +541,42 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 
 // Logos
 const lt=document.getElementById('logosTrack');
-for(let r=0;r<2;r++){for(let i=1;i<=44;i++){const img=document.createElement('img');img.src=`assets/insidee logo/${i}.svg`;img.alt='Client';img.loading='lazy';lt.appendChild(img)}}
+for(let r=0;r<2;r++){for(let i=1;i<=44;i++){const b=document.createElement('div');b.className='logo-card';const img=document.createElement('img');img.src=`assets/insidee logo/${i}.svg`;img.alt='Client';img.loading='lazy';b.appendChild(img);lt.appendChild(b)}}
+
+// Marquee Scroll & Drag
+const mOuter = document.querySelector('.logos-marquee');
+if(mOuter) {
+  let isPaused = false, isDown = false, startX, scrollL;
+  mOuter.addEventListener('mouseenter', () => isPaused = true);
+  mOuter.addEventListener('mouseleave', () => { isPaused = false; isDown = false; mOuter.classList.remove('active'); });
+  mOuter.addEventListener('touchstart', () => isPaused = true, {passive: true});
+  mOuter.addEventListener('touchend', () => isPaused = false);
+  
+  mOuter.addEventListener('mousedown', (e) => {
+    isDown = true; isPaused = true; mOuter.classList.add('active');
+    startX = e.pageX - mOuter.offsetLeft; scrollL = mOuter.scrollLeft;
+  });
+  mOuter.addEventListener('mouseup', () => { isDown = false; isPaused = false; mOuter.classList.remove('active'); });
+  mOuter.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - mOuter.offsetLeft;
+    mOuter.scrollLeft = scrollL - (x - startX) * 2;
+  });
+
+  let lastTime = 0;
+  function autoScroll(time) {
+    if (!lastTime) lastTime = time;
+    const dt = time - lastTime;
+    lastTime = time;
+    if (!isPaused && !isDown) {
+      mOuter.scrollLeft += (60 * dt) / 1000;
+      if (mOuter.scrollLeft >= lt.scrollWidth / 2) mOuter.scrollLeft = 0;
+    }
+    requestAnimationFrame(autoScroll);
+  }
+  requestAnimationFrame(autoScroll);
+}
 
 // Trust bar counter
 function animateNums(sel){document.querySelectorAll(sel).forEach(el=>{const text=el.textContent,match=text.match(/([\d.]+)/);if(!match)return;const target=parseFloat(match[1]),suffix=text.replace(match[1],''),start=performance.now();function tick(now){const p=Math.min((now-start)/1400,1),e=1-Math.pow(1-p,3);el.textContent=(target%1===0?Math.round(target*e):(target*e).toFixed(1))+suffix;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)})}
