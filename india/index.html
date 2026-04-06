@@ -17,11 +17,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4267478880206112');
+fbq('init', '1994259637792548');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4267478880206112&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1994259637792548&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
@@ -76,8 +76,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .mobile-toggle.active span:nth-child(2){opacity:0}
 .mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* Kraya WhatsApp widget — push above Strategy Call button */
-[id*='kraya'],[class*='kraya'],[id*='chat-widget'],[class*='chat-widget']{bottom:90px!important}
+.enquire-btn{position:fixed;bottom:90px;right:28px;z-index:998;display:flex;align-items:center;gap:8px;padding:14px 24px;background:var(--blue);color:#fff;font-family:var(--font-heading);font-size:0.85rem;font-weight:700;border:none;border-radius:60px;cursor:pointer;text-decoration:none;box-shadow:0 6px 24px rgba(27,58,92,0.3);transition:all 0.35s}
+.enquire-btn:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 12px 36px rgba(27,58,92,0.4);color:#fff}
 .floating-cta{position:fixed;bottom:24px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;padding:16px 28px;background:var(--yellow);color:var(--text);font-family:var(--font-heading);font-size:0.88rem;font-weight:700;border:none;border-radius:60px;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px rgba(232,168,56,0.4),0 2px 8px rgba(0,0,0,0.1);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);animation:floatPulse 3s ease-in-out infinite}
 .floating-cta:hover{background:var(--yellow-hover);color:#fff;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 44px rgba(232,168,56,0.5)}
 .floating-cta svg{transition:transform 0.3s}
@@ -269,7 +269,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
 .footer-social a:hover{color:var(--blue)}
 
 @media(max-width:1024px){.hero-content{grid-template-columns:1fr}.hero-right{margin-top:32px}.results-preview{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}}
-@media(max-width:900px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--surface);padding:24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.active{display:flex}.mobile-toggle{display:block}.why-grid,.ideal-grid{grid-template-columns:1fr 1fr}.cap-grid,.case-grid,.risk-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}.footer-grid{grid-template-columns:1fr 1fr}.floating-cta{bottom:20px;right:16px;padding:14px 22px;font-size:0.82rem}.pain-grid{grid-template-columns:1fr}.trust-bar-inner{gap:28px}}
+@media(max-width:900px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--surface);padding:24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.active{display:flex}.mobile-toggle{display:block}.why-grid,.ideal-grid{grid-template-columns:1fr 1fr}.cap-grid,.case-grid,.risk-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}.footer-grid{grid-template-columns:1fr 1fr}.floating-cta{bottom:0;left:0;right:0;width:100%;border-radius:0;padding:16px;justify-content:center;animation:none;box-shadow:0 -2px 20px rgba(0,0,0,0.1);font-size:0.88rem}.enquire-btn{bottom:68px;right:16px;padding:12px 20px;font-size:0.8rem}.pain-grid{grid-template-columns:1fr}.trust-bar-inner{gap:28px}}
 @media(max-width:600px){.hero-actions{flex-direction:column}.btn-primary,.btn-secondary{width:100%;justify-content:center}.why-grid,.ideal-grid,.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.trust-bar-inner{flex-direction:column;gap:16px}.trust-divider{width:40px;height:1px}.results-preview{grid-template-columns:1fr}.client-box{gap:16px}.client-box img{height:30px}.final-cta-actions{flex-direction:column}.logos-grand-wrapper::before,.logos-grand-wrapper::after{width:40px}.logo-card{width:145px;height:75px;padding:8px 14px;margin:0 10px}}
 </style>
 </head>
@@ -290,6 +290,9 @@ footer{border-top:1px solid var(--border);padding:48px 0 32px;background:var(--b
 
 <!-- FLOATING CTA -->
 <a href="https://tally.so/r/VLPaKN" target="_blank" class="floating-cta">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+<!-- ENQUIRE NOW -->
+<a href="https://wa.me/918077841173?text=Hey!%20I'm%20interested%20in%20scaling%20my%20brand%20with%20Insidee." target="_blank" class="enquire-btn">Enquire Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
 
 <!-- HERO -->
 <section class="hero">
@@ -550,26 +553,6 @@ intv=setInterval(()=>goTo((cur+1)%slides.length),5000);
 dotsC.addEventListener('mouseenter',()=>clearInterval(intv));
 dotsC.addEventListener('mouseleave',()=>{intv=setInterval(()=>goTo((cur+1)%slides.length),5000)});
 </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        (function() {
-                window.chatWidgetConfig = {
-                    whatsappNumber: "918077841173?text=Hey!%20I'm%20interested%20in%20scaling%20my%20brand%20with%20Insidee.",
-                    welcomeMessage: "Hey,\nHow can I help you?",
-                    buttonText: "WhatsApp Us",
-                    profileName: "Insidee",
-                    profileImageUrl: "https://prod-kraya.s3.ap-south-1.amazonaws.com/a105e4c0-c23d-4a4d-a15f-caadacac7d4a/MtXZRfBTnowbLp97W2L8GynCmQZ6CUItg7XCd8yC.png",
-                    appUrl: "https://api.kraya-ai.com"
-                };
 
-                // Load the chat widget script
-                var script = document.createElement('script');
-                script.src = "https://api.kraya-ai.com/widget/chat.js?v=1775253936218";
-                script.async = true;
-                document.head.appendChild(script);
-            }
-        )();
-    });
-</script>
 </body>
 </html>
