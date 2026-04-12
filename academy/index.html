@@ -236,7 +236,45 @@
       transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      display: none;
+    }
+
     @media(max-width:768px) {
+      .floating-cta {
+        display: flex;
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 999;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: var(--gold);
+        color: var(--bg);
+        font-family: var(--fh);
+        font-size: 1.15rem;
+        font-weight: 800;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 6px 28px rgba(255, 222, 26, 0.35), 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+      .floating-cta:active {
+        transform: scale(0.98);
+      }
+      .floating-cta svg {
+        transition: transform 0.3s;
+      }
+      .floating-cta:active svg {
+        transform: translateX(3px);
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
@@ -1653,6 +1691,26 @@
     }
 
     @media(max-width:640px) {
+      .hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: -0.02em;
+        word-break: break-word;
+      }
+      .hero-cta {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero-cta .btn {
+        width: 100%;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .scroll-cue {
+        display: none;
+      }
       .flag {
         padding: 1.6rem
       }
@@ -1676,8 +1734,6 @@
         <div class="nn">INSIDEE <b>ACADEMY</b></div>
       </a>
       <div class="nav-links">
-        <a href="#courses">Programs</a>
-        <a href="#forwho">Who It's For</a>
         <a href="../index.html">Global</a>
         <a href="../india/index.html">India</a>
         <a href="index.html">Academy</a>
@@ -1687,6 +1743,11 @@
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <!-- FLOATING CTA (MOBILE ONLY) -->
+  <button class="floating-cta" onclick="openModal('Complete Digital Marketing Mastery - ₹9,999')">
+    Apply Now <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
 
   <!-- HERO -->
   <section class="hero">
