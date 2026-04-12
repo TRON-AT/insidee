@@ -1681,7 +1681,8 @@
         <a href="index.html">Global</a>
         <a href="india/index.html">India</a>
         <a href="academy/index.html">Academy</a>
-        <span class="nc-wrap"><button class="nc" onclick="openModal('flagship')">Enroll Now →</button></span>
+        <span class="nc-wrap"><button class="nc"
+            onclick="openModal('Complete Digital Marketing Mastery - ₹9,999')">Enroll Now →</button></span>
       </div>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -1718,7 +1719,8 @@
           </div>
         </div>
         <div class="hero-cta">
-          <button class="btn btn-gold" onclick="openModal('flagship')">Enroll Now →</button>
+          <button class="btn btn-gold" onclick="openModal('Complete Digital Marketing Mastery - ₹9,999')">Enroll Now
+            →</button>
           <button class="btn btn-ghost"
             onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">View Programs
             ↓</button>
@@ -1838,7 +1840,8 @@
             <div class="f-price">₹9,999</div>
             <div class="f-price-sub">One-time · Full Access · Community Included</div>
           </div>
-          <button class="f-cta" onclick="openModal('flagship')">Register Now →</button>
+          <button class="f-cta" onclick="openModal('Complete Digital Marketing Mastery - ₹9,999')">Register Now
+            →</button>
         </div>
       </div>
 
@@ -1848,28 +1851,28 @@
           <h4>Performance Ads Bootcamp</h4>
           <p class="mc-d">Meta Ads, Google Ads, campaign structures, budget optimization, ROAS tracking.</p>
           <div class="mc-p">₹4,999 <span>· one-time</span></div><button class="mc-btn"
-            onclick="openModal('perf-ads')">Register →</button>
+            onclick="openModal('Performance Ads Bootcamp - ₹4,999')">Register →</button>
         </div>
         <div class="mc rv" style="transition-delay:0.08s">
           <div class="mc-ico" style="background:rgba(250,204,21,0.08);color:#facc15">🎯</div>
           <h4>Brand & Content Strategy</h4>
           <p class="mc-d">Positioning, storytelling, copywriting frameworks, building memorable brands.</p>
           <div class="mc-p">₹4,999 <span>· one-time</span></div><button class="mc-btn"
-            onclick="openModal('brand-content')">Register →</button>
+            onclick="openModal('Brand & Content Strategy - ₹4,999')">Register →</button>
         </div>
         <div class="mc rv" style="transition-delay:0.16s">
           <div class="mc-ico" style="background:rgba(52,211,153,0.08);color:#34d399">📈</div>
           <h4>SEO & Organic Growth</h4>
           <p class="mc-d">On-page, off-page, technical SEO, keyword strategy, organic traffic machines.</p>
           <div class="mc-p">₹4,999 <span>· one-time</span></div><button class="mc-btn"
-            onclick="openModal('seo-growth')">Register →</button>
+            onclick="openModal('SEO & Organic Growth - ₹4,999')">Register →</button>
         </div>
         <div class="mc rv" style="transition-delay:0.24s">
           <div class="mc-ico" style="background:rgba(192,132,252,0.08);color:#c084fc">🤖</div>
           <h4>AI-Powered Marketing</h4>
           <p class="mc-d">Automate workflows, generate content at scale, AI for analytics and ads.</p>
           <div class="mc-p">₹4,999 <span>· one-time</span></div><button class="mc-btn"
-            onclick="openModal('ai-marketing')">Register →</button>
+            onclick="openModal('AI-Powered Marketing - ₹4,999')">Register →</button>
         </div>
       </div>
     </div>
@@ -1960,7 +1963,8 @@
     <div class="ct">
       <h2 class="rv">Batch 01 Starts June 1.<br><em>Are You In?</em></h2>
       <p class="rv">Once filled, registration closes until the next batch.</p>
-      <button class="btn btn-gold rv" onclick="openModal('flagship')">Claim Your Spot →</button>
+      <button class="btn btn-gold rv" onclick="openModal('Complete Digital Marketing Mastery - ₹9,999')">Claim Your Spot
+        →</button>
     </div>
   </section>
 
@@ -1980,49 +1984,58 @@
           <p>Fill details → Submit → Pay</p>
         </div><button class="mo-x" onclick="closeModal()">✕</button>
       </div>
-      <form id="academyForm" action="https://script.google.com/macros/s/AKfycbxuisfT308qZp-VD1XgHvX8RPnbg9INSxtYu4pDt0I6Jid0Gu5O1Jx2bujavKAkNw/exec" method="POST" class="mo-b" onsubmit="handleReg(event)">
+      <form id="academyForm"
+        action="https://script.google.com/macros/s/AKfycbxKBKODcMh3xiTkyxvxxnNk8aoZYoauOHnBnPuYTSA-E8Hj2IEM8VGwlmq6d1nwk8o/exec"
+        method="POST" class="mo-b" onsubmit="handleReg(event)">
         <div class="sel-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg><span id="selN">Complete Digital Marketing Mastery · ₹9,999</span></div>
-        <div class="fd"><label>Program</label>
-          <div class="sw"><select id="fC" onchange="onCC()" name="course">
-              <option value="flagship">Complete Digital Marketing Mastery — ₹9,999</option>
-              <option value="perf-ads">Performance Ads Bootcamp — ₹4,999</option>
-              <option value="brand-content">Brand & Content Strategy — ₹4,999</option>
-              <option value="seo-growth">SEO & Organic Growth — ₹4,999</option>
-              <option value="ai-marketing">AI-Powered Marketing — ₹4,999</option>
+        <div class="fd"><label>PROGRAM</label>
+          <div class="sw"><select id="fC" onchange="onCC()" name="program" required>
+              <option value="Complete Digital Marketing Mastery - ₹9,999">Complete Digital Marketing Mastery — ₹9,999
+              </option>
+              <option value="Performance Ads Bootcamp - ₹4,999">Performance Ads Bootcamp — ₹4,999</option>
+              <option value="Brand & Content Strategy - ₹4,999">Brand & Content Strategy — ₹4,999</option>
+              <option value="SEO & Organic Growth - ₹4,999">SEO & Organic Growth — ₹4,999</option>
+              <option value="AI-Powered Marketing - ₹4,999">AI-Powered Marketing — ₹4,999</option>
             </select></div>
         </div>
         <div class="fd-row">
-          <div class="fd"><label>Full Name</label><input type="text" id="fN" name="fullName" placeholder="Your full name" required />
+          <div class="fd"><label>Full Name</label><input type="text" id="fN" name="fullName"
+              placeholder="Your full name" required />
             <div class="fd-err" id="eN">Enter your name</div>
           </div>
-          <div class="fd"><label>Phone</label><input type="text" id="fP" name="phone" placeholder="+91 98765 43210" required />
+          <div class="fd"><label>Phone</label><input type="text" id="fP" name="phone" placeholder="+91 98765 43210"
+              required />
             <div class="fd-err" id="eP">Valid phone required</div>
           </div>
         </div>
-        <div class="fd"><label>Email</label><input type="email" id="fE" name="email" placeholder="you@email.com" required />
+        <div class="fd"><label>Email</label><input type="email" id="fE" name="email" placeholder="you@email.com"
+            required />
           <div class="fd-err" id="eE">Valid email required</div>
         </div>
-        <div class="fd"><label>City</label><input type="text" id="fCi" name="city" placeholder="e.g. Dehradun" required />
+        <div class="fd"><label>City</label><input type="text" id="fCi" name="city" placeholder="e.g. Dehradun"
+            required />
           <div class="fd-err" id="eCi">Enter your city</div>
         </div>
         <div class="fd-row">
           <div class="fd"><label>I am a...</label>
-            <div class="sw"><select id="fSt" name="status">
-                <option value="" disabled selected>Select</option>
+            <div class="sw"><select id="fSt" name="status" required>
+                <option value="" disabled selected>I AM A...</option>
                 <option value="Student">Student</option>
-                <option value="Professional">Professional</option>
+                <option value="Working Professional">Working Professional</option>
+                <option value="Business Owner">Business Owner</option>
               </select></div>
             <div class="fd-err" id="eSt">Select an option</div>
           </div>
           <div class="fd"><label>My Goal</label>
-            <div class="sw"><select id="fGo" name="goal">
-                <option value="" disabled selected>Select</option>
-                <option value="Job">Get a Job</option>
-                <option value="Business">Start a Business</option>
+            <div class="sw"><select id="fGo" name="goal" required>
+                <option value="" disabled selected>MY GOAL</option>
+                <option value="Upskilling">Upskilling</option>
+                <option value="Job Search">Job Search</option>
+                <option value="Business Growth">Business Growth</option>
               </select></div>
             <div class="fd-err" id="eGo">Select your goal</div>
           </div>
@@ -2036,7 +2049,7 @@
   </div>
 
   <script>
-    const C = { 'flagship': { name: 'Complete Digital Marketing Mastery', price: '₹9,999', url: 'https://rzp.io/rzp/insideemediaacademy' }, 'perf-ads': { name: 'Performance Ads Bootcamp', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'brand-content': { name: 'Brand & Content Strategy', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'seo-growth': { name: 'SEO & Organic Growth', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'ai-marketing': { name: 'AI-Powered Marketing', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' } };
+    const C = { 'Complete Digital Marketing Mastery - ₹9,999': { name: 'Complete Digital Marketing Mastery', price: '₹9,999', url: 'https://rzp.io/rzp/insideemediaacademy' }, 'Performance Ads Bootcamp - ₹4,999': { name: 'Performance Ads Bootcamp', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'Brand & Content Strategy - ₹4,999': { name: 'Brand & Content Strategy', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'SEO & Organic Growth - ₹4,999': { name: 'SEO & Organic Growth', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' }, 'AI-Powered Marketing - ₹4,999': { name: 'AI-Powered Marketing', price: '₹4,999', url: 'https://rzp.io/rzp/TcsDFzJ3' } };
 
     // Google Sheet — Replace URL after Apps Script deploy
     // Extensions → Apps Script → paste:
