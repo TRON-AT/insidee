@@ -740,13 +740,28 @@
 
         /* MOBILE */
         @media(max-width:900px) {
+            html,
+            body {
+                height: auto;
+                min-height: 100dvh;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            .page {
+                height: auto;
+                min-height: 100dvh;
+                padding: 100px 0 20px 0;
+            }
+
             .hub {
                 flex-direction: column;
                 gap: 10px;
                 width: 92vw;
                 height: auto;
                 max-height: none;
-                padding-top: 20px
+                padding-top: 0;
+                margin: auto 0;
             }
 
             .hub-item {
@@ -790,7 +805,7 @@
 
             .logo {
                 font-size: 1rem;
-                top: 20px
+                top: 24px
             }
 
             .tagline {
@@ -799,10 +814,14 @@
             }
 
             .bottom {
-                bottom: 16px;
+                position: relative;
+                bottom: auto;
+                margin-top: 32px;
+                padding-bottom: env(safe-area-inset-bottom, 16px);
                 flex-direction: column;
-                gap: 4px;
-                align-items: center
+                gap: 6px;
+                align-items: center;
+                z-index: 10;
             }
 
             .bottom-center {
