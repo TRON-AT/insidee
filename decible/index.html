@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insidee Decibel — Music Marketing by Insidee Media</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Kanit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #111118;
+            --bg3: #18182a;
+            --text: #f0f0f5;
+            --text-dim: #8888a0;
+            --accent: #FFDE1A;
+            --accent2: #FF5722;
+            --accent3: #E040FB;
+            --accent4: #00E5FF;
+            --grad1: linear-gradient(135deg, #FFDE1A, #FF5722);
+            --grad2: linear-gradient(135deg, #E040FB, #00E5FF);
+            --grad3: linear-gradient(135deg, #FF5722, #E040FB);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --font-display: 'Kanit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .6s, visibility .6s;
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        .preloader-bars {
+            display: flex;
+            gap: 6px;
+            align-items: end;
+            height: 60px
+        }
+
+        .preloader-bars span {
+            width: 6px;
+            border-radius: 3px;
+            background: var(--accent);
+            animation: eqBar .8s ease-in-out infinite alternate;
+        }
+
+        .preloader-bars span:nth-child(1) {
+            height: 20px;
+            animation-delay: 0s
+        }
+
+        .preloader-bars span:nth-child(2) {
+            height: 40px;
+            animation-delay: .1s
+        }
+
+        .preloader-bars span:nth-child(3) {
+            height: 60px;
+            animation-delay: .2s
+        }
+
+        .preloader-bars span:nth-child(4) {
+            height: 35px;
+            animation-delay: .3s
+        }
+
+        .preloader-bars span:nth-child(5) {
+            height: 50px;
+            animation-delay: .15s
+        }
+
+        @keyframes eqBar {
+            0% {
+                height: 10px
+            }
+
+            100% {
+                height: 60px
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 10, 15, .7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+            transition: transform .3s;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center
+        }
+
+        .nav-links a {
+            font-size: .85rem;
+            font-weight: 500;
+            letter-spacing: .5px;
+            color: var(--text-dim);
+            transition: color .3s;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent)
+        }
+
+        .nav-cta {
+            background: var(--grad1);
+            color: #000;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: .85rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            transition: transform .3s, box-shadow .3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 222, 26, .3)
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 40px 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 40%, rgba(224, 64, 251, .12), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 30%, rgba(255, 87, 34, .1), transparent),
+                radial-gradient(ellipse 50% 40% at 50% 80%, rgba(255, 222, 26, .06), transparent);
+        }
+
+        .hero-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000, transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 222, 26, .08);
+            border: 1px solid rgba(255, 222, 26, .2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: fadeUp .8s ease-out both;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.5)
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            animation: fadeUp .8s ease-out .1s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .gradient-text-2 {
+            background: var(--grad2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 40px;
+            animation: fadeUp .8s ease-out .2s both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp .8s ease-out .3s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--grad1);
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: .5px;
+            transition: transform .3s, box-shadow .3s;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 222, 26, .3)
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text);
+            padding: 16px 36px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, .15);
+            transition: all .3s;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 60px;
+            animation: fadeUp .8s ease-out .4s both;
+        }
+
+        .stat {
+            text-align: left
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: .8rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+            letter-spacing: .5px;
+            text-transform: uppercase
+        }
+
+        /* Floating equalizer */
+        .hero-visual {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            opacity: .15;
+        }
+
+        .eq-container {
+            display: flex;
+            gap: 8px;
+            align-items: end;
+            height: 300px
+        }
+
+        .eq-bar {
+            width: 16px;
+            border-radius: 8px;
+            background: var(--grad1);
+            animation: eqFloat 1.5s ease-in-out infinite alternate;
+        }
+
+        .eq-bar:nth-child(1) {
+            height: 80px;
+            animation-delay: 0s
+        }
+
+        .eq-bar:nth-child(2) {
+            height: 160px;
+            animation-delay: .2s
+        }
+
+        .eq-bar:nth-child(3) {
+            height: 240px;
+            animation-delay: .1s
+        }
+
+        .eq-bar:nth-child(4) {
+            height: 120px;
+            animation-delay: .35s
+        }
+
+        .eq-bar:nth-child(5) {
+            height: 200px;
+            animation-delay: .15s
+        }
+
+        .eq-bar:nth-child(6) {
+            height: 140px;
+            animation-delay: .3s
+        }
+
+        .eq-bar:nth-child(7) {
+            height: 260px;
+            animation-delay: .05s
+        }
+
+        .eq-bar:nth-child(8) {
+            height: 100px;
+            animation-delay: .25s
+        }
+
+        .eq-bar:nth-child(9) {
+            height: 180px;
+            animation-delay: .4s
+        }
+
+        .eq-bar:nth-child(10) {
+            height: 220px;
+            animation-delay: .12s
+        }
+
+        @keyframes eqFloat {
+            0% {
+                height: 40px
+            }
+
+            100% {
+                height: 280px
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 100px 40px
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===== WHAT WE DO ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all .4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 222, 26, .15);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(255, 222, 26, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: .9rem;
+            color: var(--text-dim);
+            line-height: 1.6
+        }
+
+        /* ===== PACKAGES ===== */
+        .packages-section {
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(224, 64, 251, .06), transparent),
+                var(--bg);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 36px 28px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all .4s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+        }
+
+        .package-card.popular {
+            border-color: rgba(255, 222, 26, .3);
+            background: rgba(255, 222, 26, .03);
+        }
+
+        .package-card.popular::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--grad1);
+            color: #000;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: .65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .package-tier {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .tier-1 {
+            color: #00E5FF
+        }
+
+        .tier-2 {
+            color: var(--accent)
+        }
+
+        .tier-3 {
+            color: var(--accent2)
+        }
+
+        .tier-4 {
+            color: var(--accent3)
+        }
+
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .package-tagline {
+            font-size: .85rem;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .package-price {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dim)
+        }
+
+        .price-note {
+            font-size: .75rem;
+            color: var(--text-dim);
+            margin-bottom: 24px
+        }
+
+        .package-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, .06);
+            margin-bottom: 24px;
+        }
+
+        .package-features {
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: .85rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .package-features li .check {
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .package-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: .85rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .3s;
+            font-family: var(--font-body);
+            text-align: center;
+        }
+
+        .package-btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: var(--text);
+        }
+
+        .package-btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .package-btn-filled {
+            background: var(--grad1);
+            border: none;
+            color: #000;
+        }
+
+        .package-btn-filled:hover {
+            box-shadow: 0 8px 30px rgba(255, 222, 26, .3);
+            transform: translateY(-2px)
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .proof-section {
+            background: var(--bg2)
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .proof-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .proof-card .quote {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .proof-card .author {
+            font-weight: 700;
+            font-size: .9rem
+        }
+
+        .proof-card .role {
+            font-size: .8rem;
+            color: var(--text-dim)
+        }
+
+        /* ===== WHY US ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            transition: all .3s;
+        }
+
+        .why-card:hover {
+            border-color: rgba(255, 222, 26, .15);
+            transform: translateY(-3px)
+        }
+
+        .why-icon {
+            font-size: 2rem;
+            margin-bottom: 14px
+        }
+
+        .why-card h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: .85rem;
+            color: var(--text-dim);
+            line-height: 1.6
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section {
+            background:
+                radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255, 222, 26, .06), transparent),
+                var(--bg);
+        }
+
+        .contact-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .form-group.full {
+            grid-column: 1/-1
+        }
+
+        .form-group label {
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: .95rem;
+            transition: border-color .3s;
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group select option {
+            background: var(--bg2);
+            color: var(--text)
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px
+        }
+
+        .form-submit {
+            margin-top: 24px;
+            width: 100%;
+            padding: 16px;
+            background: var(--grad1);
+            border: none;
+            border-radius: 60px;
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .3s;
+            font-family: var(--font-body);
+        }
+
+        .form-submit:hover {
+            box-shadow: 0 12px 40px rgba(255, 222, 26, .3);
+            transform: translateY(-2px)
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: .8rem;
+            color: var(--text-dim);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            background: var(--bg2)
+        }
+
+        .faq-list {
+            max-width: 750px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: .95rem;
+            transition: color .3s;
+        }
+
+        .faq-q:hover {
+            color: var(--accent)
+        }
+
+        .faq-q .arrow {
+            transition: transform .3s;
+            font-size: 1.2rem;
+            color: var(--text-dim)
+        }
+
+        .faq-item.open .faq-q .arrow {
+            transform: rotate(180deg)
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .4s;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding: 0 24px 20px
+        }
+
+        .faq-a p {
+            font-size: .9rem;
+            color: var(--text-dim);
+            line-height: 1.7
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            text-align: center;
+            padding: 100px 40px;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 222, 26, .08), transparent),
+                var(--bg);
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .footer p {
+            font-size: .8rem;
+            color: var(--text-dim)
+        }
+
+        .footer a {
+            color: var(--accent)
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-section {
+            padding: 40px 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, .04);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 60px;
+            animation: marquee 25s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, .06);
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .marquee-item .dot {
+            color: var(--accent);
+            margin: 0 20px
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:1100px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:768px) {
+            .navbar {
+                padding: 16px 20px
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            .hero {
+                padding: 100px 20px 60px
+            }
+
+            .section {
+                padding: 60px 20px
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap
+            }
+
+            .hero-visual {
+                display: none
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .form-group.half {
+                grid-column: auto
+            }
+
+            .contact-wrapper {
+                padding: 28px 20px
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 {
+                font-size: 2.2rem
+            }
+
+            .hero-ctas {
+                flex-direction: column
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center
+            }
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all .7s ease-out
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* ===== CUSTOM MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, .65);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .4s, visibility .4s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: var(--bg2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 28px;
+            padding: 48px 40px;
+            max-width: 440px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform: scale(.85) translateY(30px);
+            transition: transform .5s cubic-bezier(.16,1,.3,1);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad1);
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .modal-icon.success {
+            background: rgba(255, 222, 26, .1);
+            box-shadow: 0 0 40px rgba(255, 222, 26, .15), 0 0 80px rgba(255, 222, 26, .05);
+            animation: modalPulseGlow 2s ease-in-out infinite;
+        }
+
+        .modal-icon.error {
+            background: rgba(255, 87, 34, .1);
+            box-shadow: 0 0 40px rgba(255, 87, 34, .15);
+        }
+
+        @keyframes modalPulseGlow {
+            0%, 100% { box-shadow: 0 0 40px rgba(255, 222, 26, .15), 0 0 80px rgba(255, 222, 26, .05); }
+            50% { box-shadow: 0 0 60px rgba(255, 222, 26, .25), 0 0 100px rgba(255, 222, 26, .1); }
+        }
+
+        .modal-icon .checkmark {
+            width: 40px;
+            height: 40px;
+            stroke: var(--accent);
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .modal-icon .checkmark .check-path {
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: drawCheck .6s .3s ease forwards;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .modal-title .gradient-text {
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-msg {
+            font-size: .95rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .modal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--grad1);
+            color: #000;
+            padding: 14px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: .9rem;
+            letter-spacing: .5px;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 222, 26, .3);
+        }
+
+        .modal-confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            top: -10px;
+            animation: confettiFall 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(350px) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SUCCESS / ERROR MODAL -->
+    <div class="modal-overlay" id="formModal">
+        <div class="modal-box">
+            <div class="modal-confetti" id="modalConfetti"></div>
+            <div class="modal-icon" id="modalIcon">
+                <svg class="checkmark" viewBox="0 0 40 40" id="modalCheckmark">
+                    <path class="check-path" d="M10 20 L17 27 L30 13" />
+                </svg>
+                <span id="modalErrorIcon" style="display:none;">⚠️</span>
+            </div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-msg" id="modalMsg"></p>
+            <button class="modal-btn" onclick="closeModal()">Got It ✨</button>
+        </div>
+    </div>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-bars">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">INSIDEE <span>DECIBEL</span></div>
+        <div class="nav-links">
+            <a href="#services">What We Do</a>
+            <a href="#packages">Packages</a>
+            <a href="#why">Why Us</a>
+            <a href="#faq">FAQ</a>
+            <a href="../global/index.html">Global</a>
+            <a href="../india/index.html">India</a>
+            <a href="../academy/index.html">Academy</a>
+            <a href="../index.html">Home</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get Started →</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><span class="pulse"></span> Now Onboarding Artists & Labels</div>
+            <h1>Your Sound.<br><span class="gradient-text">Our System.</span><br><span class="gradient-text-2">Real
+                    Growth.</span></h1>
+            <p>We set up your ad infrastructure, run targeted campaigns on Meta, YouTube & Instagram, and scale your
+                music to the right audience. You make the music — we make sure people hear it.</p>
+            <div class="hero-ctas">
+                <a href="#packages" class="btn-primary">See Packages ↓</a>
+                <a href="#contact" class="btn-secondary">Book a Free Strategy Call</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">7+</div>
+                    <div class="stat-label">Years in Digital Marketing</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">360°</div>
+                    <div class="stat-label">Full-Stack Agency</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="eq-container">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span class="marquee-item">META ADS <span class="dot">●</span> SPOTIFY GROWTH <span class="dot">●</span>
+                YOUTUBE ADS <span class="dot">●</span> INSTAGRAM REELS <span class="dot">●</span> AD CREATIVES <span
+                    class="dot">●</span> AUDIENCE TARGETING <span class="dot">●</span> ARTIST BRANDING <span
+                    class="dot">●</span> RELEASE STRATEGY</span>
+            <span class="marquee-item">META ADS <span class="dot">●</span> SPOTIFY GROWTH <span class="dot">●</span>
+                YOUTUBE ADS <span class="dot">●</span> INSTAGRAM REELS <span class="dot">●</span> AD CREATIVES <span
+                    class="dot">●</span> AUDIENCE TARGETING <span class="dot">●</span> ARTIST BRANDING <span
+                    class="dot">●</span> RELEASE STRATEGY</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <div class="section-header reveal">
+            <div class="section-tag">What We Do</div>
+            <h2 class="section-title">Everything Your Music Career<br>Needs to Blow Up</h2>
+            <p class="section-subtitle">From ad setup to full-scale release campaigns — we've got every angle covered.
+            </p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">📢</div>
+                <h3>Paid Ad Campaigns</h3>
+                <p>Meta, YouTube, & Instagram ads that put your music in front of real listeners — not bots. Data-driven
+                    targeting built around your genre and audience.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🎯</div>
+                <h3>Ad Account Setup</h3>
+                <p>We set up your Meta Business Suite, ad accounts, pixels, and tracking infrastructure properly from
+                    day one — so every rupee is tracked and optimized.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📈</div>
+                <h3>Audience Growth</h3>
+                <p>Grow your Spotify, YouTube, and Instagram with targeted campaigns that build a real fanbase — not
+                    vanity numbers that mean nothing.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🎨</div>
+                <h3>Ad Creatives & Design</h3>
+                <p>Scroll-stopping static and motion ad creatives designed specifically for music promotion. Visuals
+                    that make people stop scrolling and start listening.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🔥</div>
+                <h3>Release Strategy</h3>
+                <p>Pre-release hype campaigns, launch day ad pushes, and post-release retargeting. We plan the entire
+                    rollout so every drop gets maximum traction.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🎤</div>
+                <h3>Artist Branding</h3>
+                <p>Social media presence, visual identity consultation, and brand positioning that makes you look as
+                    professional as you sound. Built for the digital stage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="section packages-section" id="packages">
+        <div class="section-header reveal">
+            <div class="section-tag">Packages</div>
+            <h2 class="section-title">Pick Your <span class="gradient-text">Frequency</span></h2>
+            <p class="section-subtitle">Whether you're just starting out or ready to go all-in — there's a plan for
+                every stage of your music career.</p>
+        </div>
+        <div class="packages-grid">
+
+            <!-- PACKAGE 1 -->
+            <div class="package-card reveal">
+                <div class="package-tier tier-1">TIER 01</div>
+                <div class="package-name">Soundcheck</div>
+                <div class="package-tagline">Get your foundations right. Perfect for artists just entering the paid
+                    marketing game.</div>
+                <div class="package-price">₹7,000<span>/mo</span></div>
+                <div class="price-note">+ ad spend (managed by us)</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li><span class="check">✦</span> Meta ad account setup & configuration</li>
+                    <li><span class="check">✦</span> Pixel & event tracking installation</li>
+                    <li><span class="check">✦</span> 2 ad campaigns/month (awareness + engagement)</li>
+                    <li><span class="check">✦</span> Basic audience targeting setup</li>
+                    <li><span class="check">✦</span> 4 static ad creatives/month</li>
+                    <li><span class="check">✦</span> Monthly performance snapshot</li>
+                    <li><span class="check">✦</span> WhatsApp support</li>
+                </ul>
+                <a href="#contact" class="package-btn package-btn-outline">Get Started</a>
+            </div>
+
+            <!-- PACKAGE 2 -->
+            <div class="package-card popular reveal">
+                <span class="popular-badge">MOST POPULAR</span>
+                <div class="package-tier tier-2">TIER 02</div>
+                <div class="package-name">Drop Day</div>
+                <div class="package-tagline">For artists ready to push releases and grow their fanbase with real
+                    campaign strategy.</div>
+                <div class="package-price">₹15,000<span>/mo</span></div>
+                <div class="price-note">+ ad spend (managed by us)</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li><span class="check">✦</span> Everything in Soundcheck</li>
+                    <li><span class="check">✦</span> 4 ad campaigns/month (multi-objective)</li>
+                    <li><span class="check">✦</span> Spotify & YouTube campaign funnels</li>
+                    <li><span class="check">✦</span> 8 ad creatives (static + motion graphics)</li>
+                    <li><span class="check">✦</span> Custom audience & lookalike building</li>
+                    <li><span class="check">✦</span> Release day campaign strategy</li>
+                    <li><span class="check">✦</span> A/B testing on creatives</li>
+                    <li><span class="check">✦</span> Bi-weekly strategy calls</li>
+                    <li><span class="check">✦</span> Detailed analytics dashboard</li>
+                </ul>
+                <a href="#contact" class="package-btn package-btn-filled">Get Started</a>
+            </div>
+
+            <!-- PACKAGE 3 -->
+            <div class="package-card reveal">
+                <div class="package-tier tier-3">TIER 03</div>
+                <div class="package-name">Headline Act</div>
+                <div class="package-tagline">Full-stack marketing for artists who are serious about building a brand,
+                    not just dropping tracks.</div>
+                <div class="package-price">₹28,000<span>/mo</span></div>
+                <div class="price-note">+ ad spend (managed by us)</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li><span class="check">✦</span> Everything in Drop Day</li>
+                    <li><span class="check">✦</span> 6 campaigns/month across Meta + YouTube</li>
+                    <li><span class="check">✦</span> 12 ad creatives (static + reels + motion)</li>
+                    <li><span class="check">✦</span> Retargeting & funnel sequences</li>
+                    <li><span class="check">✦</span> Social media content calendar</li>
+                    <li><span class="check">✦</span> Instagram & YouTube growth strategy</li>
+                    <li><span class="check">✦</span> Artist branding consultation</li>
+                    <li><span class="check">✦</span> Weekly strategy calls</li>
+                    <li><span class="check">✦</span> Priority support</li>
+                </ul>
+                <a href="#contact" class="package-btn package-btn-outline">Get Started</a>
+            </div>
+
+            <!-- PACKAGE 4 -->
+            <div class="package-card reveal">
+                <div class="package-tier tier-4">TIER 04</div>
+                <div class="package-name">Sold Out</div>
+                <div class="package-tagline">The full artist growth engine. Dedicated team. Complete marketing
+                    infrastructure. Zero limits.</div>
+                <div class="package-price">₹50,000<span>/mo</span></div>
+                <div class="price-note">+ ad spend (managed by us)</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li><span class="check">✦</span> Everything in Headline Act</li>
+                    <li><span class="check">✦</span> Unlimited campaigns across all platforms</li>
+                    <li><span class="check">✦</span> Full ad creative production (static + motion + reels)</li>
+                    <li><span class="check">✦</span> Complete release strategy & rollout planning</li>
+                    <li><span class="check">✦</span> PR & playlist pitching support</li>
+                    <li><span class="check">✦</span> Brand identity design (logo, covers, social visuals)</li>
+                    <li><span class="check">✦</span> Cross-platform content strategy</li>
+                    <li><span class="check">✦</span> Dedicated account manager</li>
+                    <li><span class="check">✦</span> On-call support + weekly reviews</li>
+                </ul>
+                <a href="#contact" class="package-btn package-btn-outline">Get Started</a>
+            </div>
+
+        </div>
+        <p style="text-align:center;margin-top:32px;font-size:.85rem;color:var(--text-dim)">All packages require a
+            minimum 3-month commitment. Ad spend is separate and managed transparently.</p>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section" id="why">
+        <div class="section-header reveal">
+            <div class="section-tag">Why Insidee Decibel</div>
+            <h2 class="section-title">We're Not Another Agency.<br>We're <span class="gradient-text">Your Growth
+                    Team.</span></h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="why-icon">🎵</div>
+                <h4>We're Scaling Artists</h4>
+                <p>Insidee Media has 7+ years scaling brands with performance marketing. Now we're bringing that same
+                    system to the music industry — built specifically for artists, labels, and producers.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">📊</div>
+                <h4>Honest Numbers Only</h4>
+                <p>We don't promise 10K followers in a week. We set realistic expectations, show you real metrics, and
+                    optimize campaigns based on data — not hype.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">⚡</div>
+                <h4>Fast Execution</h4>
+                <p>We move fast. Ad accounts set up, campaigns live, creatives delivered — all within the first week of
+                    onboarding. No delays, no dragging.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">🤝</div>
+                <h4>Direct Access</h4>
+                <p>Direct WhatsApp access to your campaign manager. No ticketing systems. No ghosting. Real people, real
+                    responses — always.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILITY -->
+    <section class="section proof-section">
+        <div class="section-header reveal">
+            <div class="section-tag">Who's Behind This</div>
+            <h2 class="section-title">Built by a 7-Year-Old Agency.<br>Not Some Random Freelancer.</h2>
+        </div>
+        <div class="proof-grid">
+            <div class="proof-card reveal">
+                <div class="quote">Insidee Decibel is the music marketing division of Insidee Media — a full-stack
+                    digital marketing agency founded in 2018. We've worked with brands like BMW Motorrad, Radisson Blu,
+                    Uttarakhand Tourism, and Tata Trusts.</div>
+                <div class="author">Performance Marketing DNA</div>
+                <div class="role">Same systems. Now for music.</div>
+            </div>
+            <div class="proof-card reveal">
+                <div class="quote">We run Meta ads, YouTube campaigns, Instagram growth, and full-funnel strategies for
+                    businesses across India. We're now bringing that same data-driven approach to scale independent
+                    artists and labels.</div>
+                <div class="author">Full-Service Capability</div>
+                <div class="role">Ads, creatives, strategy — in-house.</div>
+            </div>
+            <div class="proof-card reveal">
+                <div class="quote">We don't over-promise. Our philosophy has always been to set honest, conservative
+                    expectations — then let the results speak. That's how we've retained clients for years, and that's
+                    how we'll work with you.</div>
+                <div class="author">Results Over Hype</div>
+                <div class="role">Real metrics. No vanity numbers.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="section-header reveal">
+            <div class="section-tag">FAQ</div>
+            <h2 class="section-title">Got Questions?</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <div class="faq-q">How much ad spend do I need on top of the package fee? <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">
+                    <p>We recommend a minimum of ₹5,000–₹10,000/month ad spend for Soundcheck, and ₹15,000+ for higher
+                        tiers. The ad spend goes directly to Meta/YouTube — we manage it transparently and you own the
+                        accounts.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">Do I keep my ad accounts if I leave? <span class="arrow">▾</span></div>
+                <div class="faq-a">
+                    <p>Absolutely. Everything is set up under your business — ad accounts, pixels, audiences. It's yours
+                        forever. We believe in building assets for our artists, not locking them in.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">Can you guarantee streams or followers? <span class="arrow">▾</span></div>
+                <div class="faq-a">
+                    <p>We don't guarantee vanity numbers because that's not how real marketing works. What we guarantee
+                        is strategic, data-driven campaigns that put your music in front of the right people. Real
+                        growth takes real effort — we bring the system, you bring the music.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">I'm a complete beginner. Is Soundcheck right for me? <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">
+                    <p>Yes! Soundcheck is specifically designed for artists who have never run paid campaigns. We set up
+                        everything from scratch — your ad accounts, tracking, audiences — and launch your first
+                        campaigns. You'll go from zero infrastructure to running ads within a week.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">What genres do you work with? <span class="arrow">▾</span></div>
+                <div class="faq-a">
+                    <p>All of them. Hip-hop, EDM, pop, indie, Punjabi, classical fusion, Bollywood — genre doesn't
+                        matter. Marketing principles are universal. We adapt the targeting and creative strategy to
+                        match your audience.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-q">How long until I see results? <span class="arrow">▾</span></div>
+                <div class="faq-a">
+                    <p>You'll see ad data within 48 hours of launch. Meaningful traction typically builds over 4-8 weeks
+                        as we optimize targeting and creatives. That's why we require a 3-month minimum — it takes time
+                        to build a real growth engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="section contact-section" id="contact">
+        <div class="section-header reveal">
+            <div class="section-tag">Let's Talk</div>
+            <h2 class="section-title">Ready to <span class="gradient-text">Scale</span> Your Sound?</h2>
+            <p class="section-subtitle">Fill in your details and we'll get back within 24 hours with a custom game plan
+                for your music.</p>
+        </div>
+        <div class="contact-wrapper reveal">
+            <form id="musicContactForm" onsubmit="handleSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="form-name" placeholder="e.g. Arjun Verma" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Artist / Stage Name</label>
+                        <input type="text" id="form-stage" placeholder="e.g. DJ Flux">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="form-email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone / WhatsApp *</label>
+                        <input type="tel" id="form-phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>You Are A...</label>
+                        <select id="form-role">
+                            <option value="">Select one</option>
+                            <option>Independent Artist</option>
+                            <option>Band / Group</option>
+                            <option>Music Producer</option>
+                            <option>DJ</option>
+                            <option>Singer-Songwriter</option>
+                            <option>Record Label</option>
+                            <option>Music Manager</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Genre</label>
+                        <select id="form-genre">
+                            <option value="">Select genre</option>
+                            <option>Hip-Hop / Rap</option>
+                            <option>EDM / Electronic</option>
+                            <option>Pop</option>
+                            <option>Indie / Alternative</option>
+                            <option>Punjabi</option>
+                            <option>Bollywood / Film</option>
+                            <option>Classical / Fusion</option>
+                            <option>R&B / Soul</option>
+                            <option>Rock / Metal</option>
+                            <option>Lo-Fi / Chill</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Interested In</label>
+                        <select id="form-package">
+                            <option value="">Select a package</option>
+                            <option>Soundcheck — ₹7,000/mo</option>
+                            <option>Drop Day — ₹15,000/mo</option>
+                            <option>Headline Act — ₹28,000/mo</option>
+                            <option>Sold Out — ₹50,000/mo</option>
+                            <option>Not sure — help me decide</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Ad Budget Range</label>
+                        <select id="form-budget">
+                            <option value="">Select range</option>
+                            <option>₹5,000 – ₹10,000</option>
+                            <option>₹10,000 – ₹25,000</option>
+                            <option>₹25,000 – ₹50,000</option>
+                            <option>₹50,000+</option>
+                            <option>Not sure yet</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>Your Spotify / YouTube / Instagram Links</label>
+                        <input type="text" id="form-links" placeholder="Paste your primary music link here">
+                    </div>
+                    <div class="form-group full">
+                        <label>What's Your Biggest Challenge Right Now?</label>
+                        <textarea id="form-challenge"
+                            placeholder="e.g. I release music but nobody hears it..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit" id="submitBtn">Submit & Get Your Free Strategy Call →</button>
+            </form>
+            <p class="form-note">🔒 Your info stays private. No spam. We'll WhatsApp you within 24 hours.</p>
+        </div>
+    </section>
+
+    <script>
+        async function handleSubmit(event) {
+            // 1. This prevents the page from refreshing instantly
+            event.preventDefault();
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby6WII0KGlptPgoF6xPU-ZMnnk42Hurw9G1VRgrLipW_0ISlH15S5keZcVdFUElH5M/exec';
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Collect Data
+            const data = {
+                name: document.getElementById('form-name').value,
+                stageName: document.getElementById('form-stage').value,
+                email: document.getElementById('form-email').value,
+                phone: document.getElementById('form-phone').value,
+                role: document.getElementById('form-role').value,
+                genre: document.getElementById('form-genre').value,
+                package: document.getElementById('form-package').value,
+                budget: document.getElementById('form-budget').value,
+                links: document.getElementById('form-links').value,
+                challenge: document.getElementById('form-challenge').value
+            };
+
+            // UI State Change
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            try {
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    // 2. Changed to text/plain to bypass Google's strict CORS preflight checks
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(data)
+                });
+
+                // Show success modal
+                showModal(
+                    'success',
+                    'You\'re <span class="gradient-text">In!</span> 🎶',
+                    'Your details have been sent successfully. Our team will reach out on WhatsApp within 24 hours with a custom strategy for your music.'
+                );
+
+                // Clear the form fields
+                document.getElementById('musicContactForm').reset();
+
+            } catch (error) {
+                console.error('Error!', error.message);
+                showModal(
+                    'error',
+                    'Oops! Something Went Wrong',
+                    'There was an error submitting the form. Please check your internet connection and try again.'
+                );
+            } finally {
+                // Reset the button state
+                submitBtn.innerText = "Submit & Get Your Free Strategy Call →";
+                submitBtn.disabled = false;
+            }
+        }
+
+        function showModal(type, title, message) {
+            const overlay = document.getElementById('formModal');
+            const icon = document.getElementById('modalIcon');
+            const checkmark = document.getElementById('modalCheckmark');
+            const errorIcon = document.getElementById('modalErrorIcon');
+            const confettiContainer = document.getElementById('modalConfetti');
+
+            document.getElementById('modalTitle').innerHTML = title;
+            document.getElementById('modalMsg').innerHTML = message;
+
+            // Reset classes
+            icon.className = 'modal-icon';
+            confettiContainer.innerHTML = '';
+
+            if (type === 'success') {
+                icon.classList.add('success');
+                checkmark.style.display = '';
+                errorIcon.style.display = 'none';
+                // Re-trigger checkmark animation
+                const path = checkmark.querySelector('.check-path');
+                path.style.animation = 'none';
+                path.offsetHeight; // force reflow
+                path.style.animation = '';
+                // Spawn confetti
+                spawnConfetti(confettiContainer);
+            } else {
+                icon.classList.add('error');
+                checkmark.style.display = 'none';
+                errorIcon.style.display = '';
+            }
+
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('formModal');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function spawnConfetti(container) {
+            const colors = ['#FFDE1A', '#FF5722', '#E040FB', '#00E5FF', '#76FF03', '#FFD740'];
+            for (let i = 0; i < 30; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'confetti-dot';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+                dot.style.animationDelay = (Math.random() * 0.8) + 's';
+                dot.style.animationDuration = (1 + Math.random() * 1) + 's';
+                dot.style.width = (4 + Math.random() * 6) + 'px';
+                dot.style.height = dot.style.width;
+                container.appendChild(dot);
+            }
+        }
+
+        // Close modal on overlay click
+        document.getElementById('formModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2 class="reveal">Stop Dropping Into the Void.<br><span class="gradient-text">Start Getting Heard.</span></h2>
+        <p class="reveal">Your next release deserves a real marketing strategy. Let's build one together.</p>
+        <a href="#contact" class="btn-primary reveal" style="display:inline-flex">Book Your Free Strategy Call →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Insidee Decibel — A Music Marketing Division of <a href="https://insideemedia.com"
+                target="_blank">Insidee Media</a></p>
+        <p style="margin-top:8px">
+            <a href="https://wa.me/918077002038" target="_blank" style="color:var(--accent)">WhatsApp Us →</a>
+        </p>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('preloader').classList.add('hide'), 800);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('open') });
+                item.classList.toggle('open');
+            });
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Form Submit — handled by the script above the Final CTA section
+
+        // Smooth nav hide on scroll
+        let lastScroll = 0;
+        const nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            const curr = window.scrollY;
+            if (curr > lastScroll && curr > 100) { nav.style.transform = 'translateY(-100%)'; }
+            else { nav.style.transform = 'translateY(0)'; }
+            lastScroll = curr;
+        });
+    </script>
+
+</body>
+
+</html>
