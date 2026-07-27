@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insidee Media — Vietnam's Premium Creative & Growth Agency</title>
+  <meta name="description" content="Insidee Media — Vietnam's Premium Creative & Growth 
+Agency">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --bg-alt: #F5F1EA;
+      --card: #FFFFFF;
+      --card-alt: #FDF9F0;
+      --border: #E8E2D6;
+      --border-light: #F0EBE1;
+      --yellow: #E8A838;
+      --yellow-light: #F5C963;
+      --yellow-hover: #D4962E;
+      --blue: #1B3A5C;
+      --blue-light: #2A5580;
+      --red: #C0392B;
+      --green: #27AE60;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --text: #1A1A18;
+      --text-dim: #4A4640;
+      --text-dimmer: #7A756C;
+      --text-dimmest: #A8A198;
+      --radius: 14px;
+      --maxw: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(232, 168, 56, .35);
+      color: var(--text);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--yellow-hover);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: var(--blue);
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    section[id] {
+      scroll-margin-top: 88px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--yellow-hover);
+      border: 1px solid rgba(232, 168, 56, .4);
+      background: rgba(232, 168, 56, .1);
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 56px;
+    }
+
+    .section-head.centered {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-head p {
+      color: var(--text-dim);
+      font-size: 17px;
+      margin-top: 14px;
+    }
+
+    .section-rule {
+      width: 46px;
+      height: 3px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--yellow), var(--blue-light));
+      margin: 0 auto 20px;
+    }
+
+    .section-head:not(.centered) .section-rule {
+      margin: 0 0 20px;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      border: none;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .55), transparent);
+      transform: skewX(-20deg);
+      transition: left .55s ease;
+    }
+
+    .btn:hover::after {
+      left: 130%;
+    }
+
+    .btn .arrow {
+      transition: transform .25s ease;
+      display: inline-block;
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+      color: #1A1A18;
+      box-shadow: 0 8px 24px rgba(232, 168, 56, .3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(212, 150, 46, .42);
+      background: linear-gradient(135deg, var(--yellow), var(--yellow-hover));
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--yellow);
+      color: var(--yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(26, 26, 24, .06);
+    }
+
+    .microcopy {
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-top: 14px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 244, .85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s ease, background .3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: 0 6px 24px rgba(26, 26, 24, .06);
+      background: rgba(250, 248, 244, .96);
+    }
+
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: .02em;
+      color: var(--blue);
+    }
+
+    .logo .dot {
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .nav-links a:not(.btn) {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:not(.btn)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      transition: width .25s ease;
+    }
+
+    .nav-links a:not(.btn):hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 170px 0 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-blob.b1 {
+      width: 420px;
+      height: 420px;
+      top: -140px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(232, 168, 56, .30), transparent 70%);
+    }
+
+    .hero-blob.b2 {
+      width: 460px;
+      height: 460px;
+      top: 60px;
+      right: -160px;
+      background: radial-gradient(circle, rgba(27, 58, 92, .14), transparent 70%);
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 26px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5.4vw, 58px);
+      max-width: 920px;
+      margin: 0 auto 22px;
+    }
+
+    .hero .sub {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      color: var(--text-dim);
+      font-size: 18px;
+    }
+
+    .scarcity-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--blue);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px 18px 8px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 18px rgba(26, 26, 24, .05);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      position: relative;
+      flex: none;
+    }
+
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--green);
+      opacity: .6;
+      animation: pulse 1.8s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: .6;
+      }
+
+      100% {
+        transform: scale(2.6);
+        opacity: 0;
+      }
+    }
+
+    .marquee {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 38px 0 20px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      font-size: 13px;
+      color: var(--blue);
+    }
+
+    .marquee span {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--card);
+      box-shadow: 0 4px 12px rgba(26, 26, 24, .05);
+      transition: transform .2s ease;
+    }
+
+    .marquee span:hover {
+      transform: translateY(-3px);
+      border-color: var(--yellow);
+    }
+
+    .hero-note {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 34px;
+    }
+
+    .hero-note b {
+      color: var(--yellow-hover);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 60px;
+    }
+
+    .checks {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .checks span {
+      color: var(--green);
+      margin-right: 5px;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(26, 26, 24, .06);
+    }
+
+    .stat-strip div {
+      background: var(--card);
+      padding: 30px 18px;
+      text-align: center;
+      transition: background .25s ease;
+    }
+
+    .stat-strip div:hover {
+      background: var(--card-alt);
+    }
+
+    .stat-strip .num {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: var(--blue);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .stat-strip .label {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 6px;
+      color: var(--text);
+    }
+
+    .stat-strip .sub {
+      font-size: 12px;
+      color: var(--text-dimmer);
+      margin-top: 4px;
+    }
+
+    .mini-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 56px;
+      border-top: 1px solid var(--border);
+      padding-top: 44px;
+    }
+
+    .mini-stats div {
+      padding: 0 34px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .mini-stats div:last-child {
+      border-right: none;
+    }
+
+    .mini-stats .num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--blue);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .mini-stats .label {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .problems {
+      background: var(--bg-alt);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(240px, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .problem-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .problem-card .x {
+      color: var(--red);
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .problem-card h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      overflow-wrap: normal;
+      word-break: normal;
+      white-space: normal;
+    }
+
+    .problem-card p {
+      color: var(--text-dim);
+      font-size: 14.5px;
+      overflow-wrap: normal;
+      word-break: normal;
+      white-space: normal;
+    }
+
+    .callout {
+      margin-top: 34px;
+      text-align: center;
+      font-size: 17px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      padding-top: 34px;
+    }
+
+    .callout b {
+      color: var(--text);
+    }
+
+    .cta-banner {
+      text-align: center;
+      padding: 70px 24px;
+      background: linear-gradient(135deg, rgba(232, 168, 56, .14), rgba(232, 168, 56, .03));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta-banner h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .cta-banner p {
+      color: var(--text-dim);
+      margin-bottom: 26px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .icon-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .icon-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(26, 26, 24, .08);
+    }
+
+    .ic-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(232, 168, 56, .18), rgba(232, 168, 56, .06));
+    }
+
+    .icon-card:nth-child(even) .ic-badge,
+    .risk-card:nth-child(even) .ic-badge {
+      background: linear-gradient(135deg, rgba(27, 58, 92, .14), rgba(27, 58, 92, .05));
+    }
+
+    .icon-card h4 {
+      font-size: 16.5px;
+      margin-bottom: 8px;
+    }
+
+    .icon-card p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .services {
+      background: var(--bg-alt);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--yellow);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:nth-child(even) {
+      border-top-color: var(--blue-light);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(26, 26, 24, .08);
+    }
+
+    .service-card .no {
+      font-size: 13px;
+      color: var(--yellow-hover);
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .service-card h4 {
+      font-size: 19px;
+      margin: 12px 0 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tags span {
+      font-size: 11.5px;
+      background: rgba(27, 58, 92, .06);
+      color: var(--blue);
+      border: 1px solid rgba(27, 58, 92, .15);
+      padding: 4px 10px;
+      border-radius: 100px;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .tags span:hover {
+      background: var(--yellow);
+      color: #1A1A18;
+      border-color: var(--yellow);
+    }
+
+    .case-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .case-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 88px 1fr 2fr;
+      gap: 30px;
+      align-items: start;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(26, 26, 24, .08);
+    }
+
+    .case-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 24px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    }
+
+    .case-card:nth-child(2) .case-thumb {
+      background: linear-gradient(135deg, var(--yellow-hover), var(--yellow-light));
+      color: #1A1A18;
+    }
+
+    .case-card:nth-child(3) .case-thumb {
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+    }
+
+    .case-card .tag {
+      font-size: 12px;
+      color: var(--yellow-hover);
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .case-card h4 {
+      font-size: 21px;
+      margin: 10px 0 4px;
+    }
+
+    .case-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .case-cols h5 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-dimmer);
+      margin-bottom: 6px;
+    }
+
+    .case-cols p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .track-note {
+      margin-top: 26px;
+      font-size: 13.5px;
+      color: var(--text-dimmer);
+      text-align: center;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      background: var(--card-alt);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      position: relative;
+    }
+
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--border) 0 8px, transparent 8px 14px);
+      z-index: 0;
+    }
+
+    .process-card {
+      padding: 26px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      position: relative;
+      z-index: 1;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(26, 26, 24, .07);
+    }
+
+    .process-card .n {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #1A1A18;
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+      margin-bottom: 14px;
+    }
+
+    .process-card h4 {
+      font-size: 16px;
+      margin: 10px 0 8px;
+    }
+
+    .process-card p {
+      font-size: 13.5px;
+      color: var(--text-dim);
+    }
+
+    .testimonials {
+      background: var(--bg-alt);
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .test-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--yellow);
+      border-radius: var(--radius);
+      padding: 26px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .test-card:nth-child(even) {
+      border-top-color: var(--blue-light);
+    }
+
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(26, 26, 24, .08);
+    }
+
+    .test-card .q {
+      font-size: 32px;
+      line-height: 1;
+      color: var(--yellow);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .test-card p {
+      font-size: 14.5px;
+      color: var(--text-dim);
+      margin: 8px 0 18px;
+    }
+
+    .test-card .who {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .test-card .role {
+      font-size: 12.5px;
+      color: var(--text-dimmer);
+    }
+
+    .placeholder-flag {
+      grid-column: 1/-1;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dimmer);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      background: var(--card-alt);
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .risk-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .risk-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(26, 26, 24, .08);
+    }
+
+    .risk-card .ic-badge {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .risk-card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .risk-card p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .cap-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-align: center;
+      margin-top: 34px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 110px 24px;
+      background: radial-gradient(ellipse at center, rgba(232, 168, 56, .16), transparent 70%);
+    }
+
+    .final-cta h2 {
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+
+    .final-cta .sub {
+      max-width: 600px;
+      margin: 0 auto 34px;
+      color: var(--text-dim);
+    }
+
+    footer {
+      background: var(--blue);
+      border-top: 1px solid var(--border);
+      padding: 70px 0 30px;
+      color: #EDEFF2;
+    }
+
+    footer .logo {
+      color: #FFFFFF;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      margin-bottom: 26px;
+    }
+
+    .foot-grid h5 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: rgba(255, 255, 255, .55);
+      margin-bottom: 16px;
+    }
+
+    .foot-grid a,
+    .foot-grid p {
+      display: block;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 10px;
+    }
+
+    .foot-grid a:hover {
+      color: var(--yellow-light);
+    }
+
+    .foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .foot-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .foot-social a:hover {
+      color: var(--yellow-light);
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+      background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+      color: #FFFFFF;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, .4);
+      animation: float-bob 3s ease-in-out infinite;
+    }
+
+    @keyframes float-bob {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .sticky-cta {
+      display: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-group.in>* {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-group>* {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal-group>*:nth-child(1) {
+      transition-delay: .02s;
+    }
+
+    .reveal-group>*:nth-child(2) {
+      transition-delay: .09s;
+    }
+
+    .reveal-group>*:nth-child(3) {
+      transition-delay: .16s;
+    }
+
+    .reveal-group>*:nth-child(4) {
+      transition-delay: .23s;
+    }
+
+    .reveal-group>*:nth-child(5) {
+      transition-delay: .30s;
+    }
+
+    .reveal-group>*:nth-child(6) {
+      transition-delay: .37s;
+    }
+
+    .wrap>* {
+      max-width: 100%;
+    }
+
+    .wrap>* {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    @media (max-width: 1024px) {
+      header .wrap {
+        padding: 14px 20px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-links a.hide-mobile {
+        display: none;
+      }
+
+      .nav-links .btn {
+        margin-left: auto;
+      }
+
+      section {
+        padding: 76px 0;
+      }
+
+      .hero {
+        padding: 148px 0 72px;
+      }
+
+      .hero-ctas {
+        margin-bottom: 44px;
+      }
+
+      .checks {
+        gap: 10px 16px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        padding: 0 18px;
+      }
+
+      .hero {
+        padding: 132px 0 62px;
+      }
+
+      .hero h1 {
+        font-size: clamp(28px, 7.2vw, 44px);
+        max-width: 100%;
+        margin-bottom: 18px;
+      }
+
+      .hero .sub {
+        font-size: 16px;
+        margin-bottom: 28px;
+      }
+
+      .hero-ctas .btn {
+        width: min(100%, 360px);
+      }
+
+      .checks {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .checks div {
+        font-size: 12.5px;
+      }
+
+      .stat-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mini-stats {
+        margin-top: 40px;
+        padding-top: 28px;
+        gap: 12px 0;
+      }
+
+      .mini-stats div {
+        flex: 0 0 calc(50% - 8px);
+        border-right: none;
+        padding: 8px 0;
+      }
+
+      .section-head {
+        margin-bottom: 40px;
+      }
+
+      .problem-card,
+      .service-card,
+      .icon-card,
+      .process-card,
+      .risk-card,
+      .test-card,
+      .case-card {
+        padding: 22px;
+      }
+
+      .case-card {
+        grid-template-columns: 72px 1fr;
+        gap: 20px;
+      }
+
+      .case-cols {
+        grid-column: span 2;
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .foot-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .final-cta {
+        padding: 88px 18px;
+      }
+
+      .sticky-cta {
+        padding: 12px 14px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header .wrap {
+        padding: 12px 16px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links .btn {
+        padding: 10px 16px !important;
+        font-size: 12.5px;
+      }
+
+      .hero {
+        padding: 124px 0 54px;
+      }
+
+      .scarcity-pill {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 14px;
+        font-size: 12.5px;
+      }
+
+      .marquee {
+        gap: 10px;
+        margin: 28px 0 16px;
+      }
+
+      .marquee span {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+      }
+
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-stats div {
+        flex-basis: 100%;
+      }
+
+      .problem-grid,
+      .grid-4,
+      .service-grid,
+      .process-grid,
+      .test-grid,
+      .risk-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-card {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+      }
+
+      .problem-card .x {
+        font-size: 20px;
+      }
+
+      .problem-card {
+        padding: 22px;
+      }
+
+      .problem-card h4,
+      .problem-card p {
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+      }
+
+      .case-cols {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .cta-banner {
+        padding: 56px 16px;
+      }
+
+      .wa-float {
+        width: 50px;
+        height: 50px;
+        bottom: 88px;
+        right: 16px;
+      }
+
+      .sticky-cta .btn {
+        font-size: 13px;
+        padding: 13px 16px;
+      }
+    }
+
+    @media (orientation: landscape) and (max-height: 700px) {
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 56px;
+      }
+
+      .sticky-cta {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="wrap">
+      <div class="logo">INSIDEE<span class="dot">.</span></div>
+      <div class="nav-links">
+        <a href="#services" class="hide-mobile">Dịch vụ</a>
+        <a href="#work" class="hide-mobile">Case Studies</a>
+        <a href="https://insideemedia.com/privacy-policy.html" class="hide-mobile">Privacy Policy</ a>
+          <a href="#contact" class="btn btn-primary" style="padding:11px 22px;font-size:13.5px;">Book a Strategy
+            Call</a>
+      </div>
+    </div>
+  </header>
+  <!-- TODO: replace with real Vietnam WhatsApp/Zalo number before publishing -->
+  <a class="wa-float" href="https://wa.me/8077841173" target="_blank" aria-label="WhatsApp">
+    💬</a>
+  <section class="hero">
+    <div class="hero-blob b1" aria-hidden="true"></div>
+    <div class="hero-blob b2" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="eyebrow">Việt Nam &amp; Global · Vietnam &amp; Global</div>
+      <h1>When your business outgrows freelancers and fragmented agencies, it's time for a
+        <em>dedicated growth partner.</em>
+      </h1>
+      <p class="sub">Insidee Media is a premium creative &amp; growth studio built on 8+ years
+        and 94+ brands scaled globally — now bringing that same playbook to Vietnam. Strategy,
+        performance ads, brand building, 3D/CGI, video production, and web, all under one roof. No
+        freelancers. No outsourcing. Just kết quả (results).</p>
+      <div class="scarcity-pill"><span class="pulse-dot"></span>Currently onboarding — only 5
+        new brands accepted per month</div>
+      <div class="marquee">
+        <span>PS</span><span>RM</span><span>AI</span><span>SR</span><span>MN</span>
+      </div>
+      <p class="hero-note"><b>94+ brands</b> scaled with Insidee since 2018 — now opening our
+        Ho Chi Minh City desk</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Đặt lịch tư vấn — Schedule a Strategy Call
+          <span class="arrow">→</span></a>
+        <div class="checks">
+          <div><span>✓</span>Free 30-min call</div>
+          <div><span>✓</span>No commitment</div>
+          <div><span>✓</span>Talk to the founder directly</div>
+        </div>
+      </div>
+      <div class="stat-strip reveal">
+        <div>
+          <div class="num"><span class="count" data-target="26">0</span>X</div>
+          <div class="label">Max ROAS Reached</div>
+          <div class="sub">Across Meta &amp; Google ad
+            campaigns</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="68">0</span>%</div>
+          <div class="label">Lower Cost Per Lead</div>
+          <div class="sub">Within the first 90 days of working
+            together</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="10">0</span>M+</div>
+          <div class="label">Impressions Delivered</div>
+          <div class="sub">Cross-platform campaigns,
+            globally</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="100">0</span>%</div>
+          <div class="label">In-House Delivery</div>
+          <div class="sub">Zero freelancers, zero outsourcing</div>
+        </div>
+      </div>
+      <div class="mini-stats reveal">
+        <div>
+          <div class="num"><span class="count" data-target="94">0</span>+</div>
+          <div class="label">Brands Served</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="8">0</span>+</div>
+          <div class="label">Years in Business</div>
+        </div>
+        <div>
+          <div class="num">HCMC</div>
+          <div class="label">Vietnam Base</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="2">0</span></div>
+          <div class="label">Countries, 1 Team</div>
+        </div>
+        <div>
+          <div class="num"><span class="count" data-target="100">0</span>%</div>
+          <div class="label">In-House Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="problems">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Sound Familiar? · Nghe quen không?</div>
+        <h2>Every growing brand in Vietnam <em>faces the same problems.</em></h2>
+      </div>
+      <div class="problem-grid reveal-group">
+        <div class="problem-card">
+          <div class="x">✕</div>
+          <div>
+            <h4>Agencies That Vanish After Onboarding</h4>
+            <p>They sell big in the pitch
+              meeting, then hand you off to a junior who doesn't understand your brand or your market.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="x">✕</div>
+          <div>
+            <h4>Freelancers With Zero Accountability</h4>
+            <p>Cheap 5–10 triệu VND/month deals
+              that end up costing you hundreds of triệu in missed deadlines, weak creatives, and lost
+              customers.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="x">✕</div>
+          <div>
+            <h4>Good-Looking Creatives, Zero ROI</h4>
+            <p>Instagram- and TikTok-worthy posts
+              that get likes from your friends but generate zero leads, zero sales, zero growth.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="x">✕</div>
+          <div>
+            <h4>5 Vendors for 5 Things</h4>
+            <p>One agency for ads, another for website,
+              someone else for video. Nobody owns the outcome. You're the project manager.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout">
+        <b>Insidee Media</b> was built to fix exactly this. One team. Every capability. Your brand's
+        growth — owned, not managed.
+      </div>
+    </div>
+  </section>
+  <div class="cta-banner">
+    <h3>Tired of agencies that don't deliver? Let's fix that.</h3>
+    <p>30 minutes with our founder — free, no strings attached.</p>
+    <a href="#contact" class="btn btn-primary">Book a Free Strategy Call</a>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Who We Work With</div>
+        <h2>Built for brands that are <em>serious about growth.</em></h2>
+      </div>
+      <div class="grid-4 reveal-group">
+        <div class="icon-card">
+          <div class="ic-badge">🚀</div>
+          <h4>Funded Startups</h4>
+          <p>Seed
+            to Series B companies in Vietnam's startup ecosystem ready to scale marketing with a proper
+            team.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">📈</div>
+          <h4>50 Tỷ VND+ Revenue Brands</h4>
+          <p>Growing businesses that have outgrown freelancers and need an agency that actually
+            delivers.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">🏢</div>
+          <h4>Enterprises &amp;
+            Institutions</h4>
+          <p>Established organizations seeking fresh creative and digital transformation.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">🏭</div>
+          <h4>D2C, Export &amp;
+            Manufacturing</h4>
+          <p>Product and export brands looking to build a direct-to-consumer
+            presence online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services" style="padding-bottom:60px;">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Why Insidee</div>
+        <h2>Premium. Process-led. <em>Results-driven.</em></h2>
+      </div>
+      <div class="grid-4 reveal-group">
+        <div class="icon-card">
+          <div class="ic-badge">⚡</div>
+          <h4>Strategy First</h4>
+          <p>We
+            don't jump to execution. Every campaign starts with research, audience analysis, and a custom
+            roadmap for the Vietnam market.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">🏢</div>
+          <h4>Global Team, Local
+            Understanding</h4>
+          <p>Strategists, designers, editors, developers — backed by a Ho Chi Minh
+            City desk. No freelancer surprises.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">🎯</div>
+          <h4>Creative + Performance</h4>
+          <p>Beautiful work that converts. We marry aesthetics with analytics — every creative has a
+            conversion job.</p>
+        </div>
+        <div class="icon-card">
+          <div class="ic-badge">🤝</div>
+          <h4>Founder-Led</h4>
+          <p>You talk
+            directly to the founder. No account managers, no juniors handling your brand. Direct access,
+            always.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 12px;text-align:center;">
+        <div class="eyebrow">What We Do</div>
+        <h2>One team replaces <em>5 vendors.</em></h2>
+        <p style="text-align:center;">Strategy, creative, performance, production, and technology —
+          all under one roof.</p>
+      </div>
+      <div class="service-grid reveal-group" style="margin-top:44px;">
+        <div class="service-card">
+          <div class="no">01</div>
+          <h4>Performance Marketing &amp; Ads</h4>
+          <p>Meta, Google, TikTok and Zalo campaigns that generate real leads and revenue — not
+            just impressions.</p>
+          <div class="tags"><span>Meta Ads</span><span>Google Ads</span><span>TikTok Ads</span><span>Lead
+              Gen</span><span>Retargeting</span><span>Zalo OA Funnels</span></div>
+        </div>
+        <div class="service-card">
+          <div class="no">02</div>
+          <h4>Brand Strategy &amp; Identity</h4>
+          <p>From naming to packaging to complete brand systems. We build brands that command
+            premium pricing.</p>
+          <div class="tags"><span>Logo</span><span>Guidelines</span><span>Packaging</span>
+            <span>Naming</span><span>Storytelling</span><span>Go-to-Market</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="no">03</div>
+          <h4>Video, Film &amp; CGI</h4>
+          <p>Brand films, ad films, reels, music videos, 3D renders, CGI content — concept to final
+            delivery.</p>
+          <div class="tags"><span>Brand Films</span><span>Ad Films</span><span>Reels</span>
+            <span>3D/CGI</span><span>VFX</span><span>Photography</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="no">04</div>
+          <h4>Website &amp; Technology</h4>
+          <p>Landing pages, e-commerce, apps, CRM integration — fast, responsive, built to
+            convert.</p>
+          <div class="tags"><span>Websites</span><span>Landing Pages</span><span>E-
+              Commerce</span><span>Apps</span><span>CRM</span><span>AI Tools</span></div>
+        </div>
+        <div class="service-card">
+          <div class="no">05</div>
+          <h4>Social Media &amp; Content</h4>
+          <p>Content calendars, community management, KOL/influencer strategy — we run your
+            social like it's our brand.</p>
+          <div class="tags"><span>Facebook</span><span>TikTok</span><span>Instagram</span>
+            <span>Content</span><span>KOL/KOC</span><span>Community</span>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="no">06</div>
+          <h4>SEO &amp; Events</h4>
+          <p>Search optimization for organic traffic + brand activations and events for offline impact.</p>
+          <div class="tags"><span>SEO</span><span>Local SEO</span><span>Events</span>
+            <span>Activations</span><span>PR</span><span>CRO</span>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="border:none;padding-top:0;margin-top:44px;">
+        Not sure what you need? We'll figure it out — free.<br>
+        <span style="font-size:14.5px;">Book a free audit call. We'll review your current marketing
+          and tell you exactly what's working and what's not.</span><br><br>
+        <a href="#contact" class="btn btn-outline">Get Free Marketing Audit →</a>
+      </div>
+    </div>
+  </section>
+  <section id="work" class="services">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Proof, Not Promises</div>
+        <h2>Real brands. Real problems. <em>Real results.</em></h2>
+        <p style="text-align:center;">Our track record so far — built globally, now available to brands
+          in Vietnam.</p>
+      </div>
+      <div class="case-grid reveal-group">
+        <div class="case-card">
+          <div class="case-thumb">DB</div>
+          <div>
+            <div class="tag">Dehradun Bazaar</div>
+            <h4>The City's Biggest Flea Market Experience</h4>
+          </div>
+          <div class="case-cols">
+            <div>
+              <h5>Problem</h5>
+              <p>High ad spend with minimal conversions and poor audience
+                targeting.</p>
+            </div>
+            <div>
+              <h5>What We Did</h5>
+              <p>Data-driven audience segmentation, creative refresh, and
+                complete funnel optimization.</p>
+            </div>
+            <div>
+              <h5>Result</h5>
+              <p>A benchmark for community-driven brand activations through
+                storytelling, design &amp; digital strategy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-thumb">HN</div>
+          <div>
+            <div class="tag">Haneri</div>
+            <h4>Crafting a Category's First Fan Movement Brand</h4>
+          </div>
+          <div class="case-cols">
+            <div>
+              <h5>Problem</h5>
+              <p>No brand presence. Struggling to generate qualified leads for
+                enterprise ceiling fan sales.</p>
+            </div>
+            <div>
+              <h5>What We Did</h5>
+              <p>Complete brand overhaul, LinkedIn thought leadership,
+                inbound content + 3D render strategy.</p>
+            </div>
+            <div>
+              <h5>Result</h5>
+              <p>Turned an idea into a nationwide cultural identity — from the
+                people, for the people.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-thumb">SS</div>
+          <div>
+            <div class="tag">Saatvik Solar</div>
+            <h4>Powering a Brand for Its IPO Phase</h4>
+          </div>
+          <div class="case-cols">
+            <div>
+              <h5>Problem</h5>
+              <p>Outdated digital presence, losing ground to modern solar
+                competitors.</p>
+            </div>
+            <div>
+              <h5>What We Did</h5>
+              <p>Website redesign, local SEO, reputation management,
+                investor-facing brand refresh.</p>
+            </div>
+            <div>
+              <h5>Result</h5>
+              <p>Stronger identity, higher engagement &amp; renewed market
+                confidence ahead of IPO.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="track-note">This is our track record from existing markets. Vietnam case studies
+        will be added here as our first local clients launch — ask us for references on the strategy call.</div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">How We Work</div>
+        <h2>From first call to <em>compounding results.</em></h2>
+      </div>
+      <div class="process-grid reveal-group">
+        <div class="process-card">
+          <div class="n">1</div>
+          <h4>Apply &amp; Qualify</h4>
+          <p>Fill a 2-
+            minute form. We'll review your brand and see if we're a fit.</p>
+        </div>
+        <div class="process-card">
+          <div class="n">2</div>
+          <h4>Strategy Call</h4>
+          <p>30-min call
+            with the founder. We audit your current marketing — free.</p>
+        </div>
+        <div class="process-card">
+          <div class="n">3</div>
+          <h4>Custom Proposal</h4>
+          <p>Transparent proposal — services, pricing in VND, timelines, KPIs. No hidden costs.</p>
+        </div>
+        <div class="process-card">
+          <div class="n">4</div>
+          <h4>Execute &amp; Scale</h4>
+          <p>Dedicated team deployed. Weekly reports. Monthly reviews. Results that compound.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Don't Take Our Word For It</div>
+        <h2>Hear from brands <em>we've actually scaled.</em></h2>
+      </div>
+      <div class="test-grid reveal-group">
+        <div class="placeholder-flag">Vietnam-specific testimonials will go here once local clients are
+          onboarded. The quotes below are from our existing global client base, shown as proof of process
+          and standards.</div>
+        <div class="test-card">
+          <div class="q">"</div>
+          <p>Insidee Media transformed our digital
+            presence. Their creative campaigns and strategic approach helped us reach new customers and
+            grow our brand online. Highly recommended!</p>
+          <div class="who">Priya Sharma</div>
+          <div class="role">Marketing Head, UrbanRoots</div>
+        </div>
+        <div class="test-card">
+          <div class="q">"</div>
+          <p>The team at Insidee Media is innovative
+            and responsive. Their tech solutions streamlined our operations and their branding expertise gave
+            us a fresh identity.</p>
+          <div class="who">Rohan Mehta</div>
+          <div class="role">Co-Founder,
+            TechNest</div>
+        </div>
+        <div class="test-card">
+          <div class="q">"</div>
+          <p>We loved working with Insidee Media for
+            our product launch. Their creative media production and social media strategies made a real
+            impact.</p>
+          <div class="who">Ananya Iyer</div>
+          <div class="role">Brand Manager, FreshBite</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 56px;text-align:center;">
+        <div class="eyebrow">Zero Risk to Start</div>
+        <h2>We make it <em>impossible to lose.</em></h2>
+      </div>
+      <div class="risk-grid reveal-group">
+        <div class="risk-card">
+          <div class="ic-badge">🆓</div>
+          <h4>Free Strategy Call</h4>
+          <p>30
+            minutes with our founder — no charge, no pressure. If we're not a fit, we'll tell you honestly.</p>
+        </div>
+        <div class="risk-card">
+          <div class="ic-badge">📋</div>
+          <h4>Free Marketing Audit</h4>
+          <p>We'll review your current ads, creatives, and funnels — and tell you what's broken before
+            you pay a single đồng.</p>
+        </div>
+        <div class="risk-card">
+          <div class="ic-badge">🔒</div>
+          <h4>No Lock-in Contracts</h4>
+          <p>Monthly retainers with a 30-day exit clause. We earn your business every month through
+            results, not contracts.</p>
+        </div>
+      </div>
+      <div class="cap-note"><span class="pulse-dot"></span>We onboard only 5 new brands per
+        month to maintain quality</div>
+    </div>
+  </section>
+  <section id="contact" class="final-cta">
+    <div class="wrap">
+      <div class="eyebrow">Let's Talk · Cùng trao đổi</div>
+      <h2>Ready to finally work with an agency that <em>actually delivers?</em></h2>
+      <p class="sub">Book a free strategy call with our founder. We'll audit your current marketing,
+        show you relevant case studies, and put together a custom proposal — completely free. No
+        fluff.</p>
+      <!-- TODO: replace with real Vietnam WhatsApp/Zalo number -->
+      <a href="https://wa.me/8077841173" class="btn btn-primary" target="_blank">Book a Free
+        Strategy Call <span class="arrow">→</span></a>
+      <p class="microcopy">Free 30-min call · Free audit · No commitment · Founder-led · 0₫ to
+        start</p>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo" style="margin-bottom:14px;">INSIDEE<span class="dot">.</span></div>
+          <p>Vietnam's premium 360° creative &amp; growth agency. Strategy, performance
+            marketing, brand building, production, and technology — all under one roof, backed by 8+ years
+            and 94+ brands scaled globally since 2018.</p>
+        </div>
+        <div>
+          <h5>Services</h5>
+          <a href="#services">Performance Marketing</a>
+          <a href="#services">Brand Strategy</a>
+          <a href="#services">Video &amp; CGI</a>
+          <a href="#services">Web Development</a>
+          <a href="#services">Social Media</a>
+          <a href="#services">SEO &amp; Events</a>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a href="https://insideemedia.com">Main Website</a>
+          <a href="https://insideemedia.com/india/index.html">India Site</a>
+          <a href="https://insideemedia.com/academy/index.html">Academy</a>
+          <a href="#work">Case Studies</a>
+          <a href="mailto:contact@insidee.in">contact@insidee.in</a>
+          <!-- TODO: replace with real Vietnam WhatsApp/Zalo number -->
+          <a href="https://wa.me/8077841173">+84 XXX XXX XXX</a>
+        </div>
+        <div>
+          <h5>Offices</h5>
+          <a href="#">Ho Chi Minh City, Vietnam</a>
+          <a href="#">Gurugram, India (Global HQ)</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>© 2026 Insidee Media. All rights reserved.</div>
+        <div class="foot-social">
+          <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- TODO: replace with real Vietnam WhatsApp/Zalo number -->
+  <div class="sticky-cta">
+    <a href="https://wa.me/8077841173" class="btn btn-primary" target="_blank">Đặt lịch tư vấn
+      miễn phí — Book Free Call <span class="arrow">→</span></a>
+  </div>
+  <script>
+    // Fade/slide reveal for individual elements and staggered groups 
+    const revealEls = document.querySelectorAll('.reveal, .reveal-group');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .15 });
+    revealEls.forEach(el => io.observe(el));
+    // Header shadow on scroll 
+    const header = document.getElementById('site-header');
+    const onScroll = () => {
+      if (window.scrollY > 12) { header.classList.add('scrolled'); }
+      else { header.classList.remove('scrolled'); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    // Count-up animated stats 
+    const counters = document.querySelectorAll('.count');
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = target * eased;
+          el.textContent = target % 1 === 0 ? Math.round(value) : value.toFixed(1);
+          if (progress < 1) { requestAnimationFrame(tick); } else {
+            el.textContent = target % 1 === 0 ?
+              target : target.toFixed(1);
+          }
+        }
+        requestAnimationFrame(tick);
+        countIO.unobserve(el);
+      });
+    }, { threshold: .4 });
+    counters.forEach(el => countIO.observe(el)); 
+  </script>
+</body>
+
+</html>
