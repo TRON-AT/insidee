@@ -657,6 +657,110 @@ Agency">
       border-bottom: 1px solid var(--border);
     }
 
+    .modern-clients {
+      padding: 32px 0 16px 0;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modern-clients .eyebrow,
+    .modern-clients .section-label {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--yellow-hover);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+    .logo-card {
+      width: 200px;
+      height: 100px;
+      padding: 10px 20px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 16px;
+      box-shadow: 0 4px 12px rgba(26, 26, 24, 0.08);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .logo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      transform: scale(1.4);
+    }
+
+    .logo-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(26, 26, 24, 0.12);
+    }
+
+    .logo-card:hover img {
+      transform: scale(1.55);
+    }
+
+    .logos-grand-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .logos-grand-wrapper::before,
+    .logos-grand-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logos-grand-wrapper::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--card), transparent);
+    }
+
+    .logos-grand-wrapper::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--card), transparent);
+    }
+
+    .logos-marquee {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+      padding: 8px 0;
+    }
+
+    .logos-marquee::-webkit-scrollbar {
+      display: none;
+    }
+
+    .logos-marquee.active {
+      cursor: grabbing;
+    }
+
+    .logos-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 16px;
+      padding-bottom: 4px;
+    }
+
+
     .cta-banner h3 {
       font-size: 26px;
       margin-bottom: 10px;
@@ -1716,6 +1820,16 @@ Agency">
       </div>
     </div>
   </section>
+  <div class="modern-clients">
+    <div class="wrap">
+      <div class="section-label">Trusted by 94+ Brands Across India</div>
+    </div>
+    <div class="logos-grand-wrapper">
+      <div class="logos-marquee">
+        <div class="logos-track" id="logosTrack"></div>
+      </div>
+    </div>
+  </div>
   <section class="services" style="padding-bottom:60px;">
     <div class="wrap">
       <div class="section-head" style="margin:0 auto 56px;text-align:center;">
@@ -2094,6 +2208,52 @@ Agency">
           nl.classList.remove('active');
         });
       });
+    }
+    const lt = document.getElementById('logosTrack');
+    if (lt) {
+      for (let r = 0; r < 2; r++) {
+        for (let i = 1; i <= 44; i++) {
+          const b = document.createElement('div');
+          b.className = 'logo-card';
+          const img = document.createElement('img');
+          img.src = `../assets/insidee logo/${i}.svg`;
+          img.alt = 'Client logo';
+          img.loading = 'lazy';
+          b.appendChild(img);
+          lt.appendChild(b);
+        }
+      }
+
+      const mOuter = document.querySelector('.logos-marquee');
+      let isPaused = false, isDown = false, startX, scrollL;
+      mOuter.addEventListener('mouseenter', () => isPaused = true);
+      mOuter.addEventListener('mouseleave', () => { isPaused = false; isDown = false; mOuter.classList.remove('active'); });
+      mOuter.addEventListener('touchstart', () => isPaused = true, { passive: true });
+      mOuter.addEventListener('touchend', () => isPaused = false);
+      mOuter.addEventListener('mousedown', (e) => {
+        isDown = true; isPaused = true; mOuter.classList.add('active');
+        startX = e.pageX - mOuter.offsetLeft; scrollL = mOuter.scrollLeft;
+      });
+      mOuter.addEventListener('mouseup', () => { isDown = false; isPaused = false; mOuter.classList.remove('active'); });
+      mOuter.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - mOuter.offsetLeft;
+        mOuter.scrollLeft = scrollL - (x - startX) * 2.5;
+      });
+
+      let lastTime = 0;
+      function autoScroll(time) {
+        if (!lastTime) lastTime = time;
+        const dt = time - lastTime;
+        lastTime = time;
+        if (!isPaused && !isDown) {
+          mOuter.scrollLeft += (60 * dt) / 1000;
+          if (mOuter.scrollLeft >= lt.scrollWidth / 2) mOuter.scrollLeft = 0;
+        }
+        requestAnimationFrame(autoScroll);
+      }
+      requestAnimationFrame(autoScroll);
     }
     // Count-up animated stats 
     const counters = document.querySelectorAll('.count');
