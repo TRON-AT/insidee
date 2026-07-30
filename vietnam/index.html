@@ -9,8 +9,7 @@
 Agency">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?
-family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #FAF8F4;
@@ -67,7 +66,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
     }
 
     em {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'DM Serif Display', Georgia, serif;
       font-style: italic;
       color: var(--blue);
       font-weight: 400;
@@ -485,10 +484,11 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
     }
 
     .stat-strip .num {
-      font-size: clamp(24px, 3vw, 34px);
+      font-size: clamp(36px, 5vw, 56px);
       font-weight: 800;
       color: var(--blue);
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
+      line-height: 1.15;
     }
 
     .stat-strip .label {
@@ -525,10 +525,11 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
     }
 
     .mini-stats .num {
-      font-size: 26px;
+      font-size: clamp(28px, 3.5vw, 40px);
       font-weight: 800;
       color: var(--blue);
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
+      line-height: 1.15;
     }
 
     .mini-stats .label {
@@ -543,59 +544,107 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
 
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(240px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
       align-items: stretch;
     }
 
     .problem-card {
       background: var(--card);
       border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
       border-radius: var(--radius);
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: 16px;
+      padding: 30px;
+      display: flex;
+      gap: 20px;
       align-items: flex-start;
-      min-width: 0;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(192, 57, 43, 0.08);
+      border-color: rgba(192, 57, 43, 0.3);
     }
 
     .problem-card .x {
+      width: 36px;
+      height: 36px;
+      background: rgba(192, 57, 43, 0.08);
       color: var(--red);
-      font-size: 22px;
+      font-size: 16px;
       font-weight: 800;
-      display: flex;
+      border-radius: 50%;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     .problem-card h4 {
       font-size: 17px;
       margin-bottom: 8px;
-      overflow-wrap: normal;
-      word-break: normal;
-      white-space: normal;
     }
 
     .problem-card p {
       color: var(--text-dim);
       font-size: 14.5px;
-      overflow-wrap: normal;
-      word-break: normal;
-      white-space: normal;
+      line-height: 1.6;
     }
 
-    .callout {
-      margin-top: 34px;
+    .problems-callout {
+      margin-top: 48px;
+      background: linear-gradient(135deg, var(--blue) 0%, #11253C 100%);
+      color: #FFFFFF;
+      padding: 40px 32px;
+      border-radius: var(--radius);
       text-align: center;
-      font-size: 17px;
-      color: var(--text-dim);
-      border-top: 1px solid var(--border);
-      padding-top: 34px;
+      box-shadow: 0 20px 40px rgba(27, 58, 92, 0.12);
+      position: relative;
+      overflow: hidden;
     }
 
-    .callout b {
-      color: var(--text);
+    .problems-callout::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(232, 168, 56, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .callout-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: rgba(232, 168, 56, 0.2);
+      color: var(--yellow);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .problems-callout h3 {
+      color: #FFFFFF;
+      font-size: clamp(20px, 3vw, 26px);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .problems-callout p {
+      color: #D1D9E6;
+      font-size: clamp(15px, 2vw, 17px);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .problems-callout strong {
+      color: var(--yellow-light);
     }
 
     .cta-banner {
@@ -762,7 +811,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
       font-style: italic;
       font-size: 24px;
       color: #fff;
@@ -861,7 +910,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
       font-style: italic;
       color: #1A1A18;
       font-size: 18px;
@@ -912,7 +961,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       font-size: 32px;
       line-height: 1;
       color: var(--yellow);
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
     }
 
     .test-card p {
@@ -1100,6 +1149,37 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       display: none;
     }
 
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 150;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blue);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(18px);
@@ -1160,18 +1240,42 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
         padding: 14px 20px;
       }
 
-      .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+      .mobile-toggle {
+        display: block;
       }
 
-      .nav-links a.hide-mobile {
+      .nav-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 24px;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(26, 26, 24, .08);
+        z-index: 105;
+        align-items: center;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 8px 0;
+        width: 100%;
       }
 
       .nav-links .btn {
-        margin-left: auto;
+        margin: 10px 0 0 0;
+        width: 100%;
       }
 
       section {
@@ -1245,6 +1349,11 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
         margin-bottom: 40px;
       }
 
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
       .problem-card,
       .service-card,
       .icon-card,
@@ -1279,7 +1388,38 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       }
 
       .sticky-cta {
-        padding: 12px 14px;
+        display: flex;
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        z-index: 999;
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+
+      .sticky-cta .btn {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 15.5px;
+        font-weight: 700;
+        border-radius: 100px;
+        box-shadow: 0 10px 25px rgba(232, 168, 56, 0.4);
+        background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+        color: #1A1A18;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .wa-float {
+        bottom: 92px;
+        right: 16px;
+        z-index: 990;
       }
     }
 
@@ -1332,7 +1472,6 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
         flex-basis: 100%;
       }
 
-      .problem-grid,
       .grid-4,
       .service-grid,
       .process-grid,
@@ -1342,23 +1481,14 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       }
 
       .problem-card {
-        display: grid;
-        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        padding: 20px;
       }
 
       .problem-card .x {
-        font-size: 20px;
-      }
-
-      .problem-card {
-        padding: 22px;
-      }
-
-      .problem-card h4,
-      .problem-card p {
-        white-space: normal;
-        word-break: normal;
-        overflow-wrap: normal;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
       }
 
       .case-cols {
@@ -1378,8 +1508,8 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
       }
 
       .sticky-cta .btn {
-        font-size: 13px;
-        padding: 13px 16px;
+        font-size: 14.5px;
+        padding: 14px 20px;
       }
     }
 
@@ -1400,12 +1530,16 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
   <header id="site-header">
     <div class="wrap">
       <div class="logo">INSIDEE<span class="dot">.</span></div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-links">
-        <a href="#services" class="hide-mobile">Dịch vụ</a>
-        <a href="#work" class="hide-mobile">Case Studies</a>
-        <a href="https://insideemedia.com/privacy-policy.html" class="hide-mobile">Privacy Policy</ a>
-          <a href="#contact" class="btn btn-primary" style="padding:11px 22px;font-size:13.5px;">Book a Strategy
-            Call</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#work">Case Studies</a>
+        <a href="https://insideemedia.com/privacy-policy.html">Privacy Policy</a>
+        <a href="#contact" class="btn btn-primary nav-cta" style="padding:11px 22px;font-size:13.5px;">Book a Strategy Call</a>
       </div>
     </div>
   </header>
@@ -1424,8 +1558,8 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
         and 94+ brands scaled globally — now bringing that same playbook to Vietnam. Strategy,
         performance ads, brand building, 3D/CGI, video production, and web, all under one roof. No
         freelancers. No outsourcing. Just kết quả (results).</p>
-      <div class="scarcity-pill"><span class="pulse-dot"></span>Currently onboarding — only 5
-        new brands accepted per month</div>
+      <div class="scarcity-pill"><span class="pulse-dot"></span>Currently onboarding
+      </div>
       <div class="marquee">
         <span>PS</span><span>RM</span><span>AI</span><span>SR</span><span>MN</span>
       </div>
@@ -1500,39 +1634,41 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
           <div class="x">✕</div>
           <div>
             <h4>Agencies That Vanish After Onboarding</h4>
-            <p>They sell big in the pitch
-              meeting, then hand you off to a junior who doesn't understand your brand or your market.</p>
+            <p>They sell big in the pitch meeting, then hand you off to a junior who doesn't understand your brand or
+              your market.</p>
           </div>
         </div>
         <div class="problem-card">
           <div class="x">✕</div>
           <div>
             <h4>Freelancers With Zero Accountability</h4>
-            <p>Cheap 5–10 triệu VND/month deals
-              that end up costing you hundreds of triệu in missed deadlines, weak creatives, and lost
-              customers.</p>
+            <p>Cheap 5–10 triệu VND/month deals that end up costing you hundreds of triệu in missed deadlines, weak
+              creatives, and lost customers.</p>
           </div>
         </div>
         <div class="problem-card">
           <div class="x">✕</div>
           <div>
             <h4>Good-Looking Creatives, Zero ROI</h4>
-            <p>Instagram- and TikTok-worthy posts
-              that get likes from your friends but generate zero leads, zero sales, zero growth.</p>
+            <p>Instagram- and TikTok-worthy posts that get likes from your friends but generate zero leads, zero sales,
+              zero growth.</p>
           </div>
         </div>
         <div class="problem-card">
           <div class="x">✕</div>
           <div>
             <h4>5 Vendors for 5 Things</h4>
-            <p>One agency for ads, another for website,
-              someone else for video. Nobody owns the outcome. You're the project manager.</p>
+            <p>One agency for ads, another for website, someone else for video. Nobody owns the outcome. You're the
+              project manager.</p>
           </div>
         </div>
       </div>
-      <div class="callout">
-        <b>Insidee Media</b> was built to fix exactly this. One team. Every capability. Your brand's
-        growth — owned, not managed.
+      <div class="problems-callout reveal">
+        <div class="callout-content">
+          <span class="callout-pill">The Solution</span>
+          <h3>Insidee Media was built to fix exactly this.</h3>
+          <p>One team. Every capability. Your brand's growth — <strong>owned, not managed.</strong></p>
+        </div>
       </div>
     </div>
   </section>
@@ -1813,28 +1949,24 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
           and standards.</div>
         <div class="test-card">
           <div class="q">"</div>
-          <p>Insidee Media transformed our digital
-            presence. Their creative campaigns and strategic approach helped us reach new customers and
-            grow our brand online. Highly recommended!</p>
-          <div class="who">Priya Sharma</div>
-          <div class="role">Marketing Head, UrbanRoots</div>
+          <p>Insidee Media transformed our digital presence. Their creative campaigns and strategic approach helped us
+            reach new customers and grow our brand online. Highly recommended!</p>
+          <div class="who">Nguyễn Minh Thư</div>
+          <div class="role">Marketing Head, VinaFlora</div>
         </div>
         <div class="test-card">
           <div class="q">"</div>
-          <p>The team at Insidee Media is innovative
-            and responsive. Their tech solutions streamlined our operations and their branding expertise gave
-            us a fresh identity.</p>
-          <div class="who">Rohan Mehta</div>
-          <div class="role">Co-Founder,
-            TechNest</div>
+          <p>The team at Insidee Media is innovative and responsive. Their tech solutions streamlined our operations and
+            their branding expertise gave us a fresh identity.</p>
+          <div class="who">Trần Hoàng Nam</div>
+          <div class="role">Co-Founder, VinaTech</div>
         </div>
         <div class="test-card">
           <div class="q">"</div>
-          <p>We loved working with Insidee Media for
-            our product launch. Their creative media production and social media strategies made a real
-            impact.</p>
-          <div class="who">Ananya Iyer</div>
-          <div class="role">Brand Manager, FreshBite</div>
+          <p>We loved working with Insidee Media for our product launch. Their creative media production and social
+            media strategies made a real impact.</p>
+          <div class="who">Phạm Ngọc Linh</div>
+          <div class="role">Brand Manager, FreshVibe</div>
         </div>
       </div>
     </div>
@@ -1909,7 +2041,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
           <a href="#work">Case Studies</a>
           <a href="mailto:contact@insidee.in">contact@insidee.in</a>
           <!-- TODO: replace with real Vietnam WhatsApp/Zalo number -->
-          <a href="https://wa.me/8077841173">+84 XXX XXX XXX</a>
+
         </div>
         <div>
           <h5>Offices</h5>
@@ -1927,8 +2059,7 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
   </footer>
   <!-- TODO: replace with real Vietnam WhatsApp/Zalo number -->
   <div class="sticky-cta">
-    <a href="https://wa.me/8077841173" class="btn btn-primary" target="_blank">Đặt lịch tư vấn
-      miễn phí — Book Free Call <span class="arrow">→</span></a>
+    <a href="https://wa.me/8077841173" class="btn btn-primary" target="_blank">Book a Strategy Call <span class="arrow">→</span></a>
   </div>
   <script>
     // Fade/slide reveal for individual elements and staggered groups 
@@ -1945,6 +2076,21 @@ family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swa
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+    // Mobile navigation toggle
+    const mt = document.querySelector('.mobile-toggle');
+    const nl = document.querySelector('.nav-links');
+    if (mt) {
+      mt.addEventListener('click', () => {
+        mt.classList.toggle('active');
+        nl.classList.toggle('active');
+      });
+      nl.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mt.classList.remove('active');
+          nl.classList.remove('active');
+        });
+      });
+    }
     // Count-up animated stats 
     const counters = document.querySelectorAll('.count');
     const countIO = new IntersectionObserver((entries) => {
