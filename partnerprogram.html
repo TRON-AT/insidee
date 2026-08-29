@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insidee City Partner Network — Partner Proposal 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0b;
+    --bg-alt:#111113;
+    --card:#161618;
+    --card-hover:#1c1c1f;
+    --border:#28282c;
+    --border-soft:#1e1e21;
+    --text:#f3f1ec;
+    --text-dim:#a7a49d;
+    --text-faint:#716e68;
+    --accent:#ffc300;
+    --accent-dim:#ffc30033;
+    --accent-soft:#2b2410;
+    --good:#3ddc97;
+    --font-head:'Space Grotesk', 'Inter', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent); color:#0a0a0b;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(255,195,0,0.10), transparent 40%),
+      radial-gradient(circle at 90% 25%, rgba(255,195,0,0.06), transparent 35%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(10,10,11,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .brand{
+    font-family:var(--font-head); font-weight:700; font-size:19px;
+    letter-spacing:0.02em; display:flex; align-items:center; gap:10px;
+    white-space:nowrap;
+  }
+  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent);}
+  .brand small{
+    display:block; font-family:var(--font-mono); font-weight:500; font-size:9.5px;
+    color:var(--text-faint); letter-spacing:0.14em; margin-top:1px; text-transform:uppercase;
+  }
+  nav.links{
+    display:flex; gap:22px; overflow-x:auto; scrollbar-width:none;
+    font-size:13.5px; font-weight:500; color:var(--text-dim);
+  }
+  nav.links::-webkit-scrollbar{display:none;}
+  nav.links a{white-space:nowrap; padding:6px 0; border-bottom:2px solid transparent; transition:color .15s, border-color .15s;}
+  nav.links a:hover{color:var(--text); border-color:var(--accent);}
+  .nav-cta{
+    display:inline-block; white-space:nowrap;
+    background:var(--accent); color:#0a0a0b; font-weight:700; font-size:13px;
+    padding:9px 16px; border-radius:7px; letter-spacing:0.01em;
+  }
+  @media (max-width:900px){ nav.links{display:none;} }
+
+  /* ---------- SECTION SCAFFOLDING ---------- */
+  section{position:relative; z-index:1; padding:88px 0; border-bottom:1px solid var(--border-soft);}
+  section.tight{padding:64px 0;}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12px; font-weight:500; letter-spacing:0.16em;
+    color:var(--accent); text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--accent);}
+  h2.title{
+    font-family:var(--font-head); font-weight:700; font-size:clamp(26px,3.4vw,40px);
+    letter-spacing:-0.01em; margin-bottom:18px; max-width:820px;
+  }
+  p.lede{
+    font-size:17px; color:var(--text-dim); max-width:680px; margin-bottom:8px;
+  }
+  .section-head{margin-bottom:44px;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:110px 0 90px; border-bottom:1px solid var(--border-soft); overflow:hidden;}
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--accent);
+    background:var(--accent-soft); border:1px solid #4a3f15; padding:7px 14px; border-radius:100px;
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:28px;
+  }
+  h1.hero-title{
+    font-family:var(--font-head); font-weight:700; font-size:clamp(38px,6vw,66px);
+    line-height:1.06; letter-spacing:-0.02em; max-width:900px; margin-bottom:26px;
+  }
+  h1.hero-title .accent{color:var(--accent);}
+  .hero-sub{font-size:19px; color:var(--text-dim); max-width:600px; margin-bottom:40px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px;}
+  .btn-primary{
+    background:var(--accent); color:#0a0a0b; font-weight:700; font-size:15px;
+    padding:15px 26px; border-radius:8px; display:inline-flex; align-items:center; gap:8px;
+    box-shadow:0 8px 30px -8px rgba(255,195,0,0.45);
+  }
+  .btn-secondary{
+    border:1px solid var(--border); color:var(--text); font-weight:600; font-size:15px;
+    padding:15px 26px; border-radius:8px; display:inline-flex; align-items:center; gap:8px;
+  }
+  .hero-split{
+    display:flex; gap:64px; flex-wrap:wrap; font-family:var(--font-mono);
+  }
+  .hero-col{max-width:340px;}
+  .hero-col .lbl{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-faint); margin-bottom:10px;}
+  .hero-col ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .hero-col li{font-family:var(--font-body); font-size:14.5px; color:var(--text-dim); display:flex; gap:9px; align-items:flex-start;}
+  .hero-col li::before{content:"→"; color:var(--accent); flex-shrink:0;}
+  .hero-col.owns li::before{content:"●"; font-size:8px; margin-top:6px; color:var(--good);}
+  .hero-col.supplies li::before{content:"●"; font-size:8px; margin-top:6px; color:var(--accent);}
+
+  /* ---------- GRID / CARDS ---------- */
+  .grid{display:grid; gap:18px;}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:900px){ .grid-3,.grid-4{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){ .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--card); border:1px solid var(--border-soft); border-radius:12px; padding:26px;
+    transition:border-color .15s, transform .15s, background .15s;
+  }
+  .card:hover{border-color:var(--border); background:var(--card-hover);}
+  .card .num{font-family:var(--font-mono); color:var(--accent); font-size:12px; font-weight:600; letter-spacing:0.08em; margin-bottom:12px;}
+  .card h3{font-family:var(--font-head); font-size:18px; font-weight:600; margin-bottom:10px;}
+  .card p{font-size:14.5px; color:var(--text-dim);}
+  .card ul{list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:7px;}
+  .card ul li{font-size:14px; color:var(--text-dim); display:flex; gap:8px;}
+  .card ul li::before{content:"—"; color:var(--text-faint); flex-shrink:0;}
+
+  .chiprow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .chip{
+    font-size:12.5px; font-family:var(--font-mono); color:var(--text-dim);
+    border:1px solid var(--border); padding:5px 11px; border-radius:100px;
+  }
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto; border:1px solid var(--border-soft); border-radius:12px;}
+  table{width:100%; border-collapse:collapse; min-width:560px;}
+  th,td{text-align:left; padding:14px 18px; font-size:14px; border-bottom:1px solid var(--border-soft);}
+  th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--text-faint); background:var(--bg-alt); font-weight:500;
+  }
+  td{color:var(--text-dim);}
+  td.hl{color:var(--text); font-weight:600;}
+  tr:last-child td{border-bottom:none;}
+  td.accent-cell{color:var(--accent); font-weight:700;}
+
+  /* ---------- STATS / EARNINGS ---------- */
+  .earn-row{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
+  .earn-item{
+    display:grid; grid-template-columns:170px 1fr 200px; align-items:center; gap:18px;
+    background:var(--card); border:1px solid var(--border-soft); border-radius:10px; padding:16px 20px;
+  }
+  .earn-item .earn-label{font-family:var(--font-mono); font-size:13px; color:var(--text-dim);}
+  .earn-item .earn-bar-track{height:10px; background:var(--bg-alt); border-radius:100px; overflow:hidden; border:1px solid var(--border-soft);}
+  .earn-item .earn-bar-fill{height:100%; background:linear-gradient(90deg, var(--accent), #ffe066); border-radius:100px;}
+  .earn-item .earn-figs{font-family:var(--font-mono); font-size:12.5px; text-align:right; color:var(--text-dim);}
+  .earn-item .earn-figs b{color:var(--text); font-size:14px; display:block;}
+  @media (max-width:700px){ .earn-item{grid-template-columns:1fr; gap:8px;} .earn-item .earn-figs{text-align:left;} }
+
+  /* comparison split */
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:750px){ .split{grid-template-columns:1fr;} }
+  .split .col{border-radius:12px; padding:26px; border:1px solid var(--border-soft);}
+  .split .col.good{background:linear-gradient(160deg, rgba(61,220,151,0.07), transparent); border-color:#1f3d30;}
+  .split .col.bad{background:linear-gradient(160deg, rgba(255,195,0,0.06), transparent); border-color:#3d3419;}
+  .split h3{font-family:var(--font-head); font-size:17px; margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .split ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .split li{font-size:14px; color:var(--text-dim); display:flex; gap:9px; align-items:flex-start;}
+  .split.good li::before{content:"✓"; color:var(--good); font-weight:700; flex-shrink:0;}
+  .split.bad li::before{content:"✕"; color:var(--accent); font-weight:700; flex-shrink:0;}
+
+  /* growth path */
+  .path{display:flex; gap:0; overflow-x:auto; padding-bottom:8px;}
+  .path-step{
+    min-width:200px; flex:1; background:var(--card); border:1px solid var(--border-soft); border-radius:12px;
+    padding:22px; margin-right:14px; position:relative;
+  }
+  .path-step .stage{font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.1em; margin-bottom:10px;}
+  .path-step h4{font-family:var(--font-head); font-size:16px; margin-bottom:8px;}
+  .path-step p{font-size:13.5px; color:var(--text-dim);}
+
+  /* FAQ */
+  details.faq{ border-bottom:1px solid var(--border-soft); padding:20px 0; }
+  details.faq summary{
+    cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--font-head); font-weight:600; font-size:16px; gap:16px;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{content:"+"; font-size:22px; color:var(--accent); font-weight:400; flex-shrink:0; transition:transform .2s;}
+  details.faq[open] summary::after{transform:rotate(45deg);}
+  details.faq p{font-size:14.5px; color:var(--text-dim); margin-top:12px; max-width:680px;}
+
+  /* funnel steps */
+  .funnel{display:flex; flex-direction:column; gap:0;}
+  .funnel-step{
+    display:grid; grid-template-columns:52px 1fr; gap:18px; padding:18px 0; border-bottom:1px solid var(--border-soft);
+    align-items:flex-start;
+  }
+  .funnel-step:last-child{border-bottom:none;}
+  .funnel-step .fnum{
+    font-family:var(--font-head); font-weight:700; font-size:20px; color:var(--accent);
+    background:var(--accent-soft); width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+  }
+  .funnel-step h4{font-family:var(--font-head); font-size:16px; margin-bottom:4px;}
+  .funnel-step p{font-size:14px; color:var(--text-dim);}
+
+  .section-alt{background:var(--bg-alt);}
+
+  /* CTA band */
+  .cta-band{
+    background:radial-gradient(circle at 30% 20%, rgba(255,195,0,0.14), transparent 55%), var(--bg-alt);
+    padding:100px 0; text-align:center; border-bottom:1px solid var(--border-soft);
+  }
+  .cta-band h2{font-family:var(--font-head); font-weight:700; font-size:clamp(28px,4vw,44px); max-width:720px; margin:0 auto 18px;}
+  .cta-band p{font-size:17px; color:var(--text-dim); max-width:560px; margin:0 auto 36px;}
+  .cta-note{font-size:12.5px; color:var(--text-faint); margin-top:18px; font-family:var(--font-mono);}
+
+  footer{padding:56px 0 40px;}
+  .foot-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; margin-bottom:36px;}
+  .foot-brand{font-family:var(--font-head); font-weight:700; font-size:18px;}
+  .foot-links{display:flex; gap:22px; font-size:13.5px; color:var(--text-dim);}
+  .disclaimer{
+    font-size:12.5px; color:var(--text-faint); border-top:1px solid var(--border-soft); padding-top:24px; line-height:1.7; max-width:900px;
+  }
+
+  .badge{
+    display:inline-block; font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--accent); border:1px solid #4a3f15; background:var(--accent-soft); padding:4px 10px; border-radius:100px; margin-bottom:10px;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        INSIDEE
+        <small>City Partner Network</small>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#opportunity">Opportunity</a>
+      <a href="#ecosystem">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#economics">Economics</a>
+      <a href="#investment">Investment</a>
+      <a href="#who-fits">Who Fits</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#cta" class="nav-cta">Apply Now</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Partner Proposal — 2026</span>
+    <h1 class="hero-title">Bring the Clients.<br><span class="accent">We'll Handle the Delivery.</span></h1>
+    <p class="hero-sub">Become an Insidee City Partner and sell marketing, branding, films, CGI and digital solutions under an established agency brand. Earn a 35% revenue share as standard — rising to as much as 80% on work you deliver yourself. Zero creative team, zero production team, zero delivery risk to build first.</p>
+    <div class="hero-ctas">
+      <a href="#cta" class="btn-primary">Apply to Become a City Partner →</a>
+      <a href="#economics" class="btn-secondary">See the Economics</a>
+    </div>
+    <div class="hero-split">
+      <div class="hero-col owns">
+        <div class="lbl">You own the market</div>
+        <ul>
+          <li>Relationships &amp; local networking</li>
+          <li>Meetings, sales &amp; business development</li>
+          <li>Client relationships</li>
+        </ul>
+      </div>
+      <div class="hero-col supplies">
+        <div class="lbl">Insidee HQ supplies the engine</div>
+        <ul>
+          <li>Strategy, creative &amp; performance marketing</li>
+          <li>Websites, films, CGI &amp; production</li>
+          <li>Account management &amp; operational support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Opportunity</div>
+      <h2 class="title">You build the market. We build the work.</h2>
+      <p class="lede">Insidee is building a distributed growth network — not a network of traditional agency offices. As a City Partner, you don't need to hire an entire creative, performance and production department before winning your first client. You focus on the part that creates local leverage: winning clients.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="num">WHAT YOU'RE RESPONSIBLE FOR</div>
+        <h3>Own the relationship</h3>
+        <ul>
+          <li>Prospecting and generating business</li>
+          <li>Local outreach and building relationships</li>
+          <li>Discovery calls, meetings and presentations</li>
+          <li>Closing clients and onboarding</li>
+          <li>Identifying upsell and cross-sell opportunities</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">WHAT INSIDEE HANDLES</div>
+        <h3>Own the delivery</h3>
+        <ul>
+          <li>Strategy, planning and creative direction</li>
+          <li>Performance marketing, content and websites</li>
+          <li>CGI, films and production</li>
+          <li>Specialist execution, reporting and quality control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Service Ecosystem</div>
+      <h2 class="title">Sell across the entire stack — not just one service</h2>
+      <p class="lede">Every client conversation gives you seven ways to grow the account, instead of being restricted to a single service line.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="num">01 · PERFORMANCE MARKETING</div>
+        <h3>Meta &amp; Google Ads</h3>
+        <p>Performance strategy, lead generation, e-commerce growth, retargeting, conversion optimization.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 · SOCIAL &amp; CONTENT</div>
+        <h3>Social media &amp; content</h3>
+        <p>Strategy, content calendars, reels, static creatives, campaigns, brand communication.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 · BRANDING</div>
+        <h3>Brand strategy &amp; identity</h3>
+        <p>Brand positioning, visual identity, brand communication, campaign development.</p>
+      </div>
+      <div class="card">
+        <div class="num">04 · WEBSITES</div>
+        <h3>Shopify &amp; Webflow</h3>
+        <p>Corporate websites, e-commerce websites, landing pages, conversion-focused builds.</p>
+      </div>
+      <div class="card">
+        <div class="num">05 · FILMS</div>
+        <h3>Film production</h3>
+        <p>Corporate, manufacturing, product, brand, campaign, social and event films.</p>
+      </div>
+      <div class="card">
+        <div class="num">06 · PRODUCT CGI</div>
+        <h3>3D &amp; CGI</h3>
+        <p>Product renders, animation, CGI films, visualization, exploded views, environments.</p>
+      </div>
+      <div class="card">
+        <div class="num">07 · PRODUCTION</div>
+        <h3>Full production</h3>
+        <p>Shoots, photography, video production, post-production, editing, motion graphics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2 class="title">Local face. Centralized delivery engine.</h2>
+    </div>
+    <div class="funnel">
+      <div class="funnel-step"><div class="fnum">1</div><div><h4>You source the opportunity</h4><p>Local outreach and networking surface a qualified prospect.</p></div></div>
+      <div class="funnel-step"><div class="fnum">2</div><div><h4>Insidee qualifies it</h4><p>HQ reviews scope, fit and solutioning.</p></div></div>
+      <div class="funnel-step"><div class="fnum">3</div><div><h4>You pitch together</h4><p>A joint presentation, combining your local relationship with Insidee's specialist credibility.</p></div></div>
+      <div class="funnel-step"><div class="fnum">4</div><div><h4>Client signs</h4><p>Commercial terms finalized, contract executed.</p></div></div>
+      <div class="funnel-step"><div class="fnum">5</div><div><h4>Insidee HQ delivers</h4><p>Strategy, creative, performance and production teams mobilize — you stay the senior relationship owner.</p></div></div>
+      <div class="funnel-step"><div class="fnum">6</div><div><h4>The account grows</h4><p>Through upselling and cross-selling across the full service ecosystem — and your revenue share grows with it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMICS -->
+<section id="economics" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Economics</div>
+      <h2 class="title">A revenue share that rewards you for the value you create</h2>
+      <p class="lede">Not a heavy recurring royalty — a delivery-linked split. The more execution you personally handle, the more you keep.</p>
+    </div>
+    <div class="tbl-wrap" style="margin-bottom:40px;">
+      <table>
+        <thead><tr><th>Revenue Type</th><th>You Keep</th><th>Insidee Share</th></tr></thead>
+        <tbody>
+          <tr><td class="hl">Standard managed services</td><td class="accent-cell">35%</td><td>65%</td></tr>
+          <tr><td class="hl">Large / complex projects</td><td class="accent-cell">20–30%</td><td>70–80%</td></tr>
+          <tr><td class="hl">Partner-delivered work</td><td class="accent-cell">60–80%</td><td>20–40%</td></tr>
+          <tr><td class="hl">Pure referral</td><td class="accent-cell">10–15%</td><td>85–90%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14px; color:var(--text-dim); max-width:680px; margin-bottom:56px;">A standard ₹1 lakh/month client requires significant ongoing Insidee delivery, so your role is bringing and managing the relationship — hence 35%. Handle more of the execution yourself, and your share climbs as high as 80%.</p>
+
+    <h3 style="font-family:var(--font-head); font-size:20px; font-weight:600; margin-bottom:20px;">What you could earn at a 35% share</h3>
+    <div class="earn-row">
+      <div class="earn-item">
+        <div class="earn-label">₹3L city revenue</div>
+        <div class="earn-bar-track"><div class="earn-bar-fill" style="width:17.5%"></div></div>
+        <div class="earn-figs"><b>₹1.05L to you</b>/ month</div>
+      </div>
+      <div class="earn-item">
+        <div class="earn-label">₹5L city revenue</div>
+        <div class="earn-bar-track"><div class="earn-bar-fill" style="width:29%"></div></div>
+        <div class="earn-figs"><b>₹1.75L to you</b>/ month</div>
+      </div>
+      <div class="earn-item">
+        <div class="earn-label">₹10L city revenue</div>
+        <div class="earn-bar-track"><div class="earn-bar-fill" style="width:58%"></div></div>
+        <div class="earn-figs"><b>₹3.5L to you</b>/ month</div>
+      </div>
+      <div class="earn-item">
+        <div class="earn-label">₹20L city revenue</div>
+        <div class="earn-bar-track"><div class="earn-bar-fill" style="width:100%"></div></div>
+        <div class="earn-figs"><b>₹7L to you</b>/ month</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px;">
+      <div class="num">WORKED EXAMPLE</div>
+      <p>Sign 10 clients averaging ₹1 lakh/month each — ₹10 lakh/month in city revenue. At a 35% share, that's <b style="color:var(--text)">₹3.5 lakh/month gross</b>, before your own office, staff, travel and operating costs.</p>
+    </div>
+    <p style="font-size:12px; color:var(--text-faint); margin-top:16px; font-family:var(--font-mono);">Illustrative scenarios, not guaranteed returns.</p>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section id="investment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What It Takes to Start</div>
+      <h2 class="title">Intentionally asset-light</h2>
+      <p class="lede">You won't be asked to build a large office, a large team, or multiple departments before validating the market.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="num">ONBOARDING FEE</div>
+        <h3>₹1,00,000 – ₹2,50,000 + GST</h3>
+        <p>Depending on city, territory, exclusivity, support level and market potential.</p>
+      </div>
+      <div class="card">
+        <div class="num">LOCAL SETUP</div>
+        <h3>Start lean</h3>
+        <p>Home office, co-working space, or a small client-facing space — no large office required.</p>
+      </div>
+      <div class="card">
+        <div class="num">WORKING CAPITAL</div>
+        <h3>Sales-ready runway</h3>
+        <p>For sales, travel, networking, local marketing and client meetings as you build the pipeline.</p>
+      </div>
+    </div>
+    <p style="font-size:14px; color:var(--text-dim); max-width:680px; margin-top:32px;">City-level exclusivity is available and reviewed periodically based on performance — full terms are set out in the Partner Agreement.</p>
+  </div>
+</section>
+
+<!-- WHO FITS -->
+<section id="who-fits" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Is This You?</div>
+      <h2 class="title">Character, network and sales ability — not just capital</h2>
+      <p class="lede">You don't need to be a marketer. The most important skill is the ability to sell, build trust and own a market.</p>
+    </div>
+    <div class="split">
+      <div class="col good split good">
+        <h3>This is a strong fit if you're</h3>
+        <ul>
+          <li>An entrepreneur, business owner or consultant</li>
+          <li>A sales or business development professional</li>
+          <li>Someone with a strong local network</li>
+          <li>Comfortable meeting founders &amp; CXOs</li>
+          <li>Strong on communication &amp; negotiation</li>
+          <li>Thinking long-term, and ready to drive sales personally</li>
+        </ul>
+      </div>
+      <div class="col bad split bad">
+        <h3>This isn't the right fit if you</h3>
+        <ul>
+          <li>Want a passive investment</li>
+          <li>Expect guaranteed leads or ROI</li>
+          <li>Aren't willing to sell personally</li>
+          <li>Want a "set it and forget it" business</li>
+          <li>Are looking only for a cheap agency brand</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What You Get</div>
+      <h2 class="title">Agency infrastructure, without building it from zero</h2>
+      <p class="lede">Every partner goes through a structured onboarding — brand and business training, sales enablement, then a guided market launch — before going live with full HQ support.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card"><div class="num">BRAND</div><ul><li>Brand identity &amp; guidelines</li><li>Presentation templates</li><li>Marketing material</li></ul></div>
+      <div class="card"><div class="num">SALES</div><ul><li>Pitch decks &amp; proposals</li><li>Case studies &amp; pricing</li><li>Sales training &amp; solutioning</li></ul></div>
+      <div class="card"><div class="num">DELIVERY</div><ul><li>Creative &amp; performance</li><li>Websites, CGI &amp; films</li><li>Production &amp; strategy</li></ul></div>
+      <div class="card"><div class="num">OPERATIONS</div><ul><li>CRM &amp; project management</li><li>Reporting &amp; onboarding</li><li>Delivery systems &amp; QC</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH PATH -->
+<section id="growth-path" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Where This Can Go</div>
+      <h2 class="title">You don't have to stay a solo salesperson forever</h2>
+    </div>
+    <div class="path">
+      <div class="path-step"><div class="stage">Stage 1</div><h4>Founder / Partner</h4><p>Sales + relationships.</p></div>
+      <div class="path-step"><div class="stage">Stage 2</div><h4>Partner + Account Manager</h4><p>Sales + client management.</p></div>
+      <div class="path-step"><div class="stage">Stage 3</div><h4>City Business Unit</h4><p>Sales + account management + local team.</p></div>
+      <div class="path-step"><div class="stage">Stage 4</div><h4>City Growth Hub</h4><p>Multiple salespeople + strategic clients.</p></div>
+      <div class="path-step"><div class="stage">Stage 5</div><h4>Regional Partner</h4><p>Potentially responsible for multiple territories.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Questions</div>
+      <h2 class="title">Common questions from prospective partners</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq"><summary>Do I need a physical office?</summary><p>No. A professional client-facing setup is recommended as the market matures, but a large office is not required to begin.</p></details>
+      <details class="faq"><summary>Do I need marketing experience?</summary><p>Not necessarily. Sales and business-development ability are more important. Insidee provides service and solution training.</p></details>
+      <details class="faq"><summary>Who owns the client relationship?</summary><p>You're the primary local relationship owner. Insidee HQ remains responsible for delivery standards and specialist execution.</p></details>
+      <details class="faq"><summary>Can I sell all Insidee services?</summary><p>Yes, subject to service availability, pricing and capability.</p></details>
+      <details class="faq"><summary>Is revenue guaranteed?</summary><p>No. Territory rights and support do not guarantee sales, clients or profitability.</p></details>
+      <details class="faq"><summary>Can I build my own team?</summary><p>Yes. As you grow, local sales and account-management capability can be expanded, subject to Insidee's brand and quality standards.</p></details>
+      <details class="faq"><summary>Can I work from home initially?</summary><p>Yes. The model is designed to be asset-light.</p></details>
+      <details class="faq"><summary>Can I have an exclusive territory?</summary><p>Potentially, subject to territory availability and performance requirements.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta" class="cta-band" style="border-bottom:none;">
+  <div class="wrap">
+    <span class="badge">Insidee City Partner Network</span>
+    <h2>Build the market. We build the growth.</h2>
+    <p>Tell us about yourself and your city — we'll walk you through territory availability, commercial terms and what the first 90 days look like.</p>
+    <a href="#" class="btn-primary" style="font-size:16px; padding:17px 30px;">Apply to Become a City Partner →</a>
+    <div class="cta-note">Applications reviewed by Insidee founder &amp; management team</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">INSIDEE</div>
+      <div class="foot-links">
+        <span>Dehradun</span>
+        <span>Gurugram</span>
+        <span>contact@insidee.in</span>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <strong style="color:var(--text-dim);">Commercial Disclaimer.</strong> This proposal is an indicative commercial framework. Final territory, fees, revenue share, service scope, payment terms, exclusivity, term, renewal and termination conditions will be documented in the definitive Insidee Partner Agreement. All revenue and earnings examples are illustrative and do not constitute a guarantee of revenue, profitability, clients or return on investment.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+

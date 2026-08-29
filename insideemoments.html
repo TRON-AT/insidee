@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('jsr');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insidee Moments | Indian Wedding Photography & Films</title>
+<meta name="description" content="Insidee Moments — the wedding storytelling arm of Insidee Media. Candid photography, cinematic films, drone coverage & Reels for your Indian wedding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#FFC72C;
+    --gold-deep:#E8A400;
+    --gold-darker:#C98600;
+    --maroon:#7A1731;
+    --maroon-deep:#5B1024;
+    --cream:#FFF8E9;
+    --cream-2:#FFF1D4;
+    --charcoal:#201A12;
+    --ink:#2B2013;
+    --white:#ffffff;
+    --shadow: 0 20px 50px rgba(122,23,49,.15);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;}
+  a{text-decoration:none; color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .container{width:100%; max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--maroon); background:rgba(122,23,49,.08);
+    padding:8px 16px; border-radius:999px; margin-bottom:16px;
+  }
+  .eyebrow::before{content:"✦"; color:var(--gold-darker);}
+  .section-title{
+    font-size:clamp(1.8rem,4vw,2.7rem);
+    font-weight:700;
+    line-height:1.15;
+    margin-bottom:14px;
+    color:var(--maroon-deep);
+  }
+  .section-sub{
+    font-size:1.02rem;
+    color:#5c4d3a;
+    max-width:640px;
+    line-height:1.7;
+    margin-bottom:44px;
+  }
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:16px 32px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.98rem;
+    border:none;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold) 0%, var(--gold-deep) 100%);
+    color:var(--maroon-deep);
+    box-shadow:0 10px 30px rgba(232,164,0,.45);
+  }
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02); box-shadow:0 16px 36px rgba(232,164,0,.55);}
+  .btn-outline{
+    background:transparent;
+    border:2px solid var(--maroon);
+    color:var(--maroon);
+  }
+  .btn-outline:hover{background:var(--maroon); color:var(--white); transform:translateY(-3px);}
+  .btn-dark{
+    background:var(--maroon);
+    color:var(--gold);
+  }
+  .btn-dark:hover{background:var(--maroon-deep); transform:translateY(-3px);}
+  .pulse{animation:pulse 2.2s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,199,44,.55);}
+    70%{box-shadow:0 0 0 16px rgba(255,199,44,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,199,44,0);}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:rgba(255,248,233,.7);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    transition:box-shadow .3s ease, background .3s ease, padding .3s ease;
+    padding:18px 0;
+  }
+  header.scrolled{
+    background:rgba(255,248,233,.96);
+    box-shadow:0 6px 24px rgba(122,23,49,.08);
+    padding:10px 0;
+  }
+  nav{display:flex; align-items:center; justify-content:space-between;}
+  .logo{display:flex; align-items:center; gap:10px;}
+  .logo-mark{
+    width:42px; height:42px; border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--maroon));
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem;
+  }
+  .logo-text{line-height:1.1;}
+  .logo-text b{font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--maroon-deep); display:block;}
+  .logo-text span{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-darker); font-weight:600;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    font-size:.92rem; font-weight:500; color:var(--ink); position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--gold-darker);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-cta .btn{padding:12px 24px; font-size:.88rem;}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px;}
+  .burger span{width:26px; height:2.5px; background:var(--maroon-deep); border-radius:2px;}
+  .mobile-menu{
+    display:none; position:fixed; inset:0 0 auto 0; top:0; background:var(--cream);
+    padding:100px 28px 40px; z-index:999; flex-direction:column; gap:22px;
+    transform:translateY(-100%); transition:transform .35s ease; height:100vh; overflow-y:auto;
+  }
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{font-size:1.2rem; font-weight:600; color:var(--maroon-deep); font-family:'Playfair Display',serif;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center;
+    padding:150px 0 90px;
+    background:
+      radial-gradient(circle at 85% 12%, rgba(255,199,44,.55), transparent 45%),
+      radial-gradient(circle at 8% 90%, rgba(122,23,49,.35), transparent 40%),
+      linear-gradient(160deg, var(--maroon-deep) 0%, var(--maroon) 45%, #8a2038 100%);
+    overflow:hidden;
+    color:var(--white);
+  }
+  .hero-pattern{
+    position:absolute; inset:0; opacity:.14;
+    background-image: radial-gradient(circle, var(--gold) 1.5px, transparent 1.6px);
+    background-size:26px 26px;
+  }
+  .hero-ring{
+    position:absolute; border-radius:50%; border:1.5px solid rgba(255,199,44,.35);
+  }
+  .hero-ring.r1{width:520px; height:520px; top:-160px; right:-160px;}
+  .hero-ring.r2{width:340px; height:340px; bottom:-120px; right:8%;}
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center;
+  }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,199,44,.14); border:1px solid rgba(255,199,44,.4);
+    color:var(--gold);
+    padding:9px 18px; border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.05em;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,5.2vw,4rem);
+    line-height:1.08;
+    font-weight:800;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:1.12rem; line-height:1.75; color:rgba(255,255,255,.85);
+    max-width:520px; margin-bottom:34px;
+  }
+  .hero-cta-row{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:38px;}
+  .hero-stats{display:flex; gap:38px; flex-wrap:wrap;}
+  .hero-stats div b{
+    display:block; font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--gold); font-weight:700;
+  }
+  .hero-stats div span{font-size:.8rem; color:rgba(255,255,255,.72);}
+  .hero-visual{
+    position:relative; z-index:2;
+  }
+  .hero-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,199,44,.3);
+    border-radius:28px;
+    padding:22px;
+    backdrop-filter:blur(6px);
+  }
+  .hero-photo-stack{position:relative; height:420px;}
+  .stack-photo{
+    position:absolute; border-radius:20px; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.85); font-size:.78rem; font-weight:600; text-align:center; padding:14px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  .stack-photo.p1{
+    width:72%; height:78%; top:0; left:0;
+    background:linear-gradient(150deg,#8a2038,#c98600 130%);
+  }
+  .stack-photo.p2{
+    width:56%; height:52%; bottom:0; right:0;
+    background:linear-gradient(150deg,var(--gold),var(--gold-darker));
+    color:var(--maroon-deep);
+  }
+  .stack-photo .cap{position:absolute; bottom:14px; left:14px; right:14px; text-align:left;}
+  .scroll-cue{
+    position:absolute; bottom:24px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:6px; color:rgba(255,255,255,.6);
+    font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+    z-index:3;
+  }
+  .scroll-cue .dot{width:1px; height:34px; background:linear-gradient(var(--gold),transparent); animation:down 1.8s infinite;}
+  @keyframes down{0%{opacity:0; transform:translateY(-6px);} 50%{opacity:1;} 100%{opacity:0; transform:translateY(10px);}}
+
+  /* ---------- TRUST BAR ---------- */
+  .trust-bar{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:26px 0;
+  }
+  .trust-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; text-align:center;}
+  .trust-row div{flex:1; min-width:140px;}
+  .trust-row b{display:block; font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold);}
+  .trust-row span{font-size:.76rem; color:#c9bfae; letter-spacing:.03em;}
+
+  /* ---------- SECTION WRAP ---------- */
+  section{padding:100px 0;}
+  .band-cream{background:var(--cream);}
+  .band-white{background:var(--white);}
+  .band-tint{background:var(--cream-2);}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid #f1e2bd;
+    border-radius:20px;
+    padding:30px 26px;
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .service-card::before{
+    content:""; position:absolute; top:0; left:0; width:5px; height:0;
+    background:linear-gradient(var(--gold),var(--maroon)); transition:height .3s ease;
+  }
+  .service-card:hover{transform:translateY(-8px); box-shadow:var(--shadow); border-color:transparent;}
+  .service-card:hover::before{height:100%;}
+  .service-icon{
+    width:54px; height:54px; border-radius:16px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem; margin-bottom:18px;
+    box-shadow:0 10px 20px rgba(232,164,0,.35);
+  }
+  .service-card h3{font-size:1.12rem; margin-bottom:9px; color:var(--maroon-deep); font-weight:700;}
+  .service-card p{font-size:.9rem; color:#63543f; line-height:1.6;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:30px;}
+  .gallery-scroll{
+    display:flex; gap:18px; overflow-x:auto; padding:10px 4px 26px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:thin; scrollbar-color:var(--gold-darker) transparent;
+  }
+  .gallery-scroll::-webkit-scrollbar{height:7px;}
+  .gallery-scroll::-webkit-scrollbar-thumb{background:var(--gold-darker); border-radius:10px;}
+  .gallery-item{
+    flex:0 0 auto; width:250px; height:320px;
+    border-radius:18px; scroll-snap-align:start;
+    position:relative; overflow:hidden;
+    display:flex; align-items:flex-end;
+    box-shadow:0 14px 30px rgba(122,23,49,.18);
+    transition:transform .3s ease;
+  }
+  .gallery-item:hover{transform:translateY(-6px);}
+  .gallery-item .g-overlay{
+    position:relative; z-index:2; padding:18px; color:var(--white); width:100%;
+    background:linear-gradient(to top, rgba(0,0,0,.62), transparent 70%);
+  }
+  .gallery-item .g-overlay small{font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  .gallery-item .g-overlay p{font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600; margin-top:2px;}
+  .g1{background:linear-gradient(160deg,#7A1731,#C98600);}
+  .g2{background:linear-gradient(160deg,#C98600,#FFC72C);}
+  .g3{background:linear-gradient(160deg,#5B1024,#7A1731);}
+  .g4{background:linear-gradient(160deg,#E8A400,#7A1731);}
+  .g5{background:linear-gradient(160deg,#8a2038,#FFC72C);}
+  .g6{background:linear-gradient(160deg,#201A12,#C98600);}
+  .g7{background:linear-gradient(160deg,#7A1731,#E8A400);}
+  .g8{background:linear-gradient(160deg,#C98600,#5B1024);}
+  .scroll-hint{font-size:.8rem; color:#8a7a5f; display:flex; align-items:center; gap:8px;}
+
+  /* ---------- REELS ---------- */
+  .reels-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:20px;
+  }
+  .reel-card{
+    aspect-ratio:9/16; border-radius:22px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:space-between;
+    box-shadow:0 16px 34px rgba(122,23,49,.22);
+    transition:transform .3s ease;
+    color:var(--white);
+  }
+  .reel-card:hover{transform:translateY(-8px) scale(1.02);}
+  .r1{background:linear-gradient(200deg,#7A1731,#C98600);}
+  .r2{background:linear-gradient(200deg,#C98600,#7A1731);}
+  .r3{background:linear-gradient(200deg,#5B1024,#FFC72C);}
+  .r4{background:linear-gradient(200deg,#201A12,#E8A400);}
+  .r5{background:linear-gradient(200deg,#8a2038,#FFC72C);}
+  .reel-top{display:flex; justify-content:space-between; padding:14px; font-size:.7rem; font-weight:600;}
+  .reel-top span{background:rgba(0,0,0,.35); padding:4px 9px; border-radius:999px;}
+  .reel-play{
+    width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,.22);
+    border:1.5px solid rgba(255,255,255,.6);
+    display:flex; align-items:center; justify-content:center; align-self:center;
+    font-size:1.1rem;
+    backdrop-filter:blur(3px);
+  }
+  .reel-bottom{padding:16px; background:linear-gradient(to top, rgba(0,0,0,.65), transparent);}
+  .reel-bottom p{font-family:'Playfair Display',serif; font-weight:700; font-size:.95rem;}
+  .reel-bottom small{font-size:.68rem; color:rgba(255,255,255,.8);}
+  .reels-note{margin-top:22px; font-size:.84rem; color:#8a7a5f; text-align:center;}
+
+  /* ---------- PROCESS ---------- */
+  .process-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px; counter-reset:step;
+  }
+  .process-card{
+    background:var(--white); border-radius:20px; padding:32px 24px;
+    border:1px solid #f1e2bd; position:relative;
+  }
+  .process-num{
+    font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:800;
+    color:transparent; -webkit-text-stroke:1.6px var(--gold-darker);
+    margin-bottom:16px;
+  }
+  .process-card h3{font-size:1.05rem; color:var(--maroon-deep); margin-bottom:8px;}
+  .process-card p{font-size:.87rem; color:#63543f; line-height:1.6;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .test-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .test-card{
+    background:var(--white); border-radius:20px; padding:30px; border:1px solid #f1e2bd;
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .stars{color:var(--gold-darker); font-size:.95rem; letter-spacing:2px;}
+  .test-card p.quote{font-size:.94rem; line-height:1.7; color:#4a3d2b; font-style:italic;}
+  .test-who{display:flex; align-items:center; gap:12px; margin-top:auto;}
+  .test-avatar{
+    width:44px; height:44px; border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--maroon));
+    display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-family:'Playfair Display',serif;
+  }
+  .test-who b{display:block; font-size:.9rem; color:var(--maroon-deep);}
+  .test-who span{font-size:.76rem; color:#8a7a5f;}
+
+  /* ---------- PACKAGES ---------- */
+  .urgency-banner{
+    background:linear-gradient(90deg,var(--maroon),var(--maroon-deep));
+    color:var(--gold);
+    text-align:center; padding:14px 20px; font-size:.88rem; font-weight:600;
+    letter-spacing:.02em;
+  }
+  .pkg-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .pkg-card{
+    background:var(--white); border-radius:22px; padding:36px 28px; border:1.5px solid #f1e2bd;
+    display:flex; flex-direction:column; gap:16px; transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .pkg-card:hover{transform:translateY(-8px); box-shadow:var(--shadow);}
+  .pkg-card.featured{
+    background:linear-gradient(165deg,var(--maroon-deep),var(--maroon));
+    color:var(--white); border-color:transparent; position:relative; transform:scale(1.04);
+  }
+  .pkg-card.featured .pkg-tag{background:var(--gold); color:var(--maroon-deep);}
+  .pkg-card.featured p, .pkg-card.featured li{color:rgba(255,255,255,.85);}
+  .pkg-tag{
+    align-self:flex-start; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    background:rgba(122,23,49,.1); color:var(--maroon); padding:6px 14px; border-radius:999px;
+  }
+  .pkg-card h3{font-family:'Playfair Display',serif; font-size:1.4rem;}
+  .pkg-card ul{display:flex; flex-direction:column; gap:10px; font-size:.88rem;}
+  .pkg-card ul li{display:flex; gap:8px; align-items:flex-start;}
+  .pkg-card ul li::before{content:"✔"; color:var(--gold-darker); font-weight:700;}
+  .pkg-card.featured ul li::before{color:var(--gold);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:800px; margin:0 auto;}
+  .faq-item{
+    background:var(--white); border:1px solid #f1e2bd; border-radius:16px; margin-bottom:14px; overflow:hidden;
+  }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:20px 24px; font-weight:600; color:var(--maroon-deep); font-size:.98rem;
+  }
+  .faq-q .plus{font-size:1.3rem; color:var(--gold-darker); transition:transform .3s ease; flex:0 0 auto;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+  .faq-a p{padding:0 24px 20px; font-size:.9rem; color:#63543f; line-height:1.7;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    position:relative;
+    background:radial-gradient(circle at 20% 20%, rgba(255,199,44,.25), transparent 50%), linear-gradient(150deg,var(--maroon-deep),var(--maroon) 60%, #8a2038);
+    color:var(--white); text-align:center; overflow:hidden;
+  }
+  .final-cta h2{font-size:clamp(1.9rem,4.4vw,3rem); margin-bottom:16px;}
+  .final-cta p{max-width:560px; margin:0 auto 34px; color:rgba(255,255,255,.82); font-size:1.02rem; line-height:1.7;}
+  .final-cta-row{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charcoal); color:#cbbfa8; padding:70px 0 30px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px;}
+  .footer-brand p{font-size:.86rem; line-height:1.7; margin:14px 0 20px; color:#a99a80;}
+  .foot-social{display:flex; gap:12px;}
+  .foot-social a{
+    width:38px; height:38px; border-radius:50%; border:1px solid #4a4030;
+    display:flex; align-items:center; justify-content:center; font-size:.85rem;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .foot-social a:hover{background:var(--gold); color:var(--charcoal); border-color:var(--gold);}
+  footer h4{color:var(--gold); font-size:.9rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:18px; font-family:'Poppins',sans-serif; font-weight:600;}
+  footer ul li{margin-bottom:11px; font-size:.88rem;}
+  footer ul li a:hover{color:var(--gold);}
+  .footer-bottom{
+    border-top:1px solid #3a3123; padding-top:24px; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:12px; font-size:.8rem; color:#8a7a5f;
+  }
+  .footer-bottom a{color:var(--gold-deep);}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed; bottom:26px; right:26px; z-index:900;
+    width:60px; height:60px; border-radius:50%;
+    background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem; box-shadow:0 12px 30px rgba(37,211,102,.5);
+    animation:pulse 2.2s infinite;
+  }
+
+  /* Reveal-on-scroll is opt-in via the .jsr class the inline head script adds —
+     if JavaScript is disabled or errors, content stays fully visible by default. */
+  .reveal{opacity:1; transform:none;}
+  .jsr .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+  .jsr .reveal.show{opacity:1; transform:translateY(0);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .hero-photo-stack{height:320px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .test-grid{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .pkg-card.featured{transform:scale(1);}
+    .reels-grid{grid-template-columns:repeat(3,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .burger{display:flex;}
+  }
+  @media (max-width:640px){
+    section{padding:70px 0;}
+    .services-grid{grid-template-columns:1fr;}
+    .reels-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-row{justify-content:flex-start;}
+    .footer-grid{grid-template-columns:1fr;}
+    .nav-cta .btn span.long{display:none;}
+    .hero{padding-top:120px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container">
+    <nav>
+      <a href="#top" class="logo">
+        <div class="logo-mark">IM</div>
+        <div class="logo-text">
+          <b>Insidee Moments</b>
+          <span>Wedding Films &amp; Photography</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reels">Reels</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="https://wa.me/919999999999?text=Hi%20Insidee%20Moments!%20I'd%20love%20a%20quote%20for%20our%20wedding%20shoot." target="_blank" rel="noopener">
+          💬 <span class="long">WhatsApp Us</span>
+        </a>
+        <button class="burger" id="burgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#reels">Reels</a>
+  <a href="#process">Process</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn-primary" style="margin-top:10px;" href="https://wa.me/919999999999" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-pattern"></div>
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">✦ Now booking 2026–27 wedding season</div>
+      <h1>We Shoot <em>Indian Weddings</em><br>Like Cinema, Not Coverage.</h1>
+      <p class="lead">Insidee Moments is the wedding storytelling studio of Insidee Media — candid photography, cinematic films &amp; same-day Reels that make your Baraat to Bidaai unforgettable.</p>
+      <div class="hero-cta-row">
+        <a href="https://wa.me/919999999999?text=Hi%20Insidee%20Moments!%20I'd%20love%20a%20quote%20for%20our%20wedding%20shoot." target="_blank" rel="noopener" class="btn btn-primary pulse">📅 Check Your Date's Availability</a>
+        <a href="#gallery" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,.5);">▶ See Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>250+</b><span>Weddings Shot</span></div>
+        <div><b>8+</b><span>Cities Covered</span></div>
+        <div><b>6+</b><span>Years of Trust</span></div>
+        <div><b>1000+</b><span>Happy Families</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-photo-stack">
+          <div class="stack-photo p1">
+            <div class="cap">
+              <small style="text-transform:uppercase; letter-spacing:.08em; font-size:.65rem; opacity:.8;">Candid</small>
+              <p style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700;">The Varmala Moment</p>
+            </div>
+          </div>
+          <div class="stack-photo p2">
+            <div class="cap">
+              <small style="text-transform:uppercase; letter-spacing:.08em; font-size:.65rem; opacity:.75;">Cinematic Film</small>
+              <p style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700;">Sangeet Night</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
+</section>
+
+<div class="trust-bar">
+  <div class="container trust-row">
+    <div><b>500+</b><span>Indian &amp; Destination Weddings</span></div>
+    <div><b>4.9★</b><span>Average Client Rating</span></div>
+    <div><b>48 hrs</b><span>Sneak-Peek Delivery</span></div>
+    <div><b>15+</b><span>Photographers &amp; Filmmakers</span></div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="band-cream">
+  <div class="container">
+    <div class="eyebrow">What We Cover</div>
+    <h2 class="section-title reveal">Every Ritual. Every Emotion.<br>Fully Covered.</h2>
+    <p class="section-sub reveal">From Haldi to Vidaai, our team of photographers, filmmakers and drone operators covers every function of your Indian wedding so nothing gets missed.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">📷</div>
+        <h3>Candid Wedding Photography</h3>
+        <p>Unposed, emotion-first storytelling that captures real laughter, tears and stolen glances through the day.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎞️</div>
+        <h3>Traditional &amp; Ritual Photography</h3>
+        <p>Complete documentation of every ritual — Pheras, Kanyadaan, Saptapadi — for family archives and elders.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎬</div>
+        <h3>Cinematic Wedding Films</h3>
+        <p>Feature-style highlight films with sound design and storytelling that feel like a movie trailer of your love story.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💛</div>
+        <h3>Pre-Wedding Shoots</h3>
+        <p>Concept-based couple shoots at scenic or studio locations — used for invites, save-the-dates &amp; decor.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🪔</div>
+        <h3>Haldi, Mehendi &amp; Sangeet Coverage</h3>
+        <p>Full-day multi-function coverage capturing colour, dance and family candid moments across every event.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🚁</div>
+        <h3>Drone &amp; Aerial Coverage</h3>
+        <p>Sweeping aerial shots of the Baraat, venue and mandap for cinematic scale and grandeur.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⚡</div>
+        <h3>Same-Day Edit &amp; Highlight Reel</h3>
+        <p>A polished highlight video ready to play at your reception, edited the very same day.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📡</div>
+        <h3>Live Streaming</h3>
+        <p>High-quality live broadcast of your ceremony for relatives and NRI family who can't be there in person.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✈️</div>
+        <h3>Destination Wedding Coverage</h3>
+        <p>Full-team travel packages for destination weddings across India and abroad — Udaipur, Goa, Thailand &amp; more.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📱</div>
+        <h3>Instagram Reels &amp; Social Content</h3>
+        <p>Trend-edited vertical Reels from your wedding, delivered fast for you to share while the excitement is fresh.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📖</div>
+        <h3>Premium Album &amp; Frame Design</h3>
+        <p>Luxury printed albums, canvas frames and parent albums designed to be treasured for generations.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">👥</div>
+        <h3>Multi-Camera Team Coverage</h3>
+        <p>Second shooters and multi-angle crews so bride's side, groom's side and stage are never missed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="band-white">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow">Moments We've Framed</div>
+        <h2 class="section-title reveal" style="margin-bottom:0;">A Glimpse Into Real Weddings</h2>
+      </div>
+      <div class="scroll-hint">← Swipe / scroll to explore →</div>
+    </div>
+    <div class="gallery-scroll reveal">
+      <div class="gallery-item g1"><div class="g-overlay"><small>Baraat</small><p>The Grand Entry</p></div></div>
+      <div class="gallery-item g2"><div class="g-overlay"><small>Mehendi</small><p>Colour &amp; Laughter</p></div></div>
+      <div class="gallery-item g3"><div class="g-overlay"><small>Pheras</small><p>Seven Sacred Vows</p></div></div>
+      <div class="gallery-item g4"><div class="g-overlay"><small>Sangeet</small><p>The Dance Floor</p></div></div>
+      <div class="gallery-item g5"><div class="g-overlay"><small>Bridal Portrait</small><p>Golden Hour Glow</p></div></div>
+      <div class="gallery-item g6"><div class="g-overlay"><small>Candid</small><p>Stolen Glances</p></div></div>
+      <div class="gallery-item g7"><div class="g-overlay"><small>Reception</small><p>Decor &amp; Detail</p></div></div>
+      <div class="gallery-item g8"><div class="g-overlay"><small>Varmala</small><p>The First Look</p></div></div>
+    </div>
+    <p style="text-align:center; font-size:.84rem; color:#8a7a5f;">Full-resolution portfolio shared during our discovery call — this is just a preview.</p>
+  </div>
+</section>
+
+<!-- ================= REELS ================= -->
+<section id="reels" class="band-tint">
+  <div class="container">
+    <div class="eyebrow center" style="display:inline-flex;">Fresh Off the Camera</div>
+    <h2 class="section-title reveal center">Wedding Reels That Actually Get Watched</h2>
+    <p class="section-sub reveal center">A peek at the vertical, trend-ready Reels we cut for couples — built for Instagram, delivered fast.</p>
+
+    <div class="reels-grid">
+      <div class="reel-card r1 reveal">
+        <div class="reel-top"><span>▶ 0:38</span><span>♥ 12.4k</span></div>
+        <div class="reel-play">▶</div>
+        <div class="reel-bottom"><p>Sangeet Highlights</p><small>Reel 01</small></div>
+      </div>
+      <div class="reel-card r2 reveal">
+        <div class="reel-top"><span>▶ 0:29</span><span>♥ 9.1k</span></div>
+        <div class="reel-play">▶</div>
+        <div class="reel-bottom"><p>Baraat Entry Chaos</p><small>Reel 02</small></div>
+      </div>
+      <div class="reel-card r3 reveal">
+        <div class="reel-top"><span>▶ 0:45</span><span>♥ 18.7k</span></div>
+        <div class="reel-play">▶</div>
+        <div class="reel-bottom"><p>Pheras in Slow Motion</p><small>Reel 03</small></div>
+      </div>
+      <div class="reel-card r4 reveal">
+        <div class="reel-top"><span>▶ 0:33</span><span>♥ 7.8k</span></div>
+        <div class="reel-play">▶</div>
+        <div class="reel-bottom"><p>Mehendi Dance-Off</p><small>Reel 04</small></div>
+      </div>
+      <div class="reel-card r5 reveal">
+        <div class="reel-top"><span>▶ 0:51</span><span>♥ 22.3k</span></div>
+        <div class="reel-play">▶</div>
+        <div class="reel-bottom"><p>Bride's Grand Entry</p><small>Reel 05</small></div>
+      </div>
+    </div>
+    <p class="reels-note">Tap any Reel on our Instagram to watch in full — link in the footer below.</p>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="band-white">
+  <div class="container">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="section-title reveal">Booking Us Is the Easiest Decision You'll Make</h2>
+    <p class="section-sub reveal">A simple, no-pressure process from first message to final delivery.</p>
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <div class="process-num">01</div>
+        <h3>Enquire on WhatsApp</h3>
+        <p>Tell us your wedding date, city and functions. We reply within hours, not days.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">02</div>
+        <h3>Meet &amp; Discuss Vision</h3>
+        <p>A quick call or in-person meet to understand your story, style and family preferences.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">03</div>
+        <h3>Lock Your Date</h3>
+        <p>Confirm your package and pay a small advance — your date is reserved exclusively for you.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">04</div>
+        <h3>We Shoot &amp; Deliver Magic</h3>
+        <p>Full-day coverage, same-day highlights, and your final films &amp; album delivered on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="reviews" class="band-tint">
+  <div class="container">
+    <div class="eyebrow">Real Couples, Real Words</div>
+    <h2 class="section-title reveal">Loved by Families Across India</h2>
+    <p class="section-sub reveal">A few words from couples whose weddings we were lucky enough to shoot.</p>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We didn't even realise we were being photographed half the time — the candid shots feel so real. Our parents cried watching the film."</p>
+        <div class="test-who">
+          <div class="test-avatar">R</div>
+          <div><b>Riya &amp; Aman</b><span>Dehradun</span></div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The same-day highlight reel played at our reception and the whole hall went silent watching it. Absolutely worth every rupee."</p>
+        <div class="test-who">
+          <div class="test-avatar">P</div>
+          <div><b>Priya &amp; Karan</b><span>Gurugram</span></div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"From Haldi to Vidaai, their team was everywhere without ever getting in the way. The Reels they cut are still getting views months later."</p>
+        <div class="test-who">
+          <div class="test-avatar">S</div>
+          <div><b>Simran &amp; Rohit</b><span>Udaipur (Destination)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACKAGES ================= -->
+<section id="packages" class="band-white" style="padding-top:0;">
+  <div class="urgency-banner" style="margin-bottom:70px;">🔥 Only a few 2026 wedding-season dates left — enquire before your date is gone.</div>
+  <div class="container">
+    <div class="eyebrow">Simple, Transparent Packages</div>
+    <h2 class="section-title reveal">Choose the Coverage Your Wedding Deserves</h2>
+    <p class="section-sub reveal">Every wedding is different, so every quote is custom — here's a sense of how our packages are structured.</p>
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <span class="pkg-tag">Essential</span>
+        <h3>The Intimate</h3>
+        <p style="font-size:.85rem; color:#63543f;">For single-day or small-function weddings.</p>
+        <ul>
+          <li>1 Day Candid + Traditional Coverage</li>
+          <li>1 Photographer + 1 Cinematographer</li>
+          <li>200+ Edited Photographs</li>
+          <li>3–4 Min Highlight Film</li>
+        </ul>
+        <a href="https://wa.me/919999999999" class="btn btn-outline" style="margin-top:10px;">Get Custom Quote</a>
+      </div>
+      <div class="pkg-card featured reveal">
+        <span class="pkg-tag">Most Popular</span>
+        <h3>The Grand Celebration</h3>
+        <p style="font-size:.85rem;">For multi-function Indian weddings, 2–3 days.</p>
+        <ul>
+          <li>Haldi + Mehendi + Sangeet + Wedding Day</li>
+          <li>2 Photographers + 2 Cinematographers</li>
+          <li>Drone Coverage Included</li>
+          <li>Same-Day Highlight Reel</li>
+          <li>600+ Edited Photographs + Premium Album</li>
+        </ul>
+        <a href="https://wa.me/919999999999" class="btn btn-primary" style="margin-top:10px;">Get Custom Quote</a>
+      </div>
+      <div class="pkg-card reveal">
+        <span class="pkg-tag">Signature</span>
+        <h3>The Destination Story</h3>
+        <p style="font-size:.85rem; color:#63543f;">For destination &amp; multi-day luxury weddings.</p>
+        <ul>
+          <li>Full Team Travel Across All Functions</li>
+          <li>Cinematic Feature Film + Teaser</li>
+          <li>Drone + Live Streaming + Reels Package</li>
+          <li>Luxury Album &amp; Parent Albums</li>
+        </ul>
+        <a href="https://wa.me/919999999999" class="btn btn-outline" style="margin-top:10px;">Get Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="band-tint">
+  <div class="container">
+    <div class="eyebrow center" style="display:inline-flex;">Questions, Answered</div>
+    <h2 class="section-title reveal center">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">How many photographers and videographers cover our wedding?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Team size depends on your package and number of functions — typically 2 to 4 members including a lead photographer, cinematographer and drone operator, ensuring both families and every angle are covered.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you travel outside Dehradun and Gurugram?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes — we regularly shoot destination weddings across India and abroad. Travel, stay and logistics are built into your custom quote.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How soon do we receive our photos and films?<span class="plus">+</span></div>
+        <div class="faq-a"><p>A sneak-peek gallery and same-day highlight reel are ready within hours of your event. Fully edited photographs and the final cinematic film are typically delivered within 3–5 weeks.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you offer both candid and traditional photography?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Always. Every package blends candid, emotion-led storytelling with complete traditional ritual documentation so both your memories and your family's archive are covered.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How do we lock our wedding date with Insidee Moments?<span class="plus">+</span></div>
+        <div class="faq-a"><p>Message us on WhatsApp with your date and city — we'll confirm availability, walk you through packages, and a small advance secures your date exclusively.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow" style="background:rgba(255,199,44,.15); color:var(--gold);">Let's Talk About Your Big Day</div>
+    <h2 class="reveal">Ready to Turn Your Wedding<br>Into a Timeless Film?</h2>
+    <p class="reveal">Dates fill up fast during wedding season. Reach out today and let's start planning how we'll tell your story.</p>
+    <div class="final-cta-row reveal">
+      <a href="https://wa.me/919999999999?text=Hi%20Insidee%20Moments!%20I'd%20love%20a%20quote%20for%20our%20wedding%20shoot." target="_blank" rel="noopener" class="btn btn-primary pulse">💬 Message Us on WhatsApp</a>
+      <a href="mailto:contact@insidee.in?subject=Wedding%20Shoot%20Enquiry" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,.5);">✉ Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark">IM</div>
+          <div class="logo-text">
+            <b style="color:#fff;">Insidee Moments</b>
+            <span>Wedding Films &amp; Photography</span>
+          </div>
+        </div>
+        <p>A wedding storytelling studio by Insidee Media — candid photography, cinematic films and social-ready Reels for Indian weddings across the country.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reels">Reels</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Candid Photography</a></li>
+          <li><a href="#services">Cinematic Films</a></li>
+          <li><a href="#services">Pre-Wedding Shoots</a></li>
+          <li><a href="#services">Drone Coverage</a></li>
+          <li><a href="#services">Destination Weddings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li>📍 Dehradun &amp; Gurugram, India</li>
+          <li>✉ <a href="mailto:contact@insidee.in">contact@insidee.in</a></li>
+          <li>💬 <a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Insidee Moments — a creative division of <a href="#">Insidee Media</a>. All rights reserved.</span>
+      <span>Founded by Akshat Talwar</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919999999999?text=Hi%20Insidee%20Moments!%20I'd%20love%20a%20quote%20for%20our%20wedding%20shoot." target="_blank" rel="noopener" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header scroll shadow
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('show'));
+  }
+  // Safety net: never leave content permanently invisible (slow observers,
+  // elements outside the scroll path, full-page captures, etc.)
+  window.addEventListener('load', () => {
+    setTimeout(() => revealEls.forEach(el => el.classList.add('show')), 1800);
+  });
+</script>
+
+</body>
+</html>
+

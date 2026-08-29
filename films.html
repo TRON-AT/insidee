@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manufacturing Films by Insidee Media | Industrial Brand Films That Build Trust</title>
+<meta name="description" content="Insidee Media produces manufacturing, industrial & corporate films for brands across India. See our showreel, our work, and get a free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0d;
+    --bg-alt:#111114;
+    --panel:#17171b;
+    --panel-border:#2a2a30;
+    --steel:#8b8d94;
+    --steel-light:#c4c6cc;
+    --white:#f5f4f1;
+    --amber:#ff7a1a;
+    --amber-light:#ffb066;
+    --amber-dim:rgba(255,122,26,0.12);
+    --success:#3ecf8e;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  /* Background texture */
+  .grain-bg{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,122,26,0.07), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(255,122,26,0.05), transparent 40%),
+      var(--bg);
+  }
+  .diag-lines{
+    position:fixed;inset:0;z-index:-1;opacity:0.035;pointer-events:none;
+    background-image:repeating-linear-gradient(135deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px);
+  }
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(11,11,13,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--panel-border);
+    transition:background .3s;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo span{color:var(--amber);}
+  nav ul{display:flex;gap:34px;align-items:center;}
+  nav a{
+    font-size:14px;font-weight:500;color:var(--steel-light);
+    transition:color .2s;position:relative;
+  }
+  nav a:hover{color:var(--white);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 24px;border-radius:999px;font-weight:600;font-size:14.5px;
+    transition:all .2s ease;white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--amber);color:#0b0b0d;
+    box-shadow:0 0 0 0 rgba(255,122,26,0.5);
+  }
+  .btn-primary:hover{background:var(--amber-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,122,26,0.25);}
+  .btn-outline{
+    border:1px solid var(--panel-border);color:var(--white);background:rgba(255,255,255,0.02);
+  }
+  .btn-outline:hover{border-color:var(--amber);color:var(--amber-light);}
+  .btn-sm{padding:9px 18px;font-size:13.5px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;padding:6px;}
+  .hamburger span{width:22px;height:2px;background:var(--white);}
+
+  /* Mobile nav */
+  .mobile-nav{
+    display:none;position:fixed;top:65px;left:0;right:0;z-index:99;
+    background:var(--bg-alt);border-bottom:1px solid var(--panel-border);
+    padding:20px 24px;flex-direction:column;gap:18px;
+  }
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{font-size:15px;color:var(--steel-light);}
+
+  /* Hero */
+  .hero{
+    padding:170px 0 90px;position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--amber-dim);border:1px solid rgba(255,122,26,0.3);
+    color:var(--amber-light);padding:7px 16px;border-radius:999px;
+    font-size:12.5px;font-weight:600;letter-spacing:0.03em;margin-bottom:26px;
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);}
+  .hero h1{
+    font-size:clamp(36px,5.4vw,64px);font-weight:700;line-height:1.08;
+    max-width:880px;margin-bottom:24px;
+  }
+  .hero h1 em{color:var(--amber);font-style:normal;}
+  .hero p.lead{
+    font-size:18px;color:var(--steel-light);max-width:600px;margin-bottom:38px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px;}
+  .hero-note{font-size:13px;color:var(--steel);margin-top:14px;}
+
+  /* Trust strip */
+  .trust-strip{
+    border-top:1px solid var(--panel-border);padding-top:36px;
+  }
+  .trust-label{font-size:12.5px;color:var(--steel);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;}
+  .logo-row{
+    display:flex;gap:36px;flex-wrap:wrap;align-items:center;opacity:0.55;
+  }
+  .logo-placeholder{
+    width:130px;height:38px;border:1px dashed var(--panel-border);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;color:var(--steel);font-family:'JetBrains Mono',monospace;
+  }
+
+  /* Stats */
+  .stats{
+    padding:60px 0;border-top:1px solid var(--panel-border);border-bottom:1px solid var(--panel-border);
+    background:var(--bg-alt);
+  }
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .stat h3{font-size:clamp(30px,4vw,44px);color:var(--amber);font-weight:700;margin-bottom:6px;}
+  .stat p{font-size:13.5px;color:var(--steel-light);}
+
+  /* Section shell */
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--amber);
+    text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;display:block;
+  }
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:700;margin-bottom:14px;}
+  .section-head p{color:var(--steel-light);font-size:16px;}
+
+  /* Showreel */
+  .showreel-frame{
+    position:relative;border-radius:20px;overflow:hidden;
+    border:1px dashed rgba(255,122,26,0.4);
+    background:
+      linear-gradient(135deg, rgba(255,122,26,0.08), transparent 60%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 14px),
+      var(--panel);
+    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;
+  }
+  .showreel-frame .play-btn{
+    width:84px;height:84px;border-radius:50%;background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 14px rgba(255,122,26,0.08);
+    transition:transform .25s;cursor:pointer;
+  }
+  .showreel-frame .play-btn:hover{transform:scale(1.08);}
+  .showreel-frame .play-btn svg{width:26px;height:26px;fill:#0b0b0d;margin-left:3px;}
+  .showreel-frame .frame-label{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--amber-light);
+    background:rgba(0,0,0,0.4);padding:6px 14px;border-radius:999px;
+  }
+  .showreel-frame .frame-sub{font-size:13px;color:var(--steel);max-width:360px;text-align:center;}
+  .showreel-meta{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:12px;}
+  .showreel-meta p{font-size:13.5px;color:var(--steel);}
+
+  /* Filters */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .filter-btn{
+    padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:600;
+    border:1px solid var(--panel-border);color:var(--steel-light);transition:all .2s;
+  }
+  .filter-btn:hover{border-color:var(--amber);}
+  .filter-btn.active{background:var(--amber);color:#0b0b0d;border-color:var(--amber);}
+
+  /* Film grid */
+  .film-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .film-card{
+    border:1px solid var(--panel-border);border-radius:var(--radius);overflow:hidden;
+    background:var(--panel);transition:transform .25s, border-color .25s;
+  }
+  .film-card:hover{transform:translateY(-4px);border-color:rgba(255,122,26,0.4);}
+  .film-thumb{
+    aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#1c1c20,#25252a);
+  }
+  .film-thumb::before{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 12px);
+  }
+  .film-thumb .mini-play{
+    position:relative;z-index:2;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,122,26,0.9);display:flex;align-items:center;justify-content:center;
+  }
+  .film-thumb .mini-play svg{width:14px;height:14px;fill:#0b0b0d;margin-left:2px;}
+  .film-thumb .tag{
+    position:absolute;top:10px;left:10px;z-index:2;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--amber-light);
+    background:rgba(0,0,0,0.55);padding:4px 10px;border-radius:999px;
+  }
+  .film-body{padding:16px 18px 20px;}
+  .film-body h4{font-size:15.5px;font-weight:600;margin-bottom:4px;}
+  .film-body p{font-size:13px;color:var(--steel);}
+
+  /* CGI / 3D product videos — 60s detailed videos, 2 per row, 16:9 */
+  .cgi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .cgi-card{
+    border:1px solid var(--panel-border);border-radius:12px;overflow:hidden;
+    background:var(--panel);transition:transform .25s, border-color .25s;
+  }
+  .cgi-card:hover{transform:translateY(-3px);border-color:rgba(255,122,26,0.4);}
+  .cgi-thumb{
+    aspect-ratio:16/9;position:relative;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#1a1a1e,#232328);
+  }
+  .cgi-thumb::before{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 12px);
+  }
+  .cgi-thumb .mini-play{
+    position:relative;z-index:2;width:48px;height:48px;border-radius:50%;
+    background:rgba(255,122,26,0.9);display:flex;align-items:center;justify-content:center;
+  }
+  .cgi-thumb .mini-play svg{width:16px;height:16px;fill:#0b0b0d;margin-left:2px;}
+  .cgi-thumb .tag{
+    position:absolute;top:10px;left:10px;z-index:2;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--amber-light);
+    background:rgba(0,0,0,0.55);padding:4px 10px;border-radius:999px;
+  }
+  .cgi-thumb .duration{
+    position:absolute;bottom:10px;right:10px;z-index:2;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--white);
+    background:rgba(0,0,0,0.6);padding:3px 8px;border-radius:6px;
+  }
+  .cgi-body{padding:14px 16px 18px;}
+  .cgi-body h4{font-size:15px;font-weight:600;margin-bottom:3px;}
+  .cgi-body p{font-size:12.5px;color:var(--steel);}
+
+  /* UGC / Instagram Reels — vertical 9:16 cards */
+  .ugc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .ugc-card{
+    border:1px solid var(--panel-border);border-radius:12px;overflow:hidden;
+    background:var(--panel);transition:transform .25s, border-color .25s;
+  }
+  .ugc-card:hover{transform:translateY(-3px);border-color:rgba(255,122,26,0.4);}
+  .ugc-thumb{
+    aspect-ratio:9/16;position:relative;display:flex;align-items:flex-end;justify-content:center;
+    background:linear-gradient(160deg,#1c1a20,#26212b);
+  }
+  .ugc-thumb::before{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 12px);
+  }
+  .ugc-thumb .mini-play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,122,26,0.9);display:flex;align-items:center;justify-content:center;
+  }
+  .ugc-thumb .mini-play svg{width:12px;height:12px;fill:#0b0b0d;margin-left:1px;}
+  .ugc-thumb .tag{
+    position:absolute;top:8px;left:8px;z-index:2;
+    font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--amber-light);
+    background:rgba(0,0,0,0.55);padding:3px 7px;border-radius:999px;
+  }
+  .ugc-thumb .ig-icon{position:absolute;top:8px;right:8px;z-index:2;width:15px;height:15px;stroke:var(--white);fill:none;stroke-width:1.8;opacity:0.85;}
+  .ugc-caption{
+    position:relative;z-index:2;padding:10px 10px 12px;width:100%;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  }
+  .ugc-caption h4{font-size:11.5px;font-weight:600;color:var(--white);margin-bottom:1px;}
+  .ugc-caption p{font-size:10px;color:var(--steel-light);}
+
+  /* Why us */
+  .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .feature-card{
+    padding:28px 24px;border:1px solid var(--panel-border);border-radius:var(--radius);
+    background:var(--panel);
+  }
+  .feature-icon{
+    width:46px;height:46px;border-radius:12px;background:var(--amber-dim);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .feature-icon svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:1.8;}
+  .feature-card h4{font-size:16.5px;margin-bottom:8px;}
+  .feature-card p{font-size:13.5px;color:var(--steel-light);}
+
+  /* Process */
+  .process-track{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .process-step{position:relative;padding:26px 20px 20px;border:1px solid var(--panel-border);border-radius:var(--radius);background:var(--panel);}
+  .process-step .num{
+    font-family:'JetBrains Mono',monospace;color:var(--amber);font-size:13px;margin-bottom:14px;display:block;
+  }
+  .process-step h4{font-size:15px;margin-bottom:6px;}
+  .process-step p{font-size:12.5px;color:var(--steel);}
+
+  /* Testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .testi-card{
+    padding:28px;border:1px solid var(--panel-border);border-radius:var(--radius);background:var(--panel);
+  }
+  .testi-stars{color:var(--amber);font-size:14px;margin-bottom:16px;letter-spacing:2px;}
+  .testi-card p.quote{font-size:14.5px;color:var(--steel-light);margin-bottom:20px;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:38px;height:38px;border-radius:50%;background:var(--bg-alt);
+    border:1px solid var(--panel-border);display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--steel);
+  }
+  .testi-person h5{font-size:13.5px;font-weight:600;}
+  .testi-person span{font-size:12px;color:var(--steel);}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--panel-border);padding:22px 0;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;}
+  .faq-q .plus{font-size:20px;color:var(--amber);transition:transform .25s;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{font-size:14.5px;color:var(--steel-light);padding-top:14px;max-width:640px;}
+
+  /* Contact / final CTA */
+  .cta-section{
+    background:var(--bg-alt);border-top:1px solid var(--panel-border);
+  }
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start;}
+  .cta-copy h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:18px;}
+  .cta-copy p{color:var(--steel-light);font-size:15.5px;margin-bottom:30px;max-width:440px;}
+  .cta-points{display:flex;flex-direction:column;gap:14px;margin-bottom:10px;}
+  .cta-point{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--steel-light);}
+  .cta-point svg{width:18px;height:18px;stroke:var(--success);flex:0 0 auto;margin-top:1px;}
+
+  form{
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius);
+    padding:32px;display:flex;flex-direction:column;gap:16px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  label{font-size:12.5px;color:var(--steel-light);margin-bottom:6px;display:block;font-weight:500;}
+  input,select,textarea{
+    width:100%;background:var(--bg);border:1px solid var(--panel-border);border-radius:8px;
+    padding:11px 14px;color:var(--white);font-size:14px;font-family:inherit;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amber);}
+  textarea{resize:vertical;min-height:80px;}
+  .form-submit{margin-top:6px;width:100%;justify-content:center;padding:14px;font-size:15px;}
+  .form-success{display:none;text-align:center;padding:40px 10px;}
+  .form-success.show{display:block;}
+  .form-success svg{width:44px;height:44px;stroke:var(--success);margin:0 auto 16px;fill:none;stroke-width:1.6;}
+  .form-success h4{margin-bottom:8px;}
+  .form-success p{color:var(--steel-light);font-size:14px;}
+  .form-fineprint{font-size:11.5px;color:var(--steel);text-align:center;}
+
+  /* Footer */
+  footer{padding:60px 0 30px;border-top:1px solid var(--panel-border);}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+  .footer-brand p{color:var(--steel);font-size:13.5px;max-width:280px;margin-top:12px;}
+  .footer-cols{display:flex;gap:60px;flex-wrap:wrap;}
+  .footer-col h5{font-size:13px;color:var(--steel-light);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;}
+  .footer-col ul{display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{font-size:13.5px;color:var(--steel);transition:color .2s;}
+  .footer-col a:hover{color:var(--amber-light);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    border-top:1px solid var(--panel-border);padding-top:24px;font-size:12.5px;color:var(--steel);
+  }
+
+  /* WhatsApp float */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:90;
+    width:56px;height:56px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);transition:transform .2s;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:28px;height:28px;fill:#fff;}
+
+  /* Scroll fade-in */
+  .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* Responsive */
+  @media (max-width:980px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .film-grid{grid-template-columns:repeat(2,1fr);}
+    .cgi-grid{grid-template-columns:repeat(2,1fr);}
+    .ugc-grid{grid-template-columns:repeat(3,1fr);}
+    .feature-grid{grid-template-columns:repeat(2,1fr);}
+    .process-track{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .cta-grid{grid-template-columns:1fr;}
+    nav{display:none;}
+    .hamburger{display:flex;}
+  }
+  @media (max-width:600px){
+    .hero{padding:140px 0 60px;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+    .film-grid{grid-template-columns:1fr 1fr;}
+    .cgi-grid{grid-template-columns:1fr;gap:16px;}
+    .ugc-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .feature-grid{grid-template-columns:1fr;}
+    .process-track{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    section{padding:70px 0;}
+    .logo-row{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain-bg"></div>
+<div class="diag-lines"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">INSIDEE<span>.</span>MEDIA</a>
+    <nav>
+      <ul>
+        <li><a href="#showreel">Showreel</a></li>
+        <li><a href="#films">Films</a></li>
+        <li><a href="#cgi">3D/CGI</a></li>
+        <li><a href="#ugc">UGC/Reels</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="#contact" class="btn btn-primary btn-sm">Get a Free Quote</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#showreel">Showreel</a>
+  <a href="#films">Films</a>
+  <a href="#cgi">3D/CGI</a>
+  <a href="#ugc">UGC/Reels</a>
+  <a href="#why-us">Why Us</a>
+  <a href="#process">Process</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact" class="btn btn-primary btn-sm" style="width:fit-content;">Get a Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>MANUFACTURING & INDUSTRIAL FILMS</span>
+    <h1>We turn factory floors into <em>brand films</em> that build buyer trust.</h1>
+    <p class="lead">Insidee Media is a full-service creative & marketing agency specialising in manufacturing brand films — corporate films, product films and process documentaries for manufacturers across India. We've worked with brands across industries, and we're ready to tell your story next.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
+      <a href="#showreel" class="btn btn-outline">Watch Our Showreel ▾</a>
+    </div>
+    <div class="trust-strip">
+      <p class="trust-label">Trusted by manufacturing & industrial brands across India</p>
+      <div class="logo-row">
+        <div class="logo-placeholder">CLIENT LOGO</div>
+        <div class="logo-placeholder">CLIENT LOGO</div>
+        <div class="logo-placeholder">CLIENT LOGO</div>
+        <div class="logo-placeholder">CLIENT LOGO</div>
+        <div class="logo-placeholder">CLIENT LOGO</div>
+        <div class="logo-placeholder">CLIENT LOGO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" style="padding-top:44px;padding-bottom:44px;">
+  <div class="wrap stats-grid">
+    <!-- Placeholder figures — replace with your verified numbers before publishing -->
+    <div class="stat fade-up"><h3>2018</h3><p>Insidee Media founded</p></div>
+    <div class="stat fade-up"><h3>2</h3><p>Studios — Dehradun & Gurugram</p></div>
+    <div class="stat fade-up"><h3>[X]+</h3><p>Manufacturing brands filmed</p></div>
+    <div class="stat fade-up"><h3>[X]+</h3><p>Industries served</p></div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<section id="showreel">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 01 — Showreel</span>
+      <h2>See the work before you read about it.</h2>
+      <p>A quick cut of manufacturing films we've produced — factory floors, product lines, and the people behind them.</p>
+    </div>
+    <div class="showreel-frame fade-up">
+      <!-- REPLACE: swap this div's contents with your embed, e.g.
+           <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+           or a hosted <video> tag, sized to fill this 16:9 frame. -->
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+      <span class="frame-label">SHOWREEL — ADD VIDEO HERE</span>
+      <p class="frame-sub">1920×1080 recommended · this frame is pre-sized for a 16:9 embed or hosted video</p>
+    </div>
+    <div class="showreel-meta">
+      <p>Manufacturing Showreel · 2024–2026 Edit</p>
+      <a href="#films" class="btn btn-outline btn-sm">Browse full portfolio ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- FILMS GRID -->
+<section id="films">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 02 — Portfolio</span>
+      <h2>Manufacturing films we've produced.</h2>
+      <p>Every film below is a real client project. Filter by industry, click through, and picture your brand in this list.</p>
+    </div>
+
+    <div class="filters fade-up" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All Films</button>
+      <button class="filter-btn" data-filter="automotive">Automotive</button>
+      <button class="filter-btn" data-filter="fmcg">FMCG & Consumer</button>
+      <button class="filter-btn" data-filter="pharma">Pharma & Chemicals</button>
+      <button class="filter-btn" data-filter="textile">Textile</button>
+      <button class="filter-btn" data-filter="engineering">Heavy Engineering</button>
+      <button class="filter-btn" data-filter="food">Food Processing</button>
+    </div>
+
+    <div class="film-grid" id="filmGrid">
+      <!-- Each card below is a placeholder — replace thumb background/video, title and client name -->
+      <div class="film-card fade-up" data-category="automotive">
+        <div class="film-thumb"><span class="tag">AUTOMOTIVE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Assembly Line, Reimagined</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="fmcg">
+        <div class="film-thumb"><span class="tag">FMCG</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>From Raw Material to Retail</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="pharma">
+        <div class="film-thumb"><span class="tag">PHARMA</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Inside a GMP-Certified Facility</h4><p>Client Name Pvt. Ltd. · Process Documentary</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="textile">
+        <div class="film-thumb"><span class="tag">TEXTILE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Thread to Fabric</h4><p>Client Name Pvt. Ltd. · Brand Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="engineering">
+        <div class="film-thumb"><span class="tag">ENGINEERING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Precision at Scale</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="food">
+        <div class="film-thumb"><span class="tag">FOOD PROCESSING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Farm to Factory to Shelf</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="automotive">
+        <div class="film-thumb"><span class="tag">AUTOMOTIVE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>Built to Last</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
+      </div>
+      <div class="film-card fade-up" data-category="engineering">
+        <div class="film-thumb"><span class="tag">ENGINEERING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
+        <div class="film-body"><h4>The People Behind the Plant</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D / CGI PRODUCT VIDEOS -->
+<section id="cgi">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 03 — 3D & CGI</span>
+      <h2>Product 3D & CGI videos.</h2>
+      <p>60-second, fully detailed product videos built in 3D and CGI — ideal for concept products, precision parts, or specs a live shoot can't capture.</p>
+    </div>
+    <div class="cgi-grid">
+      <!-- Each card below is a placeholder for one full 60s product video — replace thumb/embed, product name and client name -->
+      <div class="cgi-card fade-up">
+        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
+        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
+      </div>
+      <div class="cgi-card fade-up">
+        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
+        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
+      </div>
+      <div class="cgi-card fade-up">
+        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
+        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
+      </div>
+      <div class="cgi-card fade-up">
+        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
+        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UGC / INSTAGRAM REELS -->
+<section id="ugc">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 04 — UGC & Reels</span>
+      <h2>UGC & Instagram Reels.</h2>
+      <p>Short-form, vertical content built for the feed — creator-style UGC and Reels that put a human face on your manufacturing brand.</p>
+    </div>
+    <div class="ugc-grid">
+      <!-- Each card below is a placeholder for one vertical 9:16 Reel — replace thumb/embed, title and client name -->
+      <div class="ugc-card fade-up">
+        <div class="ugc-thumb">
+          <span class="tag">REEL</span>
+          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+          <div class="ugc-caption"><h4>On the Factory Floor</h4><p>Client Name</p></div>
+        </div>
+      </div>
+      <div class="ugc-card fade-up">
+        <div class="ugc-thumb">
+          <span class="tag">UGC</span>
+          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+          <div class="ugc-caption"><h4>Unboxing the Product</h4><p>Client Name</p></div>
+        </div>
+      </div>
+      <div class="ugc-card fade-up">
+        <div class="ugc-thumb">
+          <span class="tag">REEL</span>
+          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+          <div class="ugc-caption"><h4>A Day at the Plant</h4><p>Client Name</p></div>
+        </div>
+      </div>
+      <div class="ugc-card fade-up">
+        <div class="ugc-thumb">
+          <span class="tag">UGC</span>
+          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+          <div class="ugc-caption"><h4>Meet the Makers</h4><p>Client Name</p></div>
+        </div>
+      </div>
+      <div class="ugc-card fade-up">
+        <div class="ugc-thumb">
+          <span class="tag">REEL</span>
+          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
+          <div class="ugc-caption"><h4>Before & After the Line</h4><p>Client Name</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 05 — Why Insidee Media</span>
+      <h2>We know how to shoot a factory, not just a story.</h2>
+      <p>Manufacturing films come with real constraints — safety, downtime, confidentiality. We've built our process around them.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+        <h4>Safety-First on the Floor</h4>
+        <p>PPE-compliant crews, minimal-disruption shoot plans, and experience working around live production lines.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>Fast Turnaround</h4>
+        <p>Tight shoot windows, efficient editing pipelines — most manufacturing films go from brief to delivery in weeks, not months.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19h16"/></svg></div>
+        <h4>Storytelling, Not Just Footage</h4>
+        <p>We script every film around what actually convinces a B2B buyer, distributor or investor — not just pretty shots of machines.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 8h8M8 16h5"/></svg></div>
+        <h4>NDA & Confidentiality Ready</h4>
+        <p>We routinely sign NDAs before shoots and handle proprietary processes, formulas and layouts with discretion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 06 — Process</span>
+      <h2>From first call to final film.</h2>
+      <p>A clear, five-step process built specifically for manufacturing shoots.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-step fade-up"><span class="num">01</span><h4>Discover</h4><p>We understand your plant, product and the message you need this film to carry.</p></div>
+      <div class="process-step fade-up"><span class="num">02</span><h4>Script & Plan</h4><p>A shot-ready script and shoot plan built around your production schedule.</p></div>
+      <div class="process-step fade-up"><span class="num">03</span><h4>Shoot</h4><p>On-site filming with a safety-briefed crew and minimal line disruption.</p></div>
+      <div class="process-step fade-up"><span class="num">04</span><h4>Edit & Review</h4><p>Edit, sound design and revisions, with your team reviewing at every stage.</p></div>
+      <div class="process-step fade-up"><span class="num">05</span><h4>Deliver</h4><p>Final files in every format you need — web, social, trade shows, sales decks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 07 — Client Feedback</span>
+      <h2>What manufacturers say about working with us.</h2>
+      <p>Replace these with real client quotes once you have them signed off — placeholder copy below.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"[Placeholder] The team understood our production floor and delivered a film that our sales team now uses in every pitch."</p>
+        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"[Placeholder] Professional, safety-conscious, and fast. The final film exceeded what we expected from the brief."</p>
+        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="quote">"[Placeholder] They translated a complex manufacturing process into something our distributors actually understood."</p>
+        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <span class="kicker">// 08 — FAQ</span>
+      <h2>Common questions before you brief us.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span>How much does a manufacturing film cost?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>It depends on shoot days, locations, crew size and post-production scope. Tell us about your plant and goals on the form below and we'll send a tailored quote within 24–48 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Will filming disrupt our production line?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>We plan shoots around your production schedule and shift patterns, and our crews are briefed on factory safety protocols before we ever step on the floor.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Can you sign an NDA before the shoot?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes — we're happy to sign your NDA or ours before discussing proprietary processes, layouts or formulations.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How long does a project take, start to finish?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Most manufacturing films go from kickoff to final delivery in 3–6 weeks, depending on shoot complexity and revision rounds.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Do we own the final footage and film?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes — usage rights and ownership are defined clearly in our agreement before the shoot begins.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FINAL CTA -->
+<section class="cta-section" id="contact">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="cta-copy fade-up">
+        <span class="kicker">// 09 — Get Started</span>
+        <h2>Let's put your factory on film.</h2>
+        <p>Tell us a bit about your manufacturing business and what you want this film to do for you. We'll come back with next steps and a quote — no pressure, no jargon.</p>
+        <div class="cta-points">
+          <div class="cta-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Response within 24–48 hours</div>
+          <div class="cta-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Free consultation, no obligation</div>
+          <div class="cta-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> NDA available on request</div>
+        </div>
+      </div>
+
+      <div>
+        <form id="leadForm">
+          <div class="form-row">
+            <div><label for="fname">Full Name*</label><input id="fname" name="fname" type="text" required placeholder="Your name"></div>
+            <div><label for="company">Company*</label><input id="company" name="company" type="text" required placeholder="Company name"></div>
+          </div>
+          <div class="form-row">
+            <div><label for="email">Email*</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div>
+            <div><label for="phone">Phone / WhatsApp*</label><input id="phone" name="phone" type="tel" required placeholder="+91"></div>
+          </div>
+          <div>
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry">
+              <option value="">Select industry</option>
+              <option>Automotive</option>
+              <option>FMCG & Consumer Goods</option>
+              <option>Pharma & Chemicals</option>
+              <option>Textile</option>
+              <option>Heavy Engineering</option>
+              <option>Food Processing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="brief">Tell us about the film you need</label>
+            <textarea id="brief" name="brief" placeholder="e.g. We want a 2-minute corporate film for investor decks and our website."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Get My Free Quote →</button>
+          <p class="form-fineprint">
+            <!-- IMPORTANT: this form currently only shows a confirmation message in the browser.
+                 Connect it to a real endpoint (e.g. Formspree, Google Forms, your CRM, or an email API)
+                 before publishing so submissions are actually captured. -->
+            We'll never share your details. Response within 24–48 hours.
+          </p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          <h4>Thanks — we've got it.</h4>
+          <p>Our team will reach out within 24–48 hours. In a hurry? Message us on WhatsApp using the button in the corner.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">INSIDEE<span>.</span>MEDIA</a>
+        <p>A full-service digital marketing & creative agency based in Dehradun & Gurugram, producing manufacturing and brand films for companies across India since 2018.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="#showreel">Showreel</a></li>
+            <li><a href="#films">Films</a></li>
+            <li><a href="#cgi">3D/CGI</a></li>
+            <li><a href="#ugc">UGC/Reels</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:contact@insidee.in">contact@insidee.in</a></li>
+            <li><a href="#">Dehradun, India</a></li>
+            <li><a href="#">Gurugram, India</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Follow</h5>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Insidee Media. All rights reserved.</span>
+      <span>Founded by Akshat Talwar · Since 2018</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <!-- REPLACE the phone number above with your real WhatsApp business number -->
+  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.53.78 4.88 2.13 6.86L4.99 28l6.36-1.67A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm6.94 17.02c-.29.82-1.7 1.6-2.34 1.7-.6.1-1.35.14-2.17-.14-.5-.16-1.14-.37-1.96-.72-3.46-1.5-5.72-4.98-5.9-5.22-.17-.24-1.4-1.86-1.4-3.55 0-1.69.88-2.52 1.2-2.86.31-.34.68-.42.9-.42.23 0 .45.002.65.012.21.01.49-.08.76.58.29.7.98 2.42 1.07 2.6.09.18.15.39.03.62-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.37-.16.73.21.36.94 1.55 2.03 2.51 1.4 1.24 2.58 1.63 2.95 1.81.28.14.45.12.62-.05.2-.2.85-.98 1.08-1.32.22-.34.44-.28.73-.17.29.11 1.87.88 2.19 1.04.32.16.53.24.61.37.08.14.08.79-.21 1.61z"/></svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburgerBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // Film filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filmCards = document.querySelectorAll('.film-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      filmCards.forEach(card => {
+        card.style.display = (f === 'all' || card.dataset.category === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Lead form — currently client-side only.
+  // TODO before publishing: point this at a real backend (Formspree, Google Forms/Sheets, your CRM, or an email API)
+  // so submissions actually reach you. Right now it just shows a success message.
+  const leadForm = document.getElementById('leadForm');
+  const formSuccess = document.getElementById('formSuccess');
+  leadForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Example integration point:
+    // fetch('YOUR_FORM_ENDPOINT', { method: 'POST', body: new FormData(leadForm) });
+    leadForm.style.display = 'none';
+    formSuccess.classList.add('show');
+  });
+</script>
+
+</body>
+</html>

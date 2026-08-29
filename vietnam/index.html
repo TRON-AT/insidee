@@ -259,14 +259,22 @@
     }
 
     .logo {
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: .02em;
-      color: var(--blue);
+      position: relative;
+      display: block;
+      width: 150px;
+      height: 62px;
+      overflow: hidden;
+      flex: 0 0 auto;
     }
 
-    .logo .dot {
-      color: var(--yellow);
+    .logo img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      max-width: none;
+      height: auto;
+      transform: translate(-50%, -50%);
     }
 
     .nav-links {
@@ -1535,7 +1543,12 @@
       }
 
       .logo {
-        font-size: 18px;
+        width: 116px;
+        height: 48px;
+      }
+
+      .logo img {
+        width: 160px;
       }
 
       .nav-links {
@@ -1635,7 +1648,9 @@
 <body>
   <header id="site-header">
     <div class="wrap">
-      <div class="logo">INSIDEE<span class="dot">.</span></div>
+      <a class="logo" href="../index.html" aria-label="Insidee Media home">
+        <img src="../assets/logo.png" alt="Insidee Media">
+      </a>
       <button class="mobile-toggle" aria-label="Menu">
         <span></span>
         <span></span>
@@ -2136,7 +2151,9 @@
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="logo" style="margin-bottom:14px;">INSIDEE<span class="dot">.</span></div>
+          <div class="logo" style="margin-bottom:14px;">
+            <img src="../assets/logo.png" alt="Insidee Media">
+          </div>
           <p>Vietnam's premium 360° creative &amp; growth agency. Strategy, performance
             marketing, brand building, production, and technology — all under one roof, backed by 8+ years
             and 94+ brands scaled globally since 2018.</p>
