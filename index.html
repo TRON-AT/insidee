@@ -263,6 +263,12 @@
             text-decoration: none;
         }
 
+        .logo-image {
+            width: 108px;
+            height: 56px;
+            object-fit: contain;
+        }
+
         .logo-dot {
             color: var(--gold);
         }
@@ -1139,7 +1145,12 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar-inner">
-            <a href="/" class="logo" id="logo-link">INSIDEE<span class="logo-dot">.</span></a>
+            <a href="/" class="logo" id="logo-link" aria-label="Insidee Media home">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="img/140X140.png">
+                    <img class="logo-image" src="img/200X200.png" alt="Insidee Media">
+                </picture>
+            </a>
 
             <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">

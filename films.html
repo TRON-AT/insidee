@@ -170,6 +170,9 @@
       var(--panel);
     aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;
   }
+  .showreel-frame iframe{
+    position:absolute;inset:0;width:100%;height:100%;border:0;
+  }
   .showreel-frame .play-btn{
     width:84px;height:84px;border-radius:50%;background:var(--amber);
     display:flex;align-items:center;justify-content:center;
@@ -203,9 +206,10 @@
   }
   .film-card:hover{transform:translateY(-4px);border-color:rgba(255,122,26,0.4);}
   .film-thumb{
-    aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;
+    aspect-ratio:16/9;position:relative;display:flex;align-items:center;justify-content:center;
     background:linear-gradient(135deg,#1c1c20,#25252a);
   }
+  .film-thumb iframe,.cgi-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .film-thumb::before{
     content:'';position:absolute;inset:0;
     background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 12px);
@@ -225,7 +229,7 @@
   .film-body p{font-size:13px;color:var(--steel);}
 
   /* CGI / 3D product videos — 60s detailed videos, 2 per row, 16:9 */
-  .cgi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .cgi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
   .cgi-card{
     border:1px solid var(--panel-border);border-radius:12px;overflow:hidden;
     background:var(--panel);transition:transform .25s, border-color .25s;
@@ -259,38 +263,17 @@
   .cgi-body p{font-size:12.5px;color:var(--steel);}
 
   /* UGC / Instagram Reels — vertical 9:16 cards */
-  .ugc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .ugc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
   .ugc-card{
-    border:1px solid var(--panel-border);border-radius:12px;overflow:hidden;
+    min-width:0;border:1px solid var(--panel-border);border-radius:12px;overflow:hidden;
     background:var(--panel);transition:transform .25s, border-color .25s;
   }
   .ugc-card:hover{transform:translateY(-3px);border-color:rgba(255,122,26,0.4);}
   .ugc-thumb{
-    aspect-ratio:9/16;position:relative;display:flex;align-items:flex-end;justify-content:center;
+    min-height:480px;display:flex;align-items:flex-start;justify-content:center;
     background:linear-gradient(160deg,#1c1a20,#26212b);
   }
-  .ugc-thumb::before{
-    content:'';position:absolute;inset:0;
-    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 12px);
-  }
-  .ugc-thumb .mini-play{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
-    width:36px;height:36px;border-radius:50%;
-    background:rgba(255,122,26,0.9);display:flex;align-items:center;justify-content:center;
-  }
-  .ugc-thumb .mini-play svg{width:12px;height:12px;fill:#0b0b0d;margin-left:1px;}
-  .ugc-thumb .tag{
-    position:absolute;top:8px;left:8px;z-index:2;
-    font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--amber-light);
-    background:rgba(0,0,0,0.55);padding:3px 7px;border-radius:999px;
-  }
-  .ugc-thumb .ig-icon{position:absolute;top:8px;right:8px;z-index:2;width:15px;height:15px;stroke:var(--white);fill:none;stroke-width:1.8;opacity:0.85;}
-  .ugc-caption{
-    position:relative;z-index:2;padding:10px 10px 12px;width:100%;
-    background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-  }
-  .ugc-caption h4{font-size:11.5px;font-weight:600;color:var(--white);margin-bottom:1px;}
-  .ugc-caption p{font-size:10px;color:var(--steel-light);}
+  .ugc-thumb .instagram-media{width:100% !important;min-width:0 !important;margin:0 !important;border:0 !important;border-radius:0 !important;}
 
   /* Why us */
   .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
@@ -402,8 +385,8 @@
   @media (max-width:980px){
     .stats-grid{grid-template-columns:repeat(2,1fr);}
     .film-grid{grid-template-columns:repeat(2,1fr);}
-    .cgi-grid{grid-template-columns:repeat(2,1fr);}
-    .ugc-grid{grid-template-columns:repeat(3,1fr);}
+    .cgi-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .ugc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
     .feature-grid{grid-template-columns:repeat(2,1fr);}
     .process-track{grid-template-columns:repeat(2,1fr);}
     .testi-grid{grid-template-columns:1fr;}
@@ -416,7 +399,7 @@
     .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
     .film-grid{grid-template-columns:1fr 1fr;}
     .cgi-grid{grid-template-columns:1fr;gap:16px;}
-    .ugc-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .ugc-grid{grid-template-columns:1fr;gap:16px;}
     .feature-grid{grid-template-columns:1fr;}
     .process-track{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
@@ -433,7 +416,12 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">INSIDEE<span>.</span>MEDIA</a>
+    <a href="index.html" class="logo" aria-label="Insidee Media home">
+      <picture>
+        <source media="(max-width: 480px)" srcset="img/140X140.png">
+        <img class="logo-image" src="img/200X200.png" alt="Insidee Media" style="width:108px;height:56px;object-fit:contain;">
+      </picture>
+    </a>
     <nav>
       <ul>
         <li><a href="#showreel">Showreel</a></li>
@@ -494,8 +482,8 @@
     <!-- Placeholder figures — replace with your verified numbers before publishing -->
     <div class="stat fade-up"><h3>2018</h3><p>Insidee Media founded</p></div>
     <div class="stat fade-up"><h3>2</h3><p>Studios — Dehradun & Gurugram</p></div>
-    <div class="stat fade-up"><h3>[X]+</h3><p>Manufacturing brands filmed</p></div>
-    <div class="stat fade-up"><h3>[X]+</h3><p>Industries served</p></div>
+    <div class="stat fade-up"><h3>8</h3><p>Manufacturing brands filmed</p></div>
+    <div class="stat fade-up"><h3>12</h3><p>Industries served</p></div>
   </div>
 </section>
 
@@ -508,12 +496,12 @@
       <p>A quick cut of manufacturing films we've produced — factory floors, product lines, and the people behind them.</p>
     </div>
     <div class="showreel-frame fade-up">
-      <!-- REPLACE: swap this div's contents with your embed, e.g.
-           <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-           or a hosted <video> tag, sized to fill this 16:9 frame. -->
-      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-      <span class="frame-label">SHOWREEL — ADD VIDEO HERE</span>
-      <p class="frame-sub">1920×1080 recommended · this frame is pre-sized for a 16:9 embed or hosted video</p>
+      <iframe
+        src="https://www.youtube.com/embed/vp40VLVxhvA"
+        title="Insidee Media manufacturing showreel"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
     <div class="showreel-meta">
       <p>Manufacturing Showreel · 2024–2026 Edit</p>
@@ -542,38 +530,21 @@
     </div>
 
     <div class="film-grid" id="filmGrid">
-      <!-- Each card below is a placeholder — replace thumb background/video, title and client name -->
       <div class="film-card fade-up" data-category="automotive">
-        <div class="film-thumb"><span class="tag">AUTOMOTIVE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Assembly Line, Reimagined</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
+        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/ZmqlTIxCsiY" title="Insidee Media portfolio film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="film-body"><h4>Portfolio Film 1</h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="fmcg">
-        <div class="film-thumb"><span class="tag">FMCG</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>From Raw Material to Retail</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
+        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/Wt6wbJnTfSs" title="Insidee Media portfolio film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="film-body"><h4>Portfolio Film 2</h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="pharma">
-        <div class="film-thumb"><span class="tag">PHARMA</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Inside a GMP-Certified Facility</h4><p>Client Name Pvt. Ltd. · Process Documentary</p></div>
+        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/vp40VLVxhvA" title="Insidee Media portfolio film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="film-body"><h4>Portfolio Film 3</h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="textile">
-        <div class="film-thumb"><span class="tag">TEXTILE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Thread to Fabric</h4><p>Client Name Pvt. Ltd. · Brand Film</p></div>
-      </div>
-      <div class="film-card fade-up" data-category="engineering">
-        <div class="film-thumb"><span class="tag">ENGINEERING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Precision at Scale</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
-      </div>
-      <div class="film-card fade-up" data-category="food">
-        <div class="film-thumb"><span class="tag">FOOD PROCESSING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Farm to Factory to Shelf</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
-      </div>
-      <div class="film-card fade-up" data-category="automotive">
-        <div class="film-thumb"><span class="tag">AUTOMOTIVE</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>Built to Last</h4><p>Client Name Pvt. Ltd. · Product Film</p></div>
-      </div>
-      <div class="film-card fade-up" data-category="engineering">
-        <div class="film-thumb"><span class="tag">ENGINEERING</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div></div>
-        <div class="film-body"><h4>The People Behind the Plant</h4><p>Client Name Pvt. Ltd. · Corporate Film</p></div>
+        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/kR-IJJyFZN8" title="Insidee Media portfolio film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="film-body"><h4>Portfolio Film 4</h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
     </div>
   </div>
@@ -588,23 +559,12 @@
       <p>60-second, fully detailed product videos built in 3D and CGI — ideal for concept products, precision parts, or specs a live shoot can't capture.</p>
     </div>
     <div class="cgi-grid">
-      <!-- Each card below is a placeholder for one full 60s product video — replace thumb/embed, product name and client name -->
-      <div class="cgi-card fade-up">
-        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
-        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
-      </div>
-      <div class="cgi-card fade-up">
-        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
-        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
-      </div>
-      <div class="cgi-card fade-up">
-        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
-        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
-      </div>
-      <div class="cgi-card fade-up">
-        <div class="cgi-thumb"><span class="tag">3D / CGI</span><div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div><span class="duration">0:60</span></div>
-        <div class="cgi-body"><h4>Product Name — 60s CGI Film</h4><p>Client Name · Detailed Product Video</p></div>
-      </div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/BOBTF3_ME-I" title="Insidee Media 3D CGI film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 1</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/Xz_P3B6l25Q" title="Insidee Media 3D CGI film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 2</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/kAvCwTrekrU" title="Insidee Media 3D CGI film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 3</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/nBj5p7gi-iE" title="Insidee Media 3D CGI film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 4</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/vWI6Z8mUrxU" title="Insidee Media 3D CGI film 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 5</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/_sJUtmKnWD0" title="Insidee Media 3D CGI film 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 6</h4><p>Insidee Media · Detailed Product Video</p></div></div>
     </div>
   </div>
 </section>
@@ -618,47 +578,12 @@
       <p>Short-form, vertical content built for the feed — creator-style UGC and Reels that put a human face on your manufacturing brand.</p>
     </div>
     <div class="ugc-grid">
-      <!-- Each card below is a placeholder for one vertical 9:16 Reel — replace thumb/embed, title and client name -->
-      <div class="ugc-card fade-up">
-        <div class="ugc-thumb">
-          <span class="tag">REEL</span>
-          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-          <div class="ugc-caption"><h4>On the Factory Floor</h4><p>Client Name</p></div>
-        </div>
-      </div>
-      <div class="ugc-card fade-up">
-        <div class="ugc-thumb">
-          <span class="tag">UGC</span>
-          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-          <div class="ugc-caption"><h4>Unboxing the Product</h4><p>Client Name</p></div>
-        </div>
-      </div>
-      <div class="ugc-card fade-up">
-        <div class="ugc-thumb">
-          <span class="tag">REEL</span>
-          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-          <div class="ugc-caption"><h4>A Day at the Plant</h4><p>Client Name</p></div>
-        </div>
-      </div>
-      <div class="ugc-card fade-up">
-        <div class="ugc-thumb">
-          <span class="tag">UGC</span>
-          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-          <div class="ugc-caption"><h4>Meet the Makers</h4><p>Client Name</p></div>
-        </div>
-      </div>
-      <div class="ugc-card fade-up">
-        <div class="ugc-thumb">
-          <span class="tag">REEL</span>
-          <svg class="ig-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          <div class="mini-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9V3z"/></svg></div>
-          <div class="ugc-caption"><h4>Before & After the Line</h4><p>Client Name</p></div>
-        </div>
-      </div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DY9mLtPIAlo/" data-instgrm-version="14"></blockquote></div></div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbsYJbtClCL/" data-instgrm-version="14"></blockquote></div></div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbS80-rFORP/" data-instgrm-version="14"></blockquote></div></div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da77NnEouNb/" data-instgrm-version="14"></blockquote></div></div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZm4DPzod2o/" data-instgrm-version="14"></blockquote></div></div>
+      <div class="ugc-card fade-up"><div class="ugc-thumb"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYXIQr-vQdr/" data-instgrm-version="14"></blockquote></div></div>
     </div>
   </div>
 </section>
@@ -886,6 +811,12 @@
 </a>
 
 <script>
+  // Instagram embeds
+  const instagramScript = document.createElement('script');
+  instagramScript.async = true;
+  instagramScript.src = 'https://www.instagram.com/embed.js';
+  document.body.appendChild(instagramScript);
+
   // Mobile nav toggle
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileNav = document.getElementById('mobileNav');

@@ -1649,7 +1649,10 @@
   <header id="site-header">
     <div class="wrap">
       <a class="logo" href="../index.html" aria-label="Insidee Media home">
-        <img src="../assets/logo.png" alt="Insidee Media">
+        <picture>
+          <source media="(max-width: 480px)" srcset="../img/140X140.png">
+          <img src="../img/200X200.png" alt="Insidee Media" style="width:108px;height:56px;object-fit:contain;">
+        </picture>
       </a>
       <button class="mobile-toggle" aria-label="Menu">
         <span></span>
