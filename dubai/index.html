@@ -268,6 +268,7 @@
     display:flex;align-items:center;justify-content:center;font-size:26px;
     box-shadow:0 8px 20px rgba(37,211,102,0.4);
   }
+  .mobile-quote-bar{display:none;}
 
   @media(max-width:960px){
     .problem-grid,.card-grid,.service-grid,.case-grid,.step-grid,.test-grid,.risk-grid{grid-template-columns:repeat(2,1fr);}
@@ -275,11 +276,20 @@
     .footer-grid{grid-template-columns:1fr 1fr;}
   }
   @media(max-width:680px){
+    body{padding-bottom:88px;}
     .nav-links{display:none;}
     .burger{display:block;}
+    .nav-strategy-cta{display:none;}
     .problem-grid,.card-grid,.service-grid,.case-grid,.step-grid,.test-grid,.risk-grid,.statbar .wrap,.minigrid .wrap{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     section{padding:60px 0;}
+    .mobile-quote-bar{
+      display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:151;
+      min-height:58px;align-items:center;justify-content:center;
+      padding:14px 24px;border:1px solid var(--yellow-hover);border-radius:999px;
+      background:var(--yellow);color:var(--text-blue);font-size:18px;font-weight:800;
+      box-shadow:0 8px 24px rgba(27,58,92,0.25);}
+    .wa-float{bottom:84px;right:20px;}
   }
 </style>
 </head>
@@ -301,7 +311,7 @@
     </nav>
     <div class="nav-cta">
       <span class="nav-tag">Dubai Operations</span>
-      <a class="btn btn-dark" href="https://wa.me/918077841173" target="_blank" rel="noopener">Book a Strategy Call</a>
+      <a class="btn btn-dark nav-strategy-cta" href="https://wa.me/918077841173" target="_blank" rel="noopener">Book a Strategy Call</a>
     </div>
     <button class="burger" aria-label="Menu">&#9776;</button>
   </div>
@@ -830,6 +840,7 @@
   </div>
 </footer>
 
+<a class="mobile-quote-bar" href="https://wa.me/918077841173" target="_blank" rel="noopener" aria-label="Get a free quote on WhatsApp">Get a Free Quote <span aria-hidden="true">&#8594;</span></a>
 <a class="wa-float" href="https://wa.me/918077841173" target="_blank" rel="noopener" aria-label="WhatsApp us">&#128222;</a>
 
 <script>

@@ -377,6 +377,9 @@
   .wa-float:hover{transform:scale(1.08);}
   .wa-float svg{width:28px;height:28px;fill:#fff;}
 
+  /* Mobile sticky quote CTA */
+  .mobile-quote-bar{display:none;}
+
   /* Scroll fade-in */
   .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
   .fade-up.visible{opacity:1;transform:translateY(0);}
@@ -395,6 +398,7 @@
     .hamburger{display:flex;}
   }
   @media (max-width:600px){
+    body{padding-bottom:88px;}
     .hero{padding:140px 0 60px;}
     .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
     .film-grid{grid-template-columns:1fr 1fr;}
@@ -405,6 +409,14 @@
     .form-row{grid-template-columns:1fr;}
     section{padding:70px 0;}
     .logo-row{gap:20px;}
+    .header-quote{display:none;}
+    .mobile-quote-bar{
+      display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:91;
+      min-height:58px;align-items:center;justify-content:center;
+      padding:14px 24px;border:1px solid #d98a00;border-radius:999px;
+      background:var(--amber);color:#0b0b0d;font-size:18px;font-weight:700;
+      box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+    .wa-float{bottom:84px;right:20px;}
   }
 </style>
 </head>
@@ -434,7 +446,7 @@
       </ul>
     </nav>
     <div style="display:flex;align-items:center;gap:14px;">
-      <a href="#contact" class="btn btn-primary btn-sm">Get a Free Quote</a>
+      <a href="#contact" class="btn btn-primary btn-sm header-quote">Get a Free Quote</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -452,6 +464,8 @@
   <a href="#contact" class="btn btn-primary btn-sm" style="width:fit-content;">Get a Free Quote</a>
 </div>
 
+<a href="#contact" class="mobile-quote-bar" aria-label="Get a free quote">Get a Free Quote <span aria-hidden="true">→</span></a>
+
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
@@ -462,17 +476,7 @@
       <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
       <a href="#showreel" class="btn btn-outline">Watch Our Showreel ▾</a>
     </div>
-    <div class="trust-strip">
-      <p class="trust-label">Trusted by manufacturing & industrial brands across India</p>
-      <div class="logo-row">
-        <div class="logo-placeholder">CLIENT LOGO</div>
-        <div class="logo-placeholder">CLIENT LOGO</div>
-        <div class="logo-placeholder">CLIENT LOGO</div>
-        <div class="logo-placeholder">CLIENT LOGO</div>
-        <div class="logo-placeholder">CLIENT LOGO</div>
-        <div class="logo-placeholder">CLIENT LOGO</div>
-      </div>
-    </div>
+    
   </div>
 </section>
 
@@ -519,32 +523,24 @@
       <p>Every film below is a real client project. Filter by industry, click through, and picture your brand in this list.</p>
     </div>
 
-    <div class="filters fade-up" id="filterBar">
-      <button class="filter-btn active" data-filter="all">All Films</button>
-      <button class="filter-btn" data-filter="automotive">Automotive</button>
-      <button class="filter-btn" data-filter="fmcg">FMCG & Consumer</button>
-      <button class="filter-btn" data-filter="pharma">Pharma & Chemicals</button>
-      <button class="filter-btn" data-filter="textile">Textile</button>
-      <button class="filter-btn" data-filter="engineering">Heavy Engineering</button>
-      <button class="filter-btn" data-filter="food">Food Processing</button>
-    </div>
+   
 
     <div class="film-grid" id="filmGrid">
       <div class="film-card fade-up" data-category="automotive">
         <div class="film-thumb"><iframe src="https://www.youtube.com/embed/ZmqlTIxCsiY" title="Insidee Media portfolio film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="film-body"><h4>Portfolio Film 1</h4><p>Insidee Media · Manufacturing Film</p></div>
+        <div class="film-body"><h4></h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="fmcg">
         <div class="film-thumb"><iframe src="https://www.youtube.com/embed/Wt6wbJnTfSs" title="Insidee Media portfolio film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="film-body"><h4>Portfolio Film 2</h4><p>Insidee Media · Manufacturing Film</p></div>
+        <div class="film-body"><h4></h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="pharma">
         <div class="film-thumb"><iframe src="https://www.youtube.com/embed/vp40VLVxhvA" title="Insidee Media portfolio film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="film-body"><h4>Portfolio Film 3</h4><p>Insidee Media · Manufacturing Film</p></div>
+        <div class="film-body"><h4></h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
       <div class="film-card fade-up" data-category="textile">
-        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/kR-IJJyFZN8" title="Insidee Media portfolio film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="film-body"><h4>Portfolio Film 4</h4><p>Insidee Media · Manufacturing Film</p></div>
+        <div class="film-thumb"><iframe src="https://www.youtube.com/embed/vWI6Z8mUrxU" title="Insidee Media portfolio film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="film-body"><h4></h4><p>Insidee Media · Manufacturing Film</p></div>
       </div>
     </div>
   </div>
@@ -563,7 +559,7 @@
       <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/Xz_P3B6l25Q" title="Insidee Media 3D CGI film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 2</h4><p>Insidee Media · Detailed Product Video</p></div></div>
       <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/kAvCwTrekrU" title="Insidee Media 3D CGI film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 3</h4><p>Insidee Media · Detailed Product Video</p></div></div>
       <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/nBj5p7gi-iE" title="Insidee Media 3D CGI film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 4</h4><p>Insidee Media · Detailed Product Video</p></div></div>
-      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/vWI6Z8mUrxU" title="Insidee Media 3D CGI film 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 5</h4><p>Insidee Media · Detailed Product Video</p></div></div>
+      <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/kR-IJJyFZN8" title="Insidee Media 3D CGI film 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 5</h4><p>Insidee Media · Detailed Product Video</p></div></div>
       <div class="cgi-card fade-up"><div class="cgi-thumb"><iframe src="https://www.youtube.com/embed/_sJUtmKnWD0" title="Insidee Media 3D CGI film 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="cgi-body"><h4>3D / CGI Film 6</h4><p>Insidee Media · Detailed Product Video</p></div></div>
     </div>
   </div>
@@ -650,18 +646,18 @@
     <div class="testi-grid">
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
-        <p class="quote">"[Placeholder] The team understood our production floor and delivered a film that our sales team now uses in every pitch."</p>
-        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+        <p class="quote">" The team understood our production floor and delivered a film that our sales team now uses in every pitch."</p>
+        <div class="testi-person"><div class="testi-avatar">H</div><div><h5>Himanshu</h5><span>Saatvik Solar</span></div></div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
-        <p class="quote">"[Placeholder] Professional, safety-conscious, and fast. The final film exceeded what we expected from the brief."</p>
-        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+        <p class="quote">" Professional, safety-conscious, and fast. The final film exceeded what we expected from the brief."</p>
+        <div class="testi-person"><div class="testi-avatar">A</div><div><h5>Avirath</h5><span>Elza</span></div></div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
-        <p class="quote">"[Placeholder] They translated a complex manufacturing process into something our distributors actually understood."</p>
-        <div class="testi-person"><div class="testi-avatar">CN</div><div><h5>Client Name</h5><span>Designation, Company</span></div></div>
+        <p class="quote">" They translated a complex manufacturing process into something our distributors actually understood."</p>
+        <div class="testi-person"><div class="testi-avatar">S</div><div><h5>Shivam</h5><span>Verve</span></div></div>
       </div>
     </div>
   </div>
@@ -700,7 +696,7 @@
 </section>
 
 <!-- CONTACT / FINAL CTA -->
-<section class="cta-section" id="contact">
+<!-- <section class="cta-section" id="contact">
   <div class="wrap">
     <div class="cta-grid">
       <div class="cta-copy fade-up">
@@ -745,18 +741,18 @@
           <p class="form-fineprint">
             <!-- IMPORTANT: this form currently only shows a confirmation message in the browser.
                  Connect it to a real endpoint (e.g. Formspree, Google Forms, your CRM, or an email API)
-                 before publishing so submissions are actually captured. -->
-            We'll never share your details. Response within 24–48 hours.
+                 <!-- before publishing so submissions are actually captured. -->
+            <!-- We'll never share your details. Response within 24–48 hours.
           </p>
         </form>
-        <div class="form-success" id="formSuccess">
+        <!-- <div class="form-success" id="formSuccess">
           <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
           <h4>Thanks — we've got it.</h4>
           <p>Our team will reach out within 24–48 hours. In a hurry? Message us on WhatsApp using the button in the corner.</p>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </section>
 
 <!-- FOOTER -->
